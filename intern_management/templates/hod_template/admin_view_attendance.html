@@ -1,0 +1,242 @@
+{% extends 'hod_template/base_template.html' %}
+{%  load i18n %}
+{% block page_title %}
+    {% trans 'View Attendance' %}
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">{% trans 'View Attendance' %}</h3>
+                    </div>
+                    <!-- /.card-header -->
+
+                                {% comment %} Display Messages {% endcomment %}
+                                {% if messages %}
+                                <div class="form-group">
+                                <div class="col-12">
+                                    {% for message in messages %}
+                                    {% if message.tags == "error" %}
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 10px;">
+                                        {{ message }}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                    {% elif message.tags == "success" %}
+                                        <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 10px;">
+                                        {{ message }}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                                </div>
+                                {% endif %}
+                            
+
+                        <div class="card-body">
+                           
+                            <div class="form-group">
+                                <label>{% trans 'Assignment' %} </label>
+                                <select class="form-control" name="headquarter" id="headquarter">
+                                    {% for headquarter in headquarters %}
+                                        <option value="{{ headquarter.id }}">{{ headquarter.headquarter_name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>{% trans 'Session Year' %} </label>
+                                <select class="form-control" name="session_year_id" id="session_year_id">
+                                    {% for session_year in session_years %}
+                                        <option value="{{ session_year.id }}">{{ session_year.session_start_year }} to {{ session_year.session_end_year }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-primary" id="fetch_attendance">{% trans 'Fetch Attendance Date' %}</button>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="form-group" id="attendance_block" style="display:none;">
+                                    <label>{% trans 'Attendance Date' %} </label>
+                                    <select class="form-control" name="attendance_date" id="attendance_date">
+                                        
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="alert alert-danger" id="error_attendance" style="display:none;">
+
+                                </div>
+
+                                <div class="alert alert-success" id="success_attendance" style="display:none;">
+                                    
+                                </div>
+                            </div>
+
+                            <div class="card-footer" id="fetch_intern_block" style="display:none;">
+
+                                <button type="button" class="btn btn-primary" id="fetch_intern">{% trans 'Fetch Intern Data' %}</button>
+                            </div>
+                            
+                            <!-- /.card-body -->
+
+                            {% comment %} <div class="card-footer">
+                                <button type="button" class="btn btn-primary" id="save_intern">{% trans 'Save Data' %}</button>
+                            </div> {% endcomment %}
+
+                        </div>
+
+                        {% comment %} Displaying Intern Here {% endcomment %}
+
+                        <div class="card-footer" id="intern_data">
+                        </div> 
+
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+            </div>
+
+        </div><!-- /.container-fluid -->
+      </section>
+
+  {% endblock main_content %}
+
+{% block custom_js %}
+
+<script>
+    $(document).ready(function(){
+        
+
+        //Fetching Attendance Date
+
+        $("#fetch_attendance").click(function(){
+                var headquarter = $("#headquarter").val()
+                var session_year_id = $("#session_year_id").val()
+                //console.log(subject)
+                //console.log(session_year_id)
+
+                $.ajax({
+                    url:"{% url 'admin_get_attendance_dates' %}",
+                    type:'POST',
+                    data:{headquarter:headquarter, session_year_id:session_year_id},
+                })
+
+                
+                .done(function(response){
+                    var json_data = JSON.parse(response);
+                    if(json_data.length>0)
+                    {
+                        var html_data = "";
+                        for (key in json_data)
+                        {
+                            html_data+="<option value='"+ json_data[key]["id"] +"'>"+ json_data[key]["attendance_date"] +"</option>"
+                        }
+                        $("#error_attendance").html("");
+                        $("#error_attendance").hide();
+                        $("#attendance_block").show();
+                        $("#fetch_intern_block").show();
+                        $("#attendance_date").html(html_data);
+                        //console.log(response)
+                        //alert("Something")
+                    }
+                    else
+                    {
+                        $("#error_attendance").html("{% trans 'No Attendance Data Found.' %}");
+                        $("#error_attendance").show();
+                        $("#attendance_block").hide();
+                        $("#fetch_intern_block").hide();
+                        $("#attendance_date")="" //Empty the Date Dropdown also
+                    }
+                    
+                })
+
+                .fail(function(){
+                    alert("{% trans 'Error in getting Attendance Dates.' %}")
+                    $("#error_attendance").html("");
+                    $("#fetch_intern_block").hide();
+                    $("#attendance_block").hide();
+                });
+
+                
+        })
+
+        // Now Working on Fetch Student after attendance date selected
+        $("#fetch_intern").click(function(){
+
+            // Displaying Students Based on Staff, Course and Session Enrolled
+
+            //var subject=$("#subject").val()
+            //var session_year=$("#session_year").val()
+            var attendance_date=$("#attendance_date").val()
+
+            $.ajax({
+                url:"{% url 'admin_get_attendance_intern' %}",
+                type:'POST',
+                data:{attendance_date:attendance_date},
+            })
+
+            
+            .done(function(response){
+                var json_data=JSON.parse(response);
+                //console.log(json_data)
+                //Displaying Attendance Date Input and Inters Attendance
+                var div_data="<div class='form-group'><label>{% trans 'Intern Attendance:' %} </label></div>"
+                div_data+="<div class='form-group'><div class='row'>"
+
+                for(key in json_data)
+                {
+                    div_data+="<div class='col-lg-3'><div class='form-check'>";
+
+                    div_data+="<label class='form-check-label'>"+ json_data[key]['name']+" </label> ";
+                    
+                    // Displaying Present and Absent
+
+                    if(json_data[key]['status'])
+                    {
+                        div_data+="<b>[ {% trans 'Present' %} ]</b>";
+                    }
+                    else
+                    {
+                        div_data+="<b>[ {% trans 'Absent' %} ]</b>";
+                    }
+                    //Displaying Present and Absent Ends Here
+                    
+
+                    div_data+="</div></div> ";
+                }
+                div_data+="</div></div>";
+                
+                $("#intern_data").html(div_data);
+
+            })
+            .fail(function(){
+                alert("{% trans 'Error in Fetching Interns.' %}")
+            })
+
+
+        })
+
+    })
+</script>
+{% endblock custom_js %}

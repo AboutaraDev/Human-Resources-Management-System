@@ -1,0 +1,36 @@
+{% extends 'hod_template/base_template.html' %}
+{% load i18n %}
+{% block page_title %}
+   {% blocktrans with usern=username idU=id %} Edit Intern | Username: {{ usern }} | #ID : {{ idU }} {% endblocktrans %}
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">{% trans 'Edit Intern' %}</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    {% comment %} Displaying the Django Form using forms.py EditInternForm {% endcomment %}
+                    {% url 'edit_intern_save' as action_path %}
+                    {% include 'hod_template/form_template.html' with messages=messages form=form action_path=action_path button_text=_('Update Intern') %}
+
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+            </div>
+
+        </div><!-- /.container-fluid -->
+      </section>
+
+  {% endblock main_content %}

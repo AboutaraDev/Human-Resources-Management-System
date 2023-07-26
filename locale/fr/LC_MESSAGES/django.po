@@ -1,0 +1,1550 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-25 23:15+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\intern_management\forms.py:13 .\intern_management\forms.py:58
+#: .\intern_management\templates\hod_template\admin_profile.html:61
+#: .\intern_management\templates\hod_template\manage_intern_template.html:67
+#: .\intern_management\templates\hod_template\manage_staff_template.html:68
+#: .\intern_management\templates\intern_template\intern_profile.html:61
+#: .\intern_management\templates\login.html:47
+#: .\intern_management\templates\staff_template\staff_profile.html:61
+#: .\intern_management\templates\staff_template\view_intern_template.html:66
+msgid "Email"
+msgstr "Email"
+
+#: .\intern_management\forms.py:14
+#: .\intern_management\templates\hod_template\add_staff_template.html:66
+#: .\intern_management\templates\hod_template\admin_profile.html:76
+#: .\intern_management\templates\intern_template\intern_profile.html:81
+#: .\intern_management\templates\login.html:55
+#: .\intern_management\templates\staff_template\staff_profile.html:81
+msgid "Password"
+msgstr "Mot de passe"
+
+#: .\intern_management\forms.py:15 .\intern_management\forms.py:59
+#: .\intern_management\templates\hod_template\add_staff_template.html:71
+#: .\intern_management\templates\hod_template\admin_profile.html:66
+#: .\intern_management\templates\hod_template\edit_staff_template.html:72
+#: .\intern_management\templates\hod_template\manage_intern_template.html:64
+#: .\intern_management\templates\hod_template\manage_staff_template.html:65
+#: .\intern_management\templates\intern_template\intern_profile.html:66
+#: .\intern_management\templates\staff_template\staff_profile.html:66
+#: .\intern_management\templates\staff_template\view_intern_template.html:63
+msgid "First Name"
+msgstr "Prenom"
+
+#: .\intern_management\forms.py:16 .\intern_management\forms.py:60
+#: .\intern_management\templates\hod_template\add_staff_template.html:76
+#: .\intern_management\templates\hod_template\admin_profile.html:71
+#: .\intern_management\templates\hod_template\edit_staff_template.html:77
+#: .\intern_management\templates\hod_template\manage_intern_template.html:65
+#: .\intern_management\templates\hod_template\manage_staff_template.html:66
+#: .\intern_management\templates\intern_template\intern_profile.html:71
+#: .\intern_management\templates\staff_template\staff_profile.html:71
+#: .\intern_management\templates\staff_template\view_intern_template.html:64
+msgid "Last Name"
+msgstr "Nom"
+
+#: .\intern_management\forms.py:17 .\intern_management\forms.py:61
+#: .\intern_management\templates\hod_template\add_staff_template.html:61
+#: .\intern_management\templates\hod_template\admin_profile.html:56
+#: .\intern_management\templates\hod_template\edit_staff_template.html:61
+#: .\intern_management\templates\hod_template\manage_intern_template.html:66
+#: .\intern_management\templates\hod_template\manage_staff_template.html:67
+#: .\intern_management\templates\intern_template\intern_profile.html:56
+#: .\intern_management\templates\staff_template\staff_profile.html:56
+#: .\intern_management\templates\staff_template\view_intern_template.html:65
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#: .\intern_management\forms.py:18 .\intern_management\forms.py:62
+#: .\intern_management\templates\hod_template\add_staff_template.html:81
+#: .\intern_management\templates\hod_template\edit_staff_template.html:83
+#: .\intern_management\templates\hod_template\manage_intern_template.html:68
+#: .\intern_management\templates\hod_template\manage_staff_template.html:69
+#: .\intern_management\templates\intern_template\intern_profile.html:76
+#: .\intern_management\templates\staff_template\staff_profile.html:76
+#: .\intern_management\templates\staff_template\view_intern_template.html:67
+msgid "Address"
+msgstr "Adresse"
+
+#: .\intern_management\forms.py:44 .\intern_management\forms.py:87
+msgid "Male"
+msgstr "Mâle"
+
+#: .\intern_management\forms.py:45 .\intern_management\forms.py:88
+msgid "Female"
+msgstr "Femelle"
+
+#: .\intern_management\forms.py:48 .\intern_management\forms.py:91
+#: .\intern_management\templates\hod_template\add_headquarter_template.html:61
+#: .\intern_management\templates\hod_template\edit_headquarter_template.html:61
+#: .\intern_management\templates\hod_template\manage_headquarter_template.html:64
+#: .\intern_management\templates\hod_template\manage_intern_template.html:73
+#: .\intern_management\templates\intern_template\intern_view_headquarters.html:64
+#: .\intern_management\templates\staff_template\manage_headquarter_template.html:64
+#: .\intern_management\templates\staff_template\view_intern_template.html:72
+msgid "Department"
+msgstr "Département"
+
+#: .\intern_management\forms.py:49 .\intern_management\forms.py:92
+#: .\intern_management\templates\hod_template\manage_intern_template.html:69
+#: .\intern_management\templates\staff_template\view_intern_template.html:68
+msgid "Gender"
+msgstr "Genre"
+
+#: .\intern_management\forms.py:50 .\intern_management\forms.py:93
+#: .\intern_management\templates\hod_template\admin_view_attendance.html:62
+#: .\intern_management\templates\staff_template\update_attendance_template.html:62
+msgid "Session Year"
+msgstr "Année de session"
+
+#: .\intern_management\forms.py:53 .\intern_management\forms.py:96
+#: .\intern_management\templates\hod_template\manage_intern_template.html:70
+#: .\intern_management\templates\staff_template\view_intern_template.html:69
+msgid "Profile Pic"
+msgstr "Photo de profil"
+
+#: .\intern_management\models.py:35 .\intern_management\models.py:43
+msgid "address"
+msgstr "daresse"
+
+#: .\intern_management\models.py:50
+msgid "department name"
+msgstr "Nom du département"
+
+#: .\intern_management\models.py:57
+msgid "assignment name"
+msgstr "nom de mission"
+
+#: .\intern_management\models.py:67
+msgid "gender"
+msgstr "genre"
+
+#: .\intern_management\models.py:68
+msgid "profile picture"
+msgstr "Photo de profil"
+
+#: .\intern_management\models.py:100 .\intern_management\models.py:111
+msgid "leave message"
+msgstr "message de Cangé"
+
+#: .\intern_management\models.py:110
+msgid "leave date"
+msgstr "date de Cangé"
+
+#: .\intern_management\models.py:121 .\intern_management\models.py:131
+msgid "feedback"
+msgstr "Le feedback"
+
+#: .\intern_management\models.py:122 .\intern_management\models.py:132
+msgid "feedback reply"
+msgstr "Feedback Répondre"
+
+#: .\intern_management\models.py:142 .\intern_management\models.py:151
+msgid "message"
+msgstr "message"
+
+#: .\intern_management\templates\base.html:11
+msgid "Intern Management System | Dashboard"
+msgstr "Système de gestion interne | Tableau de bord"
+
+#: .\intern_management\templates\hod_template\add_department_template.html:4
+msgid "Add Departement"
+msgstr "Ajouter Département"
+
+#: .\intern_management\templates\hod_template\add_department_template.html:19
+#: .\intern_management\templates\hod_template\add_department_template.html:64
+#: .\intern_management\templates\hod_template\sidebar_template.html:77
+msgid "Add Department"
+msgstr "Ajouter Département"
+
+#: .\intern_management\templates\hod_template\add_department_template.html:56
+#: .\intern_management\templates\hod_template\edit_department_template.html:56
+#: .\intern_management\templates\hod_template\manage_department_template.html:63
+msgid "Department Name"
+msgstr "Nom du département"
+
+#: .\intern_management\templates\hod_template\add_department_template.html:57
+msgid "Enter Department"
+msgstr "Entrée du département"
+
+#: .\intern_management\templates\hod_template\add_headquarter_template.html:4
+#: .\intern_management\templates\hod_template\add_headquarter_template.html:19
+#: .\intern_management\templates\hod_template\add_headquarter_template.html:82
+#: .\intern_management\templates\hod_template\sidebar_template.html:143
+msgid "Add Assignment"
+msgstr "Ajouter Mission"
+
+#: .\intern_management\templates\hod_template\add_headquarter_template.html:56
+#: .\intern_management\templates\hod_template\edit_headquarter_template.html:56
+#: .\intern_management\templates\hod_template\manage_headquarter_template.html:63
+#: .\intern_management\templates\intern_template\intern_view_headquarters.html:63
+#: .\intern_management\templates\staff_template\manage_headquarter_template.html:63
+msgid "Assignment Name"
+msgstr "Nom de Mission"
+
+#: .\intern_management\templates\hod_template\add_headquarter_template.html:70
+#: .\intern_management\templates\hod_template\edit_headquarter_template.html:70
+#: .\intern_management\templates\hod_template\manage_headquarter_template.html:65
+#: .\intern_management\templates\hod_template\staff_feedback_template.html:28
+#: .\intern_management\templates\hod_template\staff_leave_view.html:28
+#: .\intern_management\templates\intern_template\intern_view_headquarters.html:65
+#: .\intern_management\templates\staff_template\manage_headquarter_template.html:65
+msgid "Staff"
+msgstr "Équipe"
+
+#: .\intern_management\templates\hod_template\add_intern_template.html:4
+#: .\intern_management\templates\hod_template\add_intern_template.html:19
+#: .\intern_management\templates\hod_template\add_intern_template.html:27
+#: .\intern_management\templates\hod_template\sidebar_template.html:120
+msgid "Add Intern"
+msgstr "Ajouter Stagiaire"
+
+#: .\intern_management\templates\hod_template\add_intern_template.html:61
+#: .\intern_management\templates\hod_template\add_staff_template.html:127
+msgid "Email Not Available."
+msgstr "E-mail non disponible."
+
+#: .\intern_management\templates\hod_template\add_intern_template.html:65
+#: .\intern_management\templates\hod_template\add_staff_template.html:131
+msgid "Email Available."
+msgstr "E-mail disponible."
+
+#: .\intern_management\templates\hod_template\add_intern_template.html:93
+#: .\intern_management\templates\hod_template\add_staff_template.html:159
+msgid "Username Not Available."
+msgstr "Nom d'utilisateur indisponible."
+
+#: .\intern_management\templates\hod_template\add_intern_template.html:97
+#: .\intern_management\templates\hod_template\add_staff_template.html:163
+msgid "Username Available."
+msgstr "Nom d'utilisateur disponible."
+
+#: .\intern_management\templates\hod_template\add_session_template.html:4
+#: .\intern_management\templates\hod_template\add_session_template.html:19
+#: .\intern_management\templates\hod_template\add_session_template.html:69
+msgid "Add Session Year"
+msgstr "Ajouter une année de session"
+
+#: .\intern_management\templates\hod_template\add_session_template.html:56
+#: .\intern_management\templates\hod_template\edit_session_template.html:56
+#: .\intern_management\templates\hod_template\manage_session_template.html:63
+msgid "Session Start Year"
+msgstr "Année début de session"
+
+#: .\intern_management\templates\hod_template\add_session_template.html:61
+#: .\intern_management\templates\hod_template\edit_session_template.html:61
+#: .\intern_management\templates\hod_template\manage_session_template.html:64
+msgid "Session End Year"
+msgstr "Année fin de session"
+
+#: .\intern_management\templates\hod_template\add_staff_template.html:4
+#: .\intern_management\templates\hod_template\add_staff_template.html:19
+#: .\intern_management\templates\hod_template\add_staff_template.html:92
+#: .\intern_management\templates\hod_template\sidebar_template.html:56
+msgid "Add Staff"
+msgstr "Ajouter Équipe"
+
+#: .\intern_management\templates\hod_template\add_staff_template.html:56
+#: .\intern_management\templates\hod_template\edit_staff_template.html:56
+#, fuzzy
+#| msgid "Address"
+msgid "Email address"
+msgstr "Adresse e-mail"
+
+#: .\intern_management\templates\hod_template\admin_profile.html:4
+#: .\intern_management\templates\hod_template\admin_profile.html:19
+#: .\intern_management\templates\hod_template\admin_profile.html:84
+#: .\intern_management\templates\hod_template\base_template.html:69
+#: .\intern_management\templates\intern_template\base_template.html:66
+#: .\intern_management\templates\intern_template\intern_profile.html:4
+#: .\intern_management\templates\intern_template\intern_profile.html:19
+#: .\intern_management\templates\intern_template\intern_profile.html:89
+#: .\intern_management\templates\staff_template\base_template.html:66
+#: .\intern_management\templates\staff_template\staff_profile.html:4
+#: .\intern_management\templates\staff_template\staff_profile.html:19
+#: .\intern_management\templates\staff_template\staff_profile.html:89
+msgid "Update Profile"
+msgstr "Mettre à jour le profil"
+
+#: .\intern_management\templates\hod_template\admin_profile.html:77
+#: .\intern_management\templates\intern_template\intern_profile.html:82
+#: .\intern_management\templates\staff_template\staff_profile.html:82
+msgid "Fill only if you want to change Password."
+msgstr "Remplissez uniquement si vous souhaitez modifier le mot de passe."
+
+#: .\intern_management\templates\hod_template\admin_view_attendance.html:4
+#: .\intern_management\templates\hod_template\admin_view_attendance.html:19
+#: .\intern_management\templates\hod_template\sidebar_template.html:158
+#: .\intern_management\templates\intern_template\intern_view_attendance.html:19
+#: .\intern_management\templates\intern_template\sidebar_template.html:46
+msgid "View Attendance"
+msgstr "Voir la présence"
+
+#: .\intern_management\templates\hod_template\admin_view_attendance.html:53
+#: .\intern_management\templates\intern_template\intern_view_attendance.html:55
+#: .\intern_management\templates\intern_template\intern_view_result.html:29
+#: .\intern_management\templates\staff_template\add_result_template.html:55
+#: .\intern_management\templates\staff_template\intern_view_result.html:29
+#: .\intern_management\templates\staff_template\take_attendance_template.html:53
+#: .\intern_management\templates\staff_template\update_attendance_template.html:53
+msgid "Assignment"
+msgstr "Mission"
+
+#: .\intern_management\templates\hod_template\admin_view_attendance.html:75
+#: .\intern_management\templates\staff_template\update_attendance_template.html:75
+msgid "Fetch Attendance Date"
+msgstr "Récupérer la date de présence"
+
+#: .\intern_management\templates\hod_template\admin_view_attendance.html:80
+msgid "Attendance Date"
+msgstr "Date de présence"
+
+#: .\intern_management\templates\hod_template\admin_view_attendance.html:99
+#: .\intern_management\templates\staff_template\update_attendance_template.html:99
+msgid "Fetch Intern Data"
+msgstr "Récupérer les données des Stagiaires"
+
+#: .\intern_management\templates\hod_template\admin_view_attendance.html:168
+#: .\intern_management\templates\staff_template\update_attendance_template.html:168
+msgid "No Attendance Data Found."
+msgstr "Aucune donnée de présence trouvée."
+
+#: .\intern_management\templates\hod_template\admin_view_attendance.html:178
+#: .\intern_management\templates\staff_template\update_attendance_template.html:178
+msgid "Error in getting Attendance Dates."
+msgstr "Erreur lors de l'obtention des dates de présence."
+
+#: .\intern_management\templates\hod_template\admin_view_attendance.html:207
+#: .\intern_management\templates\staff_template\update_attendance_template.html:207
+msgid "Intern Attendance:"
+msgstr "Présence du Stagiaire:"
+
+#: .\intern_management\templates\hod_template\admin_view_attendance.html:220
+#: .\intern_management\templates\intern_template\intern_attendance_data.html:63
+#: .\intern_management\templates\intern_template\intern_home_template.html:53
+#: .\intern_management\templates\intern_template\intern_home_template.html:174
+#: .\intern_management\templates\staff_template\update_attendance_template.html:228
+msgid "Present"
+msgstr "Présent"
+
+#: .\intern_management\templates\hod_template\admin_view_attendance.html:224
+#: .\intern_management\templates\staff_template\update_attendance_template.html:232
+msgid "Absent"
+msgstr "Absent"
+
+#: .\intern_management\templates\hod_template\admin_view_attendance.html:237
+#: .\intern_management\templates\staff_template\add_result_template.html:148
+#: .\intern_management\templates\staff_template\take_attendance_template.html:133
+#: .\intern_management\templates\staff_template\update_attendance_template.html:247
+msgid "Error in Fetching Interns."
+msgstr "Erreur lors de la récupération des Stagiaires."
+
+#: .\intern_management\templates\hod_template\base_template.html:10
+msgid "Intern Management System | Admin Dashboard"
+msgstr "Système de gestion des Stagiaires | Tableau de bord Administrateur"
+
+#: .\intern_management\templates\hod_template\base_template.html:57
+msgid "Intern Management System | Admin"
+msgstr "Système de gestion des Stagiaires | Administrateur"
+
+#: .\intern_management\templates\hod_template\base_template.html:74
+#: .\intern_management\templates\intern_template\base_template.html:71
+#: .\intern_management\templates\staff_template\base_template.html:71
+msgid "Logout"
+msgstr "Se déconnecter"
+
+#: .\intern_management\templates\hod_template\base_template.html:130
+#: .\intern_management\templates\hod_template\sidebar_template.html:35
+#: .\intern_management\templates\intern_template\base_template.html:124
+#: .\intern_management\templates\intern_template\sidebar_template.html:35
+#: .\intern_management\templates\staff_template\base_template.html:125
+#: .\intern_management\templates\staff_template\sidebar_template.html:37
+msgid "Home"
+msgstr "Accueil"
+
+#: .\intern_management\templates\hod_template\edit_department_template.html:4
+#, python-format
+msgid "Edit Department | #ID : %(deptId)s "
+msgstr "Modifier Département | #ID : %(deptId)s "
+
+#: .\intern_management\templates\hod_template\edit_department_template.html:19
+msgid "Edit Department"
+msgstr "Modifier Département"
+
+#: .\intern_management\templates\hod_template\edit_department_template.html:65
+msgid "Update Department"
+msgstr "Mise à jour Département"
+
+#: .\intern_management\templates\hod_template\edit_headquarter_template.html:4
+#, python-format
+msgid "Edit Assignment | #ID : %(hedId)s "
+msgstr "Modifier la mission | #ID : %(hedId)s "
+
+#: .\intern_management\templates\hod_template\edit_headquarter_template.html:19
+msgid "Edit Assignment"
+msgstr "Modifier la Mission"
+
+#: .\intern_management\templates\hod_template\edit_headquarter_template.html:85
+msgid "Update Assignment"
+msgstr "Mise à jour Mission"
+
+#: .\intern_management\templates\hod_template\edit_intern_template.html:4
+#, python-format
+msgid " Edit Intern | Username: %(usern)s | #ID : %(idU)s "
+msgstr "Modifier stagiaire | Nom d'utilisateur:  %(usern)s | #ID : %(idU)s "
+
+#: .\intern_management\templates\hod_template\edit_intern_template.html:19
+msgid "Edit Intern"
+msgstr "Modifier le Stagiaire"
+
+#: .\intern_management\templates\hod_template\edit_intern_template.html:26
+msgid "Update Intern"
+msgstr "Mettre à jour Stagiaire"
+
+#: .\intern_management\templates\hod_template\edit_session_template.html:4
+#: .\intern_management\templates\hod_template\edit_session_template.html:19
+msgid "Edit Session Year"
+msgstr "Modifier l'année de la Session"
+
+#: .\intern_management\templates\hod_template\edit_session_template.html:70
+msgid "Update Session Year"
+msgstr "Mettre à jour l'année de la Session"
+
+#: .\intern_management\templates\hod_template\edit_staff_template.html:4
+#, python-format
+msgid "Edit Staff | Username: %(sUnser)s | #ID : %(sId)s "
+msgstr "Modifier stagiaire | Nom d'utilisateur:  %(sUnser)s | #ID : %(sId)s "
+
+#: .\intern_management\templates\hod_template\edit_staff_template.html:19
+msgid "Edit Staff"
+msgstr "Modifier l'Équipe"
+
+#: .\intern_management\templates\hod_template\edit_staff_template.html:94
+msgid "Update Staff"
+msgstr "Mettre à jour Équipe"
+
+#: .\intern_management\templates\hod_template\footer.html:4
+#: .\intern_management\templates\intern_template\footer.html:4
+msgid "All rights reserved."
+msgstr "Tous les droits sont réservés."
+
+#: .\intern_management\templates\hod_template\home_content.html:17
+msgid "Total Interns"
+msgstr "Total de Stagiaires"
+
+#: .\intern_management\templates\hod_template\home_content.html:22
+#: .\intern_management\templates\hod_template\home_content.html:37
+#: .\intern_management\templates\hod_template\home_content.html:53
+#: .\intern_management\templates\intern_template\intern_home_template.html:58
+#: .\intern_management\templates\intern_template\intern_home_template.html:74
+#: .\intern_management\templates\staff_template\staff_home_template.html:28
+#: .\intern_management\templates\staff_template\staff_home_template.html:45
+#: .\intern_management\templates\staff_template\staff_home_template.html:60
+msgid "More info"
+msgstr "Plus d'informations"
+
+#: .\intern_management\templates\hod_template\home_content.html:32
+msgid "Total Staffs"
+msgstr "Total des Équipes"
+
+#: .\intern_management\templates\hod_template\home_content.html:48
+msgid "Total Departments"
+msgstr "Total de Départements"
+
+#: .\intern_management\templates\hod_template\home_content.html:63
+#: .\intern_management\templates\intern_template\intern_home_template.html:69
+#: .\intern_management\templates\staff_template\staff_home_template.html:70
+msgid "Total Assignments"
+msgstr "Total de Missions"
+
+#: .\intern_management\templates\hod_template\home_content.html:68
+msgid "More info "
+msgstr "Plus d'informations "
+
+#: .\intern_management\templates\hod_template\home_content.html:80
+msgid "Intern and Staff Chart"
+msgstr "Tableau des stagiaires et des équipes"
+
+#: .\intern_management\templates\hod_template\home_content.html:100
+msgid "Total Assignments in Each Departement"
+msgstr "Total des Missions dans chaque Département"
+
+#: .\intern_management\templates\hod_template\home_content.html:124
+msgid "Total Interns in Each Department"
+msgstr "Total des Stagiaires dans chaque Département"
+
+#: .\intern_management\templates\hod_template\home_content.html:143
+msgid "Total Interns in Each Assignment"
+msgstr "Total des Stagiaires dans chaque Mission"
+
+#: .\intern_management\templates\hod_template\home_content.html:164
+msgid "Staff Attendance vs Leave"
+msgstr "Présence d'équipe vs Congé"
+
+#: .\intern_management\templates\hod_template\home_content.html:194
+msgid "Intern Attendance vs Leave"
+msgstr "Présence de Stagiaire vs Congé"
+
+#: .\intern_management\templates\hod_template\home_content.html:234
+msgid "Interns"
+msgstr "Stagiaires"
+
+#: .\intern_management\templates\hod_template\home_content.html:235
+msgid "Staffs"
+msgstr "Équipes"
+
+#: .\intern_management\templates\hod_template\home_content.html:365
+#: .\intern_management\templates\hod_template\home_content.html:421
+#: .\intern_management\templates\staff_template\staff_home_template.html:162
+msgid "Leave"
+msgstr "Congé"
+
+#: .\intern_management\templates\hod_template\home_content.html:376
+#: .\intern_management\templates\hod_template\home_content.html:432
+#: .\intern_management\templates\staff_template\staff_home_template.html:163
+msgid "Attendance"
+msgstr "Présence"
+
+#: .\intern_management\templates\hod_template\intern_feedback_template.html:4
+#: .\intern_management\templates\hod_template\intern_feedback_template.html:19
+#: .\intern_management\templates\hod_template\sidebar_template.html:168
+msgid "Intern Feedback"
+msgstr "Commentaire Stagiaire"
+
+#: .\intern_management\templates\hod_template\intern_feedback_template.html:28
+#: .\intern_management\templates\hod_template\intern_leave_view.html:28
+#: .\intern_management\templates\login.html:33
+msgid "Intern"
+msgstr "Stagiaire"
+
+#: .\intern_management\templates\hod_template\intern_feedback_template.html:29
+#: .\intern_management\templates\hod_template\intern_leave_view.html:29
+msgid "Intern Name"
+msgstr "Nom Stagiaire"
+
+#: .\intern_management\templates\hod_template\intern_feedback_template.html:30
+msgid "Intern Session"
+msgstr "Stagiaire Session"
+
+#: .\intern_management\templates\hod_template\intern_feedback_template.html:31
+#: .\intern_management\templates\hod_template\staff_feedback_template.html:30
+msgid "Message"
+msgstr "Message"
+
+#: .\intern_management\templates\hod_template\intern_feedback_template.html:32
+#: .\intern_management\templates\hod_template\staff_feedback_template.html:31
+msgid "Sended On"
+msgstr "Envoyé le"
+
+#: .\intern_management\templates\hod_template\intern_feedback_template.html:33
+#: .\intern_management\templates\hod_template\intern_feedback_template.html:48
+#: .\intern_management\templates\hod_template\intern_feedback_template.html:90
+#: .\intern_management\templates\hod_template\staff_feedback_template.html:32
+#: .\intern_management\templates\hod_template\staff_feedback_template.html:46
+#: .\intern_management\templates\hod_template\staff_feedback_template.html:88
+msgid "Reply"
+msgstr "Répondre"
+
+#: .\intern_management\templates\hod_template\intern_feedback_template.html:77
+#: .\intern_management\templates\hod_template\staff_feedback_template.html:75
+msgid "Reply Feedback"
+msgstr "Réponse Commentaire"
+
+#: .\intern_management\templates\hod_template\intern_feedback_template.html:83
+#: .\intern_management\templates\hod_template\staff_feedback_template.html:81
+msgid "Reply to:"
+msgstr "Répondre à:"
+
+#: .\intern_management\templates\hod_template\intern_feedback_template.html:139
+#: .\intern_management\templates\hod_template\staff_feedback_template.html:137
+msgid "Reply Sent!"
+msgstr "Réponse envoyée!"
+
+#: .\intern_management\templates\hod_template\intern_feedback_template.html:143
+#: .\intern_management\templates\hod_template\staff_feedback_template.html:141
+msgid "Failed to Send Reply!"
+msgstr "Échec de l'envoi de la réponse!"
+
+#: .\intern_management\templates\hod_template\intern_feedback_template.html:151
+#: .\intern_management\templates\hod_template\staff_feedback_template.html:149
+msgid "Error in Sending Feedback Reply."
+msgstr "Erreur lors de l'obtention des dates de présence."
+
+#: .\intern_management\templates\hod_template\intern_leave_view.html:4
+msgid "Leave Apply by Interns"
+msgstr "Congé postuler par Stagiaires"
+
+#: .\intern_management\templates\hod_template\intern_leave_view.html:19
+msgid "Leave Apply by interns"
+msgstr "Congé postuler par Stagiaires"
+
+#: .\intern_management\templates\hod_template\intern_leave_view.html:30
+#: .\intern_management\templates\hod_template\staff_leave_view.html:30
+#: .\intern_management\templates\intern_template\intern_apply_leave.html:54
+#: .\intern_management\templates\intern_template\intern_apply_leave.html:94
+#: .\intern_management\templates\staff_template\staff_apply_leave_template.html:54
+#: .\intern_management\templates\staff_template\staff_apply_leave_template.html:94
+msgid "Leave Date"
+msgstr "date de Cangé"
+
+#: .\intern_management\templates\hod_template\intern_leave_view.html:31
+#: .\intern_management\templates\hod_template\staff_leave_view.html:31
+#: .\intern_management\templates\intern_template\intern_apply_leave.html:95
+#: .\intern_management\templates\staff_template\staff_apply_leave_template.html:95
+msgid "Leave Message"
+msgstr "message de Cangé"
+
+#: .\intern_management\templates\hod_template\intern_leave_view.html:32
+#: .\intern_management\templates\hod_template\staff_leave_view.html:32
+msgid "Applied On"
+msgstr "Appliqué sur"
+
+#: .\intern_management\templates\hod_template\intern_leave_view.html:33
+#: .\intern_management\templates\hod_template\manage_department_template.html:66
+#: .\intern_management\templates\hod_template\manage_headquarter_template.html:68
+#: .\intern_management\templates\hod_template\manage_intern_template.html:76
+#: .\intern_management\templates\hod_template\manage_session_template.html:65
+#: .\intern_management\templates\hod_template\manage_staff_template.html:72
+#: .\intern_management\templates\hod_template\staff_leave_view.html:33
+msgid "Action"
+msgstr "Action"
+
+#: .\intern_management\templates\hod_template\intern_leave_view.html:48
+#: .\intern_management\templates\hod_template\staff_leave_view.html:48
+msgid "Approve"
+msgstr "Approuver"
+
+#: .\intern_management\templates\hod_template\intern_leave_view.html:49
+#: .\intern_management\templates\hod_template\staff_leave_view.html:49
+msgid "Reject"
+msgstr "Rejeter"
+
+#: .\intern_management\templates\hod_template\intern_leave_view.html:51
+#: .\intern_management\templates\hod_template\staff_leave_view.html:51
+#: .\intern_management\templates\intern_template\intern_apply_leave.html:107
+#: .\intern_management\templates\staff_template\staff_apply_leave_template.html:107
+msgid "Approved"
+msgstr "Approuvé"
+
+#: .\intern_management\templates\hod_template\intern_leave_view.html:53
+#: .\intern_management\templates\hod_template\staff_leave_view.html:53
+#: .\intern_management\templates\intern_template\intern_apply_leave.html:109
+#: .\intern_management\templates\staff_template\staff_apply_leave_template.html:109
+msgid "Rejected"
+msgstr "Rejeté"
+
+#: .\intern_management\templates\hod_template\manage_department_template.html:4
+#: .\intern_management\templates\hod_template\sidebar_template.html:67
+msgid "Manage Department"
+msgstr "Gérer Département"
+
+#: .\intern_management\templates\hod_template\manage_department_template.html:14
+msgid "+ Add Department"
+msgstr "+ Ajouter Département"
+
+#: .\intern_management\templates\hod_template\manage_department_template.html:45
+msgid "Department Details"
+msgstr "Department Details"
+
+#: .\intern_management\templates\hod_template\manage_department_template.html:49
+#: .\intern_management\templates\hod_template\manage_headquarter_template.html:49
+#: .\intern_management\templates\hod_template\manage_intern_template.html:50
+#: .\intern_management\templates\hod_template\manage_session_template.html:49
+#: .\intern_management\templates\hod_template\manage_staff_template.html:51
+#: .\intern_management\templates\staff_template\manage_headquarter_template.html:49
+#: .\intern_management\templates\staff_template\view_intern_template.html:49
+msgid "Search"
+msgstr "Recherche"
+
+#: .\intern_management\templates\hod_template\manage_department_template.html:64
+#: .\intern_management\templates\hod_template\manage_headquarter_template.html:66
+#: .\intern_management\templates\intern_template\intern_view_headquarters.html:66
+#: .\intern_management\templates\staff_template\manage_headquarter_template.html:66
+msgid "Created At"
+msgstr "Créé à"
+
+#: .\intern_management\templates\hod_template\manage_department_template.html:65
+#: .\intern_management\templates\hod_template\manage_headquarter_template.html:67
+#: .\intern_management\templates\intern_template\intern_view_headquarters.html:67
+#: .\intern_management\templates\staff_template\manage_headquarter_template.html:67
+msgid "Updated At"
+msgstr "Mis à jour à"
+
+#: .\intern_management\templates\hod_template\manage_department_template.html:77
+#: .\intern_management\templates\hod_template\manage_headquarter_template.html:81
+#: .\intern_management\templates\hod_template\manage_intern_template.html:96
+#: .\intern_management\templates\hod_template\manage_session_template.html:75
+#: .\intern_management\templates\hod_template\manage_staff_template.html:87
+msgid "Edit"
+msgstr "Modifier"
+
+#: .\intern_management\templates\hod_template\manage_department_template.html:78
+#: .\intern_management\templates\hod_template\manage_headquarter_template.html:82
+#: .\intern_management\templates\hod_template\manage_intern_template.html:97
+#: .\intern_management\templates\hod_template\manage_session_template.html:76
+#: .\intern_management\templates\hod_template\manage_staff_template.html:88
+msgid "Delete"
+msgstr "Supprimer"
+
+#: .\intern_management\templates\hod_template\manage_headquarter_template.html:4
+msgid "Manage Assignments"
+msgstr "Gérer Missions"
+
+#: .\intern_management\templates\hod_template\manage_headquarter_template.html:14
+msgid "+ Add Assignment"
+msgstr "+ Ajouter Mission"
+
+#: .\intern_management\templates\hod_template\manage_headquarter_template.html:45
+#: .\intern_management\templates\intern_template\intern_view_headquarters.html:45
+#: .\intern_management\templates\staff_template\manage_headquarter_template.html:45
+msgid "Assignment Details"
+msgstr "Détails de Mission"
+
+#: .\intern_management\templates\hod_template\manage_intern_template.html:4
+#: .\intern_management\templates\hod_template\sidebar_template.html:110
+msgid "Manage Intern"
+msgstr "Gérer Stagiaire"
+
+#: .\intern_management\templates\hod_template\manage_intern_template.html:14
+msgid "+ Add Intern"
+msgstr "+ Ajouter Stagiaire"
+
+#: .\intern_management\templates\hod_template\manage_intern_template.html:46
+#: .\intern_management\templates\staff_template\view_intern_template.html:45
+msgid "Intern Details"
+msgstr "Détails de Stagiaire"
+
+#: .\intern_management\templates\hod_template\manage_intern_template.html:71
+#: .\intern_management\templates\staff_template\view_intern_template.html:70
+msgid "Start Year"
+msgstr "Année début de session"
+
+#: .\intern_management\templates\hod_template\manage_intern_template.html:72
+#: .\intern_management\templates\staff_template\view_intern_template.html:71
+msgid "End Year"
+msgstr "Année fin de session"
+
+#: .\intern_management\templates\hod_template\manage_intern_template.html:74
+#: .\intern_management\templates\hod_template\manage_staff_template.html:70
+#: .\intern_management\templates\staff_template\view_intern_template.html:73
+msgid "Last Login"
+msgstr "Dernière connexion"
+
+#: .\intern_management\templates\hod_template\manage_intern_template.html:75
+#: .\intern_management\templates\hod_template\manage_staff_template.html:71
+#: .\intern_management\templates\staff_template\view_intern_template.html:74
+msgid "Date Joined"
+msgstr "Date Rejoint"
+
+#: .\intern_management\templates\hod_template\manage_session_template.html:4
+#: .\intern_management\templates\hod_template\sidebar_template.html:88
+msgid "Manage Session"
+msgstr "Gérer Session"
+
+#: .\intern_management\templates\hod_template\manage_session_template.html:14
+msgid "+ Add Session"
+msgstr "+ Ajouter Session"
+
+#: .\intern_management\templates\hod_template\manage_session_template.html:45
+msgid "Session Details"
+msgstr "Détails de session"
+
+#: .\intern_management\templates\hod_template\manage_staff_template.html:4
+#: .\intern_management\templates\hod_template\sidebar_template.html:46
+msgid "Manage Staff"
+msgstr "Gérer Équipe"
+
+#: .\intern_management\templates\hod_template\manage_staff_template.html:14
+msgid "+ Add Staff"
+msgstr "+ Ajouter Équipe"
+
+#: .\intern_management\templates\hod_template\manage_staff_template.html:47
+msgid "Staff Details"
+msgstr "Détails d'Équipe"
+
+#: .\intern_management\templates\hod_template\sidebar_template.html:98
+msgid "Add Session"
+msgstr "Ajouter Session"
+
+#: .\intern_management\templates\hod_template\sidebar_template.html:133
+msgid "Manage Assignment"
+msgstr "Gérer Mission"
+
+#: .\intern_management\templates\hod_template\sidebar_template.html:178
+#: .\intern_management\templates\hod_template\staff_feedback_template.html:4
+#: .\intern_management\templates\hod_template\staff_feedback_template.html:19
+msgid "Staff Feedback"
+msgstr "Commentaire Équipe"
+
+#: .\intern_management\templates\hod_template\sidebar_template.html:188
+msgid "Intern Leave"
+msgstr "Congé Stagiaire"
+
+#: .\intern_management\templates\hod_template\sidebar_template.html:198
+msgid "Staff Leave"
+msgstr "Congé Équipe"
+
+#: .\intern_management\templates\hod_template\staff_feedback_template.html:29
+#: .\intern_management\templates\hod_template\staff_leave_view.html:29
+msgid "Staff Name"
+msgstr "Nom d'Équipe"
+
+#: .\intern_management\templates\hod_template\staff_leave_view.html:4
+#: .\intern_management\templates\hod_template\staff_leave_view.html:19
+msgid "Leave Apply by Staffs"
+msgstr "Congé Appliquer par les Équipes"
+
+#: .\intern_management\templates\intern_template\base_template.html:10
+#: .\intern_management\templates\intern_template\base_template.html:54
+msgid "Intern Management System | Intern Dashboard"
+msgstr "Système de gestion Stagiaire | Tableau de bord de Stagiaire"
+
+#: .\intern_management\templates\intern_template\intern_apply_leave.html:4
+#: .\intern_management\templates\staff_template\staff_apply_leave_template.html:4
+msgid "Leave Report and Apply for Leave"
+msgstr "Rapport de Congé et Postuler pour Congé"
+
+#: .\intern_management\templates\intern_template\intern_apply_leave.html:19
+#: .\intern_management\templates\staff_template\staff_apply_leave_template.html:19
+msgid "Apply For Leave"
+msgstr "Postuler pour Congé"
+
+#: .\intern_management\templates\intern_template\intern_apply_leave.html:59
+#: .\intern_management\templates\staff_template\staff_apply_leave_template.html:59
+msgid "Leave Reason"
+msgstr "Raison de Cangé"
+
+#: .\intern_management\templates\intern_template\intern_apply_leave.html:60
+#: .\intern_management\templates\staff_template\staff_apply_leave_template.html:60
+msgid "Leave Messge"
+msgstr "Message de Cangé"
+
+#: .\intern_management\templates\intern_template\intern_apply_leave.html:68
+#: .\intern_management\templates\intern_template\sidebar_template.html:70
+#: .\intern_management\templates\staff_template\staff_apply_leave_template.html:68
+msgid "Apply for Leave"
+msgstr "Postuler pour Congé"
+
+#: .\intern_management\templates\intern_template\intern_apply_leave.html:85
+#: .\intern_management\templates\staff_template\staff_apply_leave_template.html:85
+msgid "Leave Apply History"
+msgstr "Historique de Congé postuler"
+
+#: .\intern_management\templates\intern_template\intern_apply_leave.html:96
+#: .\intern_management\templates\staff_template\staff_apply_leave_template.html:96
+msgid "Status"
+msgstr "Status"
+
+#: .\intern_management\templates\intern_template\intern_apply_leave.html:111
+#: .\intern_management\templates\staff_template\staff_apply_leave_template.html:111
+msgid "Pending"
+msgstr "En cours"
+
+#: .\intern_management\templates\intern_template\intern_attendance_data.html:35
+#: .\intern_management\templates\intern_template\intern_view_attendance.html:4
+msgid "View Attendance Data"
+msgstr "Voir les données de présence"
+
+#: .\intern_management\templates\intern_template\intern_attendance_data.html:50
+msgid "Attendance Data for"
+msgstr "Donées de présence pour"
+
+#: .\intern_management\templates\intern_template\intern_feedback.html:4
+#: .\intern_management\templates\intern_template\intern_feedback.html:54
+#: .\intern_management\templates\intern_template\intern_feedback.html:55
+#: .\intern_management\templates\intern_template\intern_feedback.html:89
+#: .\intern_management\templates\staff_template\staff_feedback_template.html:4
+#: .\intern_management\templates\staff_template\staff_feedback_template.html:54
+#: .\intern_management\templates\staff_template\staff_feedback_template.html:55
+#: .\intern_management\templates\staff_template\staff_feedback_template.html:89
+msgid "Feedback Message"
+msgstr "Commentaire Message"
+
+#: .\intern_management\templates\intern_template\intern_feedback.html:19
+#: .\intern_management\templates\staff_template\staff_feedback_template.html:19
+msgid "Leave a Feedback Message"
+msgstr "laissez une Commentaire Message"
+
+#: .\intern_management\templates\intern_template\intern_feedback.html:63
+#: .\intern_management\templates\staff_template\staff_feedback_template.html:63
+msgid "Leave a Feedback"
+msgstr "Laissez une Commentaire"
+
+#: .\intern_management\templates\intern_template\intern_feedback.html:80
+#: .\intern_management\templates\staff_template\staff_feedback_template.html:80
+msgid "Feedback History"
+msgstr "Historique de commentaire"
+
+#: .\intern_management\templates\intern_template\intern_feedback.html:90
+#: .\intern_management\templates\staff_template\staff_feedback_template.html:90
+msgid "Feedback Reply"
+msgstr "Répondre de commentaire"
+
+#: .\intern_management\templates\intern_template\intern_home_template.html:4
+msgid "Intern Home"
+msgstr "Accueil de Stagiaire"
+
+#: .\intern_management\templates\intern_template\intern_home_template.html:23
+msgid "Total Attendance"
+msgstr "Total de présence"
+
+#: .\intern_management\templates\intern_template\intern_home_template.html:89
+msgid "Total Attendance Chart"
+msgstr "Graphe Total de présence"
+
+#: .\intern_management\templates\intern_template\intern_home_template.html:109
+msgid "Attendance Statistics by Assignments"
+msgstr "Statistiques de présence par Mission"
+
+#: .\intern_management\templates\intern_template\intern_home_template.html:140
+msgid "PRESENT"
+msgstr "PRÉSENT"
+
+#: .\intern_management\templates\intern_template\intern_view_attendance.html:66
+msgid "Start Date"
+msgstr "Date de début"
+
+#: .\intern_management\templates\intern_template\intern_view_attendance.html:73
+msgid "End Date"
+msgstr "Date de fin"
+
+#: .\intern_management\templates\intern_template\intern_view_attendance.html:85
+msgid "Fetch Attendance"
+msgstr "Récupérer la présence"
+
+#: .\intern_management\templates\intern_template\intern_view_headquarters.html:4
+msgid "View Assignments"
+msgstr "Voir la Mission"
+
+#: .\intern_management\templates\intern_template\intern_view_result.html:4
+#: .\intern_management\templates\intern_template\intern_view_result.html:20
+#: .\intern_management\templates\staff_template\intern_view_result.html:4
+#: .\intern_management\templates\staff_template\intern_view_result.html:20
+msgid "Result"
+msgstr "Resultat"
+
+#: .\intern_management\templates\intern_template\intern_view_result.html:30
+#: .\intern_management\templates\staff_template\intern_view_result.html:30
+msgid "Assignments Marks"
+msgstr "Note de Missions"
+
+#: .\intern_management\templates\intern_template\intern_view_result.html:44
+#: .\intern_management\templates\staff_template\intern_view_result.html:44
+msgid "Bad Work"
+msgstr "Mauvais travail"
+
+#: .\intern_management\templates\intern_template\intern_view_result.html:47
+#: .\intern_management\templates\staff_template\intern_view_result.html:47
+msgid "Normal Work"
+msgstr "Travail normal"
+
+#: .\intern_management\templates\intern_template\intern_view_result.html:50
+#: .\intern_management\templates\staff_template\intern_view_result.html:50
+msgid "Good Work"
+msgstr "Bon travail"
+
+#: .\intern_management\templates\intern_template\intern_view_result.html:53
+msgid "Amazing Work"
+msgstr "Excellent travail"
+
+#: .\intern_management\templates\intern_template\intern_view_result.html:55
+msgid "Wonderful Work"
+msgstr "Très bon travail"
+
+#: .\intern_management\templates\intern_template\intern_view_result.html:57
+#: .\intern_management\templates\staff_template\intern_view_result.html:57
+msgid "Error Up 20"
+msgstr "Erreur jusqu'à 20"
+
+#: .\intern_management\templates\intern_template\sidebar_template.html:58
+#: .\intern_management\templates\staff_template\sidebar_template.html:98
+msgid "View Result"
+msgstr "Voir Resultat"
+
+#: .\intern_management\templates\intern_template\sidebar_template.html:82
+msgid "Send Feedback"
+msgstr "Commentaire Stagiaire"
+
+#: .\intern_management\templates\login.html:33
+msgid "Management System"
+msgstr "Système de Gestion"
+
+#: .\intern_management\templates\login.html:42
+msgid "Sign in to Intern Management System"
+msgstr "Connectez-vous au système de gestion des Stagiaires"
+
+#: .\intern_management\templates\login.html:64
+msgid "Sign In"
+msgstr "S'identifier"
+
+#: .\intern_management\templates\staff_template\add_result_template.html:4
+#: .\intern_management\templates\staff_template\add_result_template.html:21
+#: .\intern_management\templates\staff_template\sidebar_template.html:86
+msgid "Add Result"
+msgstr "Ajouter Resultat"
+
+#: .\intern_management\templates\staff_template\add_result_template.html:77
+#: .\intern_management\templates\staff_template\take_attendance_template.html:75
+msgid "Fetch Intern"
+msgstr "Récupérer Stagiaires"
+
+#: .\intern_management\templates\staff_template\add_result_template.html:120
+msgid "Intern List"
+msgstr "Liste de Stagiaire "
+
+#: .\intern_management\templates\staff_template\add_result_template.html:132
+msgid "Assignment Marks :"
+msgstr "Note de Mission"
+
+#: .\intern_management\templates\staff_template\add_result_template.html:132
+msgid "Assignment Marks"
+msgstr "Note de Mission"
+
+#: .\intern_management\templates\staff_template\add_result_template.html:136
+msgid "Exam Marks :"
+msgstr "Note Exam :"
+
+#: .\intern_management\templates\staff_template\add_result_template.html:136
+msgid "Exam Marks"
+msgstr "Note Exam"
+
+#: .\intern_management\templates\staff_template\add_result_template.html:142
+msgid "Save Result"
+msgstr "Enregistrer Resultat"
+
+#: .\intern_management\templates\staff_template\base_template.html:10
+#: .\intern_management\templates\staff_template\base_template.html:54
+msgid "Intern Management System | Staff Dashboard"
+msgstr "Système de gestion de Stagiaires | Tableau de bord d'équipe"
+
+#: .\intern_management\templates\staff_template\intern_view_result.html:32
+msgid "status"
+msgstr "status"
+
+#: .\intern_management\templates\staff_template\intern_view_result.html:53
+msgid "Ammazing Work"
+msgstr "Excellent travail"
+
+#: .\intern_management\templates\staff_template\intern_view_result.html:55
+msgid "Wondurful Work"
+msgstr "Très bon travail"
+
+#: .\intern_management\templates\staff_template\sidebar_template.html:49
+#: .\intern_management\templates\staff_template\view_intern_template.html:4
+msgid "View Intern"
+msgstr "Voir le Stagiaire"
+
+#: .\intern_management\templates\staff_template\sidebar_template.html:62
+#: .\intern_management\templates\staff_template\take_attendance_template.html:4
+#: .\intern_management\templates\staff_template\take_attendance_template.html:19
+msgid "Take Attendance"
+msgstr "Prendre la présence"
+
+#: .\intern_management\templates\staff_template\sidebar_template.html:74
+#: .\intern_management\templates\staff_template\update_attendance_template.html:4
+#: .\intern_management\templates\staff_template\update_attendance_template.html:19
+msgid "View Update Attendance"
+msgstr "Vue Modéfication Présence"
+
+#: .\intern_management\templates\staff_template\sidebar_template.html:110
+msgid "Apply Leave"
+msgstr "Postuler Congé"
+
+#: .\intern_management\templates\staff_template\sidebar_template.html:122
+msgid "Feedback"
+msgstr "Commentaire"
+
+#: .\intern_management\templates\staff_template\staff_home_template.html:4
+msgid "Staff Home"
+msgstr "Accueil d'Équipe"
+
+#: .\intern_management\templates\staff_template\staff_home_template.html:23
+msgid "Interns Under Me"
+msgstr "Stagiaires sous moi"
+
+#: .\intern_management\templates\staff_template\staff_home_template.html:40
+msgid "Total Attendance Taken"
+msgstr "Total de présence"
+
+#: .\intern_management\templates\staff_template\staff_home_template.html:55
+msgid "Total Leave Taken"
+msgstr "Total de Congés"
+
+#: .\intern_management\templates\staff_template\staff_home_template.html:88
+msgid "Leave Status Chart"
+msgstr "Graphe des Status de Congé"
+
+#: .\intern_management\templates\staff_template\staff_home_template.html:108
+msgid "Assignments Attend Chart"
+msgstr "Graphe de Présence aux Missions"
+
+#: .\intern_management\templates\staff_template\staff_home_template.html:132
+msgid "Intern Attendance Data"
+msgstr "les Données de Présence du Stagiaire:"
+
+#: .\intern_management\templates\staff_template\staff_home_template.html:204
+msgid "Headquarter Attend Chart"
+msgstr "Graphe de Présence au Mission"
+
+#: .\intern_management\templates\staff_template\staff_home_template.html:252
+msgid "Intern Attendance Chart for Present"
+msgstr "Graphe de Présence de Stagiaire pour Présent"
+
+#: .\intern_management\templates\staff_template\staff_home_template.html:263
+msgid "Intern Attendance Chart for Absent"
+msgstr "Graphe de Présence de Stagiaire pour Absent"
+
+#: .\intern_management\templates\staff_template\take_attendance_template.html:117
+msgid "Attendance Date:"
+msgstr "Date de Présence"
+
+#: .\intern_management\templates\staff_template\take_attendance_template.html:127
+#: .\intern_management\templates\staff_template\update_attendance_template.html:241
+msgid "Save Attendance Data"
+msgstr "Sauvegarder Donnée de Présence"
+
+#: .\intern_management\templates\staff_template\take_attendance_template.html:141
+msgid "Saving Attendance Data..."
+msgstr "Enregistrement Données de Présence..."
+
+#: .\intern_management\templates\staff_template\take_attendance_template.html:173
+#: .\intern_management\templates\staff_template\update_attendance_template.html:289
+msgid "Attendance Saved!"
+msgstr "Présence Sauvegardé!"
+
+#: .\intern_management\templates\staff_template\take_attendance_template.html:177
+#: .\intern_management\templates\staff_template\update_attendance_template.html:293
+msgid "Failed to Save Attendance!"
+msgstr "Échec de Sauvegarder de la Présence!"
+
+#: .\intern_management\templates\staff_template\take_attendance_template.html:185
+#: .\intern_management\templates\staff_template\update_attendance_template.html:301
+msgid "Error in Saving Interns Attendance Data."
+msgstr "Erreur lors de l'Enregistrement des donées de présence de Stagiaire."
+
+#: .\intern_management\templates\staff_template\update_attendance_template.html:65
+msgid "to"
+msgstr "à"
+
+#: .\intern_management\templates\staff_template\update_attendance_template.html:80
+msgid "Attendance Date "
+msgstr "Date de présence"
+
+#: .\intern_management\urls.py:10
+msgid "doLogin/"
+msgstr "SeConnecter/"
+
+#: .\intern_management\urls.py:11
+msgid "get_user_details/"
+msgstr "obtenir_détails_utilisateur/"
+
+#: .\intern_management\urls.py:12
+msgid "logout_user/"
+msgstr "déconnexion_utilisateur/"
+
+#: .\intern_management\urls.py:13
+msgid "admin_home/"
+msgstr "accueil_administrateur/"
+
+#: .\intern_management\urls.py:14 .\intern_management\urls.py:67
+msgid "admin_profile/"
+msgstr "profile_administrateur/"
+
+#: .\intern_management\urls.py:15 .\intern_management\urls.py:68
+msgid "admin_profile_update/"
+msgstr "miseAjour_profile_administrateur/"
+
+#: .\intern_management\urls.py:18
+msgid "add_staff/"
+msgstr "ajouter_equipe/"
+
+#: .\intern_management\urls.py:19
+msgid "manage_staff/"
+msgstr "gérer_équipe/"
+
+#: .\intern_management\urls.py:20
+msgid "add_staff_save/"
+msgstr "ajouter_equipe_enregistrer/"
+
+#: .\intern_management\urls.py:21
+msgid "edit_staff/<staff_id>/"
+msgstr "modifier_equipe/<staff_id>/"
+
+#: .\intern_management\urls.py:22
+msgid "edit_staff_save/"
+msgstr "modifier_equipe_enregistrer/"
+
+#: .\intern_management\urls.py:23
+msgid "delete_staff/<staff_id>/"
+msgstr "supprimer_equipe/<staff_id>/"
+
+#: .\intern_management\urls.py:25
+msgid "add_department/"
+msgstr "ajouter_departement/"
+
+#: .\intern_management\urls.py:26
+msgid "add_department_save/"
+msgstr "ajouter_departement_enregistrer/"
+
+#: .\intern_management\urls.py:27
+msgid "manage_department/"
+msgstr "gérer_département/"
+
+#: .\intern_management\urls.py:28
+msgid "edit_department/<department_id>/"
+msgstr "modifier_departement/<department_id>/"
+
+#: .\intern_management\urls.py:29
+msgid "edit_department_save/"
+msgstr "modifier_departement_enregistrer/"
+
+#: .\intern_management\urls.py:30
+msgid "delete_department/<department_id>/"
+msgstr "supprimer_departement/<department_id>/"
+
+#: .\intern_management\urls.py:33
+msgid "manage_session/"
+msgstr "gerer_session/"
+
+#: .\intern_management\urls.py:34
+msgid "add_session/"
+msgstr "ajouter_session/"
+
+#: .\intern_management\urls.py:35
+msgid "add_session_save/"
+msgstr "ajouter_session_enregistrer/"
+
+#: .\intern_management\urls.py:36
+msgid "edit_session/<session_id>"
+msgstr "modifier_session/<session_id>"
+
+#: .\intern_management\urls.py:37
+msgid "edit_session_save/"
+msgstr "modifier_session_enregistrer/"
+
+#: .\intern_management\urls.py:38
+msgid "delete_session/<session_id>/"
+msgstr "supprimer_session/<session_id>/"
+
+#: .\intern_management\urls.py:40
+msgid "manage_intern/"
+msgstr "gerer_stagiaire/"
+
+#: .\intern_management\urls.py:41
+msgid "add_intern/"
+msgstr "ajouter_stagiaire/"
+
+#: .\intern_management\urls.py:42
+msgid "add_intern_save/"
+msgstr "ajouter_stagiaire_enregistrer/"
+
+#: .\intern_management\urls.py:43
+msgid "edit_intern/<intern_id>"
+msgstr "modifier_stagiaire/<intern_id>"
+
+#: .\intern_management\urls.py:44
+msgid "edit_intern_save/"
+msgstr "modifier_stagiaire_enregistrer/"
+
+#: .\intern_management\urls.py:45
+msgid "delete_intern/<intern_id>/"
+msgstr "supprimer_stagiaire/<intern_id>/"
+
+#: .\intern_management\urls.py:47
+msgid "manage_headquarter/"
+msgstr "gerer_mission/"
+
+#: .\intern_management\urls.py:48
+msgid "add_headquarter/"
+msgstr "ajouter_mission/"
+
+#: .\intern_management\urls.py:49
+msgid "add_headquarter_save/"
+msgstr "ajouter_mission_enregistrer/"
+
+#: .\intern_management\urls.py:50
+msgid "edit_headquarter/<headquarter_id>"
+msgstr "modifier_mission/<headquarter_id>"
+
+#: .\intern_management\urls.py:51
+msgid "edit_headquarter_save/"
+msgstr "modifier_mission_enregistrer/"
+
+#: .\intern_management\urls.py:52
+msgid "delete_headquarter/<headquarter_id>/"
+msgstr "supprimer_mission/<headquarter_id>/"
+
+#: .\intern_management\urls.py:54
+msgid "intern_feedback_message/"
+msgstr "_message_commentaire_stagiaire/"
+
+#: .\intern_management\urls.py:55
+msgid "intern_feedback_message_reply/"
+msgstr "réponse_au_message_commentaire_stagiaire/"
+
+#: .\intern_management\urls.py:56
+msgid "staff_feedback_message/"
+msgstr "commentaire_message_équipe/"
+
+#: .\intern_management\urls.py:57
+msgid "staff_feedback_message_reply/"
+msgstr "réponse_au_message_Commentaire_équipe/"
+
+#: .\intern_management\urls.py:58
+msgid "intern_leave_view/"
+msgstr "voir_congé_stagiaire/"
+
+#: .\intern_management\urls.py:59
+msgid "intern_leave_approve/<leave_id>/"
+msgstr "ajouter_stagiaire_enregistrer/<leave_id>/"
+
+#: .\intern_management\urls.py:60
+msgid "intern_leave_reject/<leave_id>/"
+msgstr "refus_congé_stagiaire/<leave_id>/"
+
+#: .\intern_management\urls.py:61
+msgid "staff_leave_view/"
+msgstr "équipe_congé_stagiaire/"
+
+#: .\intern_management\urls.py:62
+msgid "staff_leave_approve/<leave_id>/"
+msgstr "congé_du_équipe_approuver"
+
+#: .\intern_management\urls.py:63
+msgid "staff_leave_reject/<leave_id>/"
+msgstr "équipe_congé_stagiaire/<leave_id>/"
+
+#: .\intern_management\urls.py:64
+msgid "admin_view_attendance/"
+msgstr "afficher_la_présence"
+
+#: .\intern_management\urls.py:65
+msgid "admin_get_attendance_dates/"
+msgstr "obtenir_les_dates_de_présence_administrateur/"
+
+#: .\intern_management\urls.py:66
+msgid "admin_get_attendance_intern/"
+msgstr "obtenir_les_dates_de_présence_stagiaire/"
+
+#: .\intern_management\urls.py:71
+msgid "staff_home/"
+msgstr "accueil_équipe/"
+
+#: .\intern_management\urls.py:72
+msgid "staff_take_attendance/"
+msgstr "équipe_prendre_présence/"
+
+#: .\intern_management\urls.py:73
+msgid "get_interns/"
+msgstr "obtenir_stagiaires/"
+
+#: .\intern_management\urls.py:74
+msgid "save_attendance_data/"
+msgstr "sauvgarder_données_de_présence/"
+
+#: .\intern_management\urls.py:75
+msgid "staff_update_attendance/"
+msgstr "équipe_modifier_présence"
+
+#: .\intern_management\urls.py:76
+msgid "get_attendance_dates/"
+msgstr "obtenir_les_dates_de_présence/"
+
+#: .\intern_management\urls.py:77
+msgid "get_attendance_intern/"
+msgstr "obtenir_la_présence_de_stagiaire/"
+
+#: .\intern_management\urls.py:78
+msgid "update_attendance_data/"
+msgstr "modifier_les_données_de_présence/"
+
+#: .\intern_management\urls.py:79
+msgid "staff_apply_leave/"
+msgstr "équipe_postuler_congé/"
+
+#: .\intern_management\urls.py:80
+msgid "staff_apply_leave_save/"
+msgstr "enregistrer_équipe_postuler_congé/"
+
+#: .\intern_management\urls.py:81
+msgid "staff_feedback/"
+msgstr "commentaire_équipe/"
+
+#: .\intern_management\urls.py:82
+msgid "staff_feedback_save/"
+msgstr "sauvgarder_commentaire_équipe/"
+
+#: .\intern_management\urls.py:83
+msgid "staff_profile/"
+msgstr "profile_équipe/"
+
+#: .\intern_management\urls.py:84
+msgid "staff_profile_update/"
+msgstr "miseAjour_profile_aquipe/"
+
+#: .\intern_management\urls.py:85
+msgid "staff_add_result/"
+msgstr "ajouter_resultat_équipe/"
+
+#: .\intern_management\urls.py:86
+msgid "staff_add_result_save/"
+msgstr "ajouter_equipe_enregistrer_resultat/"
+
+#: .\intern_management\urls.py:87
+msgid "view_headquarter/"
+msgstr "voir_mission/"
+
+#: .\intern_management\urls.py:88
+msgid "view_intern/"
+msgstr "voir_stagiaire/"
+
+#: .\intern_management\urls.py:89
+msgid "intern_view_result_by_staff/"
+msgstr "voir_resultat_stagiaire_par_équipe/"
+
+#: .\intern_management\urls.py:92
+
+#| msgid "admin_home/"
+msgid "intern_home/"
+msgstr "accueil_stagiaire/"
+
+#: .\intern_management\urls.py:93
+
+#| msgid "admin_view_attendance/"
+msgid "intern_view_attendance/"
+msgstr "voir_la_présence_stagiaire/"
+
+#: .\intern_management\urls.py:94
+
+#| msgid "admin_view_attendance/"
+msgid "intern_view_attendance_post/"
+msgstr "voir_la_présence_stagiaire_post/"
+
+#: .\intern_management\urls.py:95
+
+#| msgid "staff_apply_leave/"
+msgid "intern_apply_leave/"
+msgstr "stagiaire_postuler_congé/"
+
+#: .\intern_management\urls.py:96
+
+#| msgid "staff_apply_leave_save/"
+msgid "intern_apply_leave_save/"
+msgstr "enregistrer_stagiaire_postuler_congé/"
+
+#: .\intern_management\urls.py:97
+
+#| msgid "intern_feedback_message/"
+msgid "intern_feedback/"
+msgstr "commentaire_stagiaire/"
+
+#: .\intern_management\urls.py:98
+
+#| msgid "intern_feedback_message/"
+msgid "intern_feedback_save/"
+msgstr "enregistrer_commentaire_stagiaire/"
+
+#: .\intern_management\urls.py:99
+
+#| msgid "admin_profile/"
+msgid "intern_profile/"
+msgstr "profile_stagiaire/"
+
+#: .\intern_management\urls.py:100
+
+#| msgid "admin_profile_update/"
+msgid "intern_profile_update/"
+msgstr "miseAjour_profile_stagiaire/"
+
+#: .\intern_management\urls.py:101
+
+#| msgid "intern_view_result_by_staff/"
+msgid "intern_view_result/"
+msgstr "voir_resultat_stagiaire/"
+
+#: .\intern_management\urls.py:102
+
+#| msgid "view_headquarter/"
+msgid "intern_view_headquarters/"
+msgstr "voir_missions_stagiaire/"
+
+#: .\intern_management\urls.py:105
+msgid "check_email_exist/"
+msgstr "vérifier_email_existe/"
+
+#: .\intern_management\urls.py:106
+msgid "check_username_exist/"
+msgstr "vérifier_nom_utilisateur_exist/"
+
+#: .\intern_management\views.py:37
+msgid "Invalid Login!"
+msgstr "Identifiant Invalide!"
+
+#: .\intern_management\views.py:40
+msgid "Invalid Login Credentials!"
+msgstr "Authentification Invalide!"
+
+#: .\intern_management\views.py:49
+msgid "Please Login First"
+msgstr "Si il vous plait Se Connecter D'abord"
+
+#: .\provinceManagement\settings.py:120
+msgid "English"
+msgstr "Anglais"
+
+#: .\provinceManagement\settings.py:121
+msgid "French"
+msgstr "Français"
+
+#: .\provinceManagement\urls.py:26
+msgid "admin/"
+msgstr "administrateur/"
+
+#~| msgid "Total Departments"
+#~ msgid "Total Headquarters"
+#~ msgstr "Total de Missions"
+
+#~ msgid "Intern Management System HOD Login"
+#~ msgstr "Système de gestion des stagiaires Connexion HOD"
+
+#~ msgid "Last Login<"
+#~ msgstr "Dernière connexion"
+
+#~ msgid "{{ button_text }}"
+#~ msgstr "{{ button_text }}"
+
+#, python-format
+#~ msgid "%(btxt)s"
+#~ msgstr "%(btxt)s"
+
+#, python-format
+#~ msgid ""
+#~ "Edit Staff | Username: %(staff.admin.username)s | #ID : "
+#~ "%(staff.admin.id)s "
+#~ msgstr ""
+#~ "Modifier l'équipe | Nom d'utilisateur: %(staff.admin.username)s | #ID : "
+#~ "%(staff.admin.id)s "
+
+#, fuzzy
+#~| msgid "Intern Management System HOD Login"
+#~ msgid "<b>Intern</b> Management System"
+#~ msgstr "Système de gestion des <b>Stagiaires</b>"
