@@ -11,7 +11,8 @@
 <section class="content">
         <div class="container-fluid">
 
-            
+            <a class="btn btn-primary" href="{% url 'generate_employee_under_staff' %}" role="button">{% trans 'Download PDF' %}</a> <br/>&nbsp;
+
             {% if messages %}
                                 <div class="form-group">
                                 <div class="col-12">
@@ -42,7 +43,7 @@
                     <!-- general form elements -->
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">{% trans 'Intern Details' %}</h3>
+                            <h3 class="card-title">{% trans 'Employee Details' %}</h3>
 
                             <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
@@ -67,9 +68,10 @@
                                 <th>{% trans 'Address' %}</th>
                                 <th>{% trans 'Gender' %}</th>
                                 <th>{% trans 'Profile Pic' %}</th>
-                                <th>{% trans 'Start Year' %}</th>
-                                <th>{% trans 'End Year' %}</th>
+                                <th>{% trans 'Start Period' %}</th>
+                                <th>{% trans 'End Period' %}</th>
                                 <th>{% trans 'Department' %}</th>
+                                <th>{% trans 'Service' %}</th>
                                 <th>{% trans 'Last Login' %}</th>
                                 <th>{% trans 'Date Joined' %}</th>
                                 
@@ -89,6 +91,7 @@
                                 <td>{{ intern.session_year_id.session_start_year }}</td>
                                 <td>{{ intern.session_year_id.session_end_year }}</td>
                                 <td>{{ intern.department_id.department_name }}</td>
+                                <td>{{ intern.service_id.service_name }}</td>
                                 <td>{{ intern.admin.last_login }}</td>
                                 <td>{{ intern.admin.date_joined }}</td>
                                 

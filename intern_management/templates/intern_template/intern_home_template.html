@@ -24,7 +24,7 @@
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
                     </div>
-                    <a href="{% url 'intern_view_attendance' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="{% url 'intern_view_attendance' %}" class="small-box-footer">{% trans 'More info' %} <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -34,12 +34,12 @@
                     <div class="inner">
                         <h3>{{ attendance_absent }}</h3>
 
-                        <p>Absent</p>
+                        <p>{% trans 'Absent' %}</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
                     </div>
-                    <a href="{% url 'intern_view_attendance' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="{% url 'intern_view_attendance' %}" class="small-box-footer">{% trans 'More info' %} <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -134,7 +134,7 @@
            //Code for Pie Chart
             var pieData        = {
             labels: [
-                'ABSENT', 
+                '{% trans "ABSENT" %}', 
                 '{% trans "PRESENT" %}', 
             ],
             datasets: [
@@ -180,7 +180,7 @@
                 data                : data_present
                 },
                 {
-                label               : 'Absent',
+                label               : '{% trans "Absent" %}',
                 backgroundColor     : 'rgba(210, 214, 222, 1)',
                 borderColor         : 'rgba(210, 214, 222, 1)',
                 pointRadius         : false,
@@ -214,4 +214,5 @@
 
        })
     </script>
+    
   {% endblock custom_js %}

@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils.translation import gettext_lazy as _
+from django.utils import timezone
 
 # Create your models here.
 
@@ -52,11 +53,24 @@ class Department(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     objects = models.Manager()
 
+    def __str__(self):
+        return self.department_name
+
+class Service(models.Model):
+    id = models.AutoField(primary_key=True)
+    service_name = models.CharField(_('service name'), max_length=255)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='services')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    objects = models.Manager()
+
 class Headquarter(models.Model):
     id = models.AutoField(primary_key=True)
     headquarter_name = models.CharField(_('assignment name'), max_length=255)
     department_id = models.ForeignKey(Department, on_delete=models.CASCADE, default=1)
+    service_id = models.ForeignKey(Service, on_delete=models.CASCADE)
     staff_id = models.ForeignKey(CustomUser, on_delete=models.CASCADE, default=1)
+    session_year_id = models.ForeignKey(SessionYearModel, on_delete=models.CASCADE, default=timezone.now)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = models.Manager()
@@ -68,7 +82,9 @@ class Intern(models.Model):
     profile_pic = models.FileField(_('profile picture'))
     address = models.TextField()
     department_id = models.ForeignKey(Department, on_delete=models.DO_NOTHING, default=1)
+    service_id = models.ForeignKey(Service, on_delete=models.CASCADE, default=1)
     session_year_id = models.ForeignKey(SessionYearModel, on_delete=models.CASCADE)
+    numero_telephone = models.CharField(_('phone number'), max_length=20)
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
     objects = models.Manager()
@@ -158,7 +174,7 @@ class InternResult(models.Model):
     id = models.AutoField(primary_key=True)
     intern_id = models.ForeignKey(Intern, on_delete=models.CASCADE)
     headquarter_id = models.ForeignKey(Headquarter, on_delete=models.CASCADE)
-    headquarter_exam_marks = models.FloatField(default=0)
+    # headquarter_exam_marks = models.FloatField(default=0)
     headquarter_assignment_marks = models.FloatField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

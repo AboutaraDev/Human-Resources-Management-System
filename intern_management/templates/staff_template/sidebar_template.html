@@ -8,7 +8,7 @@
       <a href="{% url 'staff_home' %}" class="brand-link">
         <img src="{% static 'dist/img/provinceZagoraLogoo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
-        <span class="brand-text font-weight-light">Province Zagora</span>
+        <span class="brand-text font-weight-light">{% trans 'Province Zagora' %}</span>
       </a>
 
       <!-- Sidebar -->
@@ -51,6 +51,17 @@
               </a>
             </li>
 
+            <li class="nav-item">
+              {% url 'view_headquarter' as view_headquarter %}
+              <a href="{{ view_headquarter }}" class="nav-link {% if request.path == view_intern %} active {% endif %}">
+                <i class="nav-icon fas fa-user-graduate"></i>
+                <p>
+                  {% trans 'View Assignments' %}
+                  {% comment %} <span class="right badge badge-danger">New</span> {% endcomment %}
+                </p>
+              </a>
+            </li>
+
 
             <li class="nav-item">
               {% url 'staff_take_attendance' as staff_take_attendance %}
@@ -79,7 +90,7 @@
               <a href="{{ staff_add_result }}" class="nav-link {% if request.path == staff_add_result %} active {% endif %}">
                 <i class="nav-icon fas fa-tasks"></i>
                 <p>
-                  {% trans 'Add Result' %}
+                  {% trans 'Add Evaluation Result' %}
                   {% comment %} <span class="right badge badge-danger">New</span> {% endcomment %}
                 </p>
               </a>

@@ -6,6 +6,21 @@ from django.urls import reverse
 import datetime # To Parse input DateTime into Python Date Time Object
 
 from .models import CustomUser, Department, Headquarter, Intern, Attendance, AttendanceReport, LeaveReportIntern, FeedBackIntern, InternResult
+from django.utils.translation import gettext_lazy as _
+from django.utils import translation
+import io
+import os
+from django.conf import settings
+
+
+from django.template.loader import get_template
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Image, Spacer, SimpleDocTemplate
+from reportlab.lib import colors
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.enums import TA_LEFT, TA_CENTER
+from reportlab.lib import utils
+from reportlab.platypus import Paragraph
 
 
 def intern_home(request):
@@ -28,6 +43,12 @@ def intern_home(request):
         headquarter_name.append(headquarter.headquarter_name)
         data_present.append(attendance_present_count)
         data_absent.append(attendance_absent_count)
+
+    lang_code = request.GET.get('lang', None)
+    if lang_code:
+        # Activate the desired language
+        translation.activate(lang_code)
+        request.session[translation.LANGUAGE_SESSION_KEY] = lang_code
     
     context={
         "total_attendance": total_attendance,
@@ -51,10 +72,134 @@ def intern_view_attendance(request):
     }
     return render(request, "intern_template/intern_view_attendance.html", context)
 
+def generate_attendance_employee_pdf(request):
+    emp = request.user
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = f'attachment; filename=attendance_employee_{emp}.pdf'
+    
+
+    # Create a new PDF document
+    doc = SimpleDocTemplate(response, pagesize=letter)
+
+    # Table data and styles
+    #attendance_date = request.POST.get('attendance_date')
+    try:
+     intern_instance = Intern.objects.get(admin=emp)
+     attendance_data = AttendanceReport.objects.filter(intern_id=intern_instance)
+    except Intern.DoesNotExist:
+        # Handle the case where the employee is not associated with an intern
+        attendance_data = []
+
+    table_data = [[_("First Name"), _("Last Name"), _("Date"), _("Status")]]
+
+    # Variables to store totals
+    unique_dates = set()
+    total_present = 0
+    total_absent = 0
+
+    for intern in attendance_data:
+        
+
+        if intern.status == True:
+            total_present += 1
+            name = _('Present')
+        elif intern.status == False:
+            total_absent += 1
+            name = _('Absent')
+        else:
+            name = _('None')
+
+        row = [
+            
+            
+            Paragraph(intern.intern_id.admin.first_name, getSampleStyleSheet()["BodyText"]),
+            Paragraph(intern.intern_id.admin.last_name, getSampleStyleSheet()["BodyText"]),  # Use BodyText style for inline formatting  
+            Paragraph(str(intern.attendance_id.attendance_date), getSampleStyleSheet()["BodyText"]),    
+            Paragraph(name, getSampleStyleSheet()["BodyText"]),
+
+            
+        ]
+        table_data.append(row)
+        # Calculate unique attendance dates
+        unique_dates.add(str(intern.attendance_id.attendance_date))
+
+     # Calculate the column widths based on the page size and number of columns
+    num_columns = len(table_data[0])
+    page_width, page_height = letter
+    column_width = page_width / num_columns
+
+    elements = []
+
+     # Get the full paths of the logo images
+    logo1_path = os.path.join(settings.MEDIA_ROOT, 'provinceZagoraLogoo.png')
+    logo2_path = os.path.join(settings.MEDIA_ROOT, 'provinceZagoraLogoo.png')
+
+    # Check if the logo image files exist
+    if os.path.exists(logo1_path) and os.path.exists(logo2_path):
+        # Add the logos to the PDF
+        logo1 = Image(logo1_path)
+        logo2 = Image(logo2_path)
+
+        # Set the sizes of the logos
+        logo1.drawHeight = 150
+        logo1.drawWidth = 150
+
+        logo2.drawHeight = 50
+        logo2.drawWidth = 150
+
+        # Position the logos on the top corners
+        logo1_pos_x, logo1_pos_y = 40, 750  # Top left corner
+        logo2_pos_x, logo2_pos_y = page_width - 40 - logo2.drawWidth, 750  # Top right corner
+
+        # Add the logos directly to the elements list
+        elements.extend([
+            logo1,
+            #logo2,
+        ])
+
+        
+    
+    # Add title to the PDF
+    title = _(f'Employee {emp} Attendance')
+    title_style = getSampleStyleSheet()["Title"]
+    title_paragraph = Paragraph(title, title_style)
+    elements.append(title_paragraph)
+    elements.append(Spacer(1, 12))  # Add some space between title and table
+    
+    table = Table(table_data, colWidths=[column_width] * num_columns, repeatRows=1)
+    table.setStyle(TableStyle([
+            # ... Table styles ...
+            ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),  # Vertical alignment of text within cells
+            ('TEXTCOLOR', (0, 0), (-1, -1), colors.black),  # Text color
+            ('FONTNAME', (0, 0), (-1, -1), 'Helvetica'),  # Font
+            ('FONTSIZE', (0, 0), (-1, -1), 10),  # Font size
+            ('GRID', (0, 0), (-1, -1), 1, colors.black),  # Grid lines
+            ('BACKGROUND', (0, 0), (-1, 0), colors.grey),  # Header background color
+            ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),  # Header text color
+            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),  # Center alignment for all cells
+            ('TOPPADDING', (0, 0), (-1, -1), 10),  # Top padding for cells
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 10),  # Bottom padding for cells
+            ('LEFTPADDING', (0, 0), (-1, -1), 5),  # Left padding for cells
+            ('RIGHTPADDING', (0, 0), (-1, -1), 5),  # Right padding for cells
+    ]))
+
+    # Calculate total days
+    total_days = len(unique_dates)
+
+    elements.append(table)
+    elements.append(Paragraph(_("Total Days: ") + str(total_days), getSampleStyleSheet()["BodyText"]))
+    elements.append(Paragraph(_(f"Total {intern.intern_id.admin.first_name} Present: ") + str(total_present), getSampleStyleSheet()["BodyText"]))
+    elements.append(Paragraph(_(f"Total {intern.intern_id.admin.first_name} Absent: ") + str(total_absent), getSampleStyleSheet()["BodyText"]))
+    elements.append(Spacer(0, 10))
+
+    doc.build(elements)
+    
+    return response
+
 
 def intern_view_attendance_post(request):
     if request.method != "POST":
-        messages.error(request, "Invalid Method")
+        messages.error(request, _("Invalid Method"))
         return redirect('intern_view_attendance')
     else:
         # Getting all the Input Data
@@ -102,7 +247,7 @@ def intern_apply_leave(request):
 
 def intern_apply_leave_save(request):
     if request.method != "POST":
-        messages.error(request, "Invalid Method")
+        messages.error(request, _("Invalid Method"))
         return redirect('intern_apply_leave')
     else:
         leave_date = request.POST.get('leave_date')
@@ -112,10 +257,10 @@ def intern_apply_leave_save(request):
         try:
             leave_report = LeaveReportIntern(intern_id=intern_obj, leave_date=leave_date, leave_message=leave_message, leave_status=0)
             leave_report.save()
-            messages.success(request, "Applied for Leave.")
+            messages.success(request, _("Applied for Leave."))
             return redirect('intern_apply_leave')
         except:
-            messages.error(request, "Failed to Apply Leave")
+            messages.error(request, _("Failed to Apply Leave"))
             return redirect('intern_apply_leave')
 
 
@@ -130,7 +275,7 @@ def intern_feedback(request):
 
 def intern_feedback_save(request):
     if request.method != "POST":
-        messages.error(request, "Invalid Method.")
+        messages.error(request, _("Invalid Method."))
         return redirect('intern_feedback')
     else:
         feedback = request.POST.get('feedback_message')
@@ -139,10 +284,10 @@ def intern_feedback_save(request):
         try:
             add_feedback = FeedBackIntern(intern_id=intern_obj, feedback=feedback, feedback_reply="")
             add_feedback.save()
-            messages.success(request, "Feedback Sent.")
+            messages.success(request, _("Feedback Sent."))
             return redirect('intern_feedback')
         except:
-            messages.error(request, "Failed to Send Feedback.")
+            messages.error(request, _("Failed to Send Feedback."))
             return redirect('intern_feedback')
 
 
@@ -159,7 +304,7 @@ def intern_profile(request):
 
 def intern_profile_update(request):
     if request.method != "POST":
-        messages.error(request, "Invalid Method!")
+        messages.error(request, _("Invalid Method!"))
         return redirect('intern_profile')
     else:
         first_name = request.POST.get('first_name')
@@ -179,10 +324,10 @@ def intern_profile_update(request):
             intern.address = address
             intern.save()
             
-            messages.success(request, "Profile Updated Successfully")
+            messages.success(request, _("Profile Updated Successfully"))
             return redirect('intern_profile')
         except:
-            messages.error(request, "Failed to Update Profile")
+            messages.error(request, _("Failed to Update Profile"))
             return redirect('intern_profile')
 
 

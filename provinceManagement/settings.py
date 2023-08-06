@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'intern_management',
-    'rosetta',
+    
+    'django_babel',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_babel.middleware.LocaleMiddleware',
 
     'intern_management.LoginCheckMiddleWare.LoginCheckMiddleWare',
     
@@ -64,7 +66,7 @@ ROOT_URLCONF = 'provinceManagement.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,6 +74,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
+            ],
+            'builtins': [
+                'django_babel.templatetags.babel',  # Add this line for Babel support
             ],
         },
     },
@@ -82,12 +88,13 @@ WSGI_APPLICATION = 'provinceManagement.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+DATABASE_NAME = str(BASE_DIR / 'db.sqlite3')
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': DATABASE_NAME,
     }
 }
 

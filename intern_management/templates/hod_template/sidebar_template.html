@@ -6,7 +6,7 @@
       <a href="{% url 'admin_home' %}" class="brand-link">
         <img src="{% static 'dist/img/provinceZagoraLogoo.png' %}" alt="Admin Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
-        <span class="brand-text font-weight-light">Province Zagora</span>
+        <span class="brand-text font-weight-light">{% trans 'Province Zagora' %}</span>
       </a>
 
       <!-- Sidebar -->
@@ -80,12 +80,33 @@
             </li>
 
             <li class="nav-item">
+              {% url 'manage_service' as manage_service %}
+              {% url 'edit_service' service_id=id as edit_service %}
+              <a href="{{ manage_service }}" class="nav-link {% if request.path == manage_service %} active {% endif %} {% if request.path == edit_service %} active {% endif %}">
+                <i class="nav-icon fas fa-chalkboard"></i>
+                <p>
+                  {% trans 'Manage Service' %}
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+            {% url 'add_service' as add_service %}
+              <a href="{{ add_service }}" class="nav-link {% if request.path == add_service %} active {% endif %}">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  {% trans 'Add Service' %}
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
               {% url 'manage_session' as manage_session %}
               {% url 'edit_session' session_id=id as edit_session %}
               <a href="{{ manage_session }}" class="nav-link {% if request.path == manage_session %} active {% endif %} {% if request.path == edit_session %} active {% endif %}">
                 <i class="nav-icon fas fa-graduation-cap"></i>
                 <p>
-                  {% trans 'Manage Session' %} 
+                  {% trans 'Manage Period' %} 
                 </p>
               </a>
             </li>
@@ -95,7 +116,7 @@
               <a href="{{ add_session }}" class="nav-link {% if request.path == add_session %} active {% endif %}">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
-                  {% trans 'Add Session' %}
+                  {% trans 'Add Period' %}
                 </p>
               </a>
             </li>

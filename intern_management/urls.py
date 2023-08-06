@@ -21,6 +21,7 @@ urlpatterns = [
     path(_('edit_staff/<staff_id>/'), HodViews.edit_staff, name="edit_staff"),
     path(_('edit_staff_save/'), HodViews.edit_staff_save, name="edit_staff_save"),
     path(_('delete_staff/<staff_id>/'), HodViews.delete_staff, name="delete_staff"),
+    path(_('generate_staff_pdf/'), HodViews.generate_staff_pdf, name='generate_staff_pdf'),
 
     path(_('add_department/'), HodViews.add_department, name="add_department"),
     path(_('add_department_save/'), HodViews.add_department_save, name="add_department_save"),
@@ -28,7 +29,16 @@ urlpatterns = [
     path(_('edit_department/<department_id>/'), HodViews.edit_department, name="edit_department"),
     path(_('edit_department_save/'), HodViews.edit_department_save, name="edit_department_save"),
     path(_('delete_department/<department_id>/'), HodViews.delete_department, name="delete_department"),
+    path(_('generate_department_pdf/'), HodViews.generate_department_pdf, name='generate_department_pdf'),
 
+    
+    path(_('manage_service/'), HodViews.manage_service, name="manage_service"),
+    path(_('add_service/'), HodViews.add_service, name="add_service"),
+    path(_('add_service_save/'), HodViews.add_service_save, name="add_service_save"),
+    path(_('edit_service/<service_id>'), HodViews.edit_service, name="edit_service"),
+    path(_('edit_service_save/'), HodViews.edit_service_save, name="edit_service_save"),
+    path(_('delete_service/<service_id>/'), HodViews.delete_service, name="delete_service"),
+    path(_('generate_service_pdf/'), HodViews.generate_service_pdf, name='generate_service_pdf'),
     
     path(_('manage_session/'), HodViews.manage_session, name="manage_session"),
     path(_('add_session/'), HodViews.add_session, name="add_session"),
@@ -43,6 +53,8 @@ urlpatterns = [
     path(_('edit_intern/<intern_id>'), HodViews.edit_intern, name="edit_intern"),
     path(_('edit_intern_save/'), HodViews.edit_intern_save, name="edit_intern_save"),
     path(_('delete_intern/<intern_id>/'), HodViews.delete_intern, name="delete_intern"),
+    path(_('generate_intern_pdf/'), HodViews.generate_intern_pdf, name='generate_intern_pdf'),
+
 
     path(_('manage_headquarter/'), HodViews.manage_headquarter, name="manage_headquarter"),
     path(_('add_headquarter/'), HodViews.add_headquarter, name="add_headquarter"),
@@ -50,6 +62,7 @@ urlpatterns = [
     path(_('edit_headquarter/<headquarter_id>'), HodViews.edit_headquarter, name="edit_headquarter"),
     path(_('edit_headquarter_save/'), HodViews.edit_headquarter_save, name="edit_headquarter_save"),
     path(_('delete_headquarter/<headquarter_id>/'), HodViews.delete_headquarter, name="delete_headquarter"),
+    path(_('generate_assignment_pdf/'), HodViews.generate_assignment_pdf, name='generate_assignment_pdf'),
 
     path(_('intern_feedback_message/'), HodViews.intern_feedback_message, name="intern_feedback_message"),
     path(_('intern_feedback_message_reply/'), HodViews.intern_feedback_message_reply, name="intern_feedback_message_reply"),
@@ -87,6 +100,14 @@ urlpatterns = [
     path(_('view_headquarter/'), StaffViews.view_headquarter, name="view_headquarter"),
     path(_('view_intern/'), StaffViews.view_intern, name="view_intern"),
     path(_('intern_view_result_by_staff/'), StaffViews.intern_view_result_by_staff, name="intern_view_result_by_staff"),
+    path(_('generate_employee_under_staff/'), StaffViews.generate_employee_under_staff_pdf, name="generate_employee_under_staff"),
+    path(_('generate_assignments_staff/'), StaffViews.generate_assignments_staff_pdf, name="generate_assignments_staff"),
+    path(_('generate_attendance_employee_under_staff/'), StaffViews.generate_attendance_employee_under_staff_pdf, name="generate_attendance_employee_under_staff"),
+    path(_('generate_result_employee_under_staff/'), StaffViews.generate_result_employee_under_staff_pdf, name="generate_result_employee_under_staff"),
+    path(_('generate_leave_staff/'), StaffViews.generate_leave_staff_pdf, name="generate_leave_staff"),
+     path(_('generate_message_staff/'), StaffViews.generate_message_staff_pdf, name="generate_message_staff"),
+    
+    
     
      # URSL for Interns
     path(_('intern_home/'), InternViews.intern_home, name="intern_home"),
@@ -100,6 +121,8 @@ urlpatterns = [
     path(_('intern_profile_update/'), InternViews.intern_profile_update, name="intern_profile_update"),
     path(_('intern_view_result/'), InternViews.intern_view_result, name="intern_view_result"),
     path(_('intern_view_headquarters/'), InternViews.intern_view_headquarters, name="intern_view_headquarters"),
+    path(_('generate_attendance_employee/'), InternViews.generate_attendance_employee_pdf, name="generate_attendance_employee"),
+   
 
 
     path(_('check_email_exist/'), HodViews.check_email_exist, name="check_email_exist"),

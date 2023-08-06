@@ -1,5 +1,7 @@
 {% extends 'hod_template/base_template.html' %}
 {% load i18n %}
+{% load babel %}
+
 {% block page_title %}
 {% trans 'Add Assignment' %}
 {% endblock page_title %}
@@ -53,14 +55,25 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label>{% trans 'Assignment Name' %} </label>
-                                <input type="text" class="form-control" name="headquarter" id="headquarter" placeholder="Enter headquarter">
+                                <input type="text" class="form-control arabic-input" name="headquarter" id="headquarter" placeholder="{% trans 'Enter Assignment' %}">
                             </div>
 
                             <div class="form-group">
                                 <label for="department">{% trans 'Department' %} </label>
                                 <select class="form-control" name="department" id="department">
                                     {% for department in departments %}
-                                        <option value="{{ department.id }}">{{ department.department_name }}</option>
+                                        <option value="{{ department.id }}">{% trans department.department_name %}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service">{% trans 'Service' %} </label>
+                                <select class="form-control" name="service" id="service">
+                                    {% for department in departments %}
+                                      {% for service in department.services.all %}
+                                       <option value="{{ service.id }}" data-department="{{ department.id }}">{{ service.service_name }}</option>
+                                       {% endfor %}
                                     {% endfor %}
                                 </select>
                             </div>
@@ -69,10 +82,23 @@
                                 <label for="staff">{% trans 'Staff' %} </label>
                                 <select class="form-control" name="staff" id="staff">
                                     {% for staff in staffs %}
-                                        <option value="{{ staff.id }}">{{ staff.first_name }} {{ staff.last_name }}</option>
+                                        <option value="{{ staff.id }}">{% trans staff.first_name %} {% trans staff.last_name %}</option>
                                     {% endfor %}
                                 </select>
                             </div>
+
+                            <div class="form-group">
+                                <label for="session_year">{% trans 'Period' %} </label>
+                                <select class="form-control" name="session_year" id="session_year">
+                                    {% for session_year in session_year_list %}
+                                       {% with id_val=session_year.0 name=session_year.1 %}
+                                        <option value="{{ id_val }}">{% trans name %}</option>
+                                        {% endwith %}
+                                    {% endfor %}
+                                </select> 
+                            </div>
+
+
 
                         </div>
                         <!-- /.card-body -->
@@ -91,3 +117,98 @@
       </section>
 
   {% endblock main_content %}
+
+
+  {% block custom_js %}
+   
+  <script>
+    $(document).ready(function() {
+        // Hide all service options initially
+        $('#department').on('change', function() {
+            var selectedDepartmentId = $(this).val();
+
+            // Hide all service options
+            $('#service option').hide();
+
+            // Show only the services related to the selected department
+            $('#service option[data-department="' + selectedDepartmentId + '"]').show();
+
+            // Select the first service option for the selected department
+            $('#service option[data-department="' + selectedDepartmentId + '"]:first').prop('selected', true);
+        });
+    });
+</script>
+
+
+  {% get_current_language as LANGUAGE_CODE %}
+
+  {% if LANGUAGE_CODE == 'ar' %}
+
+<script>
+  $(document).ready(function () {
+      // Initialize the virtual keyboard
+      var virtualKeyboard = $('.arabic-input').keyboard({
+          layout: 'custom',
+          customLayout: {
+            'default': [
+                      'ض ص ث ق ف غ ع ه خ ح ج ش',
+                      'ش س ي ب ل ا ت ن م ك ظ',
+                      '{shift} ء ئ ؤ ر لإ لآ ى ة و ز ظ',
+                      '{numbers} ، ؛ / : . , - + = _',
+                      '{space}'
+            ],
+            'shift': [
+                      'ً ٌ ٍ ؤ َ ُ ِ ئ ا أ ٱ ٲ ٳ ٴ ٵ ٶ ٷ',
+                      'إ ب ة ت ث ن م ء ذ د ِ ّ ْ َّ ُّ ِّ ًّ',
+                      '{shift} ؤ ئ ّء ة ى ٱ ٲ ٳ ٴ ٵ ٶ ٷ ٸ ٹ ٺ',
+                      '{numbers} ، ؛ / : . , - + = _',
+                      '{space}'
+            ],
+          },
+          display: {
+              '{numbers}': '123',
+              '{space}': 'Space',
+              '{shift}': 'Shift',
+          },
+          usePreview: false, // Disable the preview display
+          position: {
+              of: '.arabic-input',
+              my: 'center top+40', // Adjust the vertical offset here (40px in this example)
+              at: 'center bottom',
+              collision: 'flipfit',
+          },
+          autoAccept: false, // Disable auto-acceptance of keys
+          useCombos: false, // Disable combining characters
+          maxLength: 100, // Set a maximum length for the input field if needed
+          autoAccept: true,
+      }).getkeyboard();
+
+      // Handle keypress events on the virtual keyboard
+      $('.arabic-input').on('keyboardChange', function (e, keyboard, el) {
+        el.value = keyboard.$preview.val(); // Update the input field value with the pressed key
+        
+        
+      });
+
+      
+     /*
+      // Show the virtual keyboard when the button is clicked
+      $('#arabic-input-button').on('click', function () {
+           virtualKeyboard.reveal();
+          $('#arabic-input').focus(); // Focus the input field after showing the virtual keyboard
+      });
+      */
+
+      $('.arabic-input').on('focus', function () {
+      $(this).blur();
+      });
+       virtualKeyboard.$el.on('hidden.keyboard', function () {
+       $('.arabic-input').val(virtualKeyboard.$preview.val());
+       });
+      
+  });
+</script>
+
+{% endif %}
+
+  {% endblock custom_js %}

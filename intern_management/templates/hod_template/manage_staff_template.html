@@ -11,7 +11,17 @@
 <section class="content">
         <div class="container-fluid">
 
-            <a class="btn btn-primary" href="{% url 'add_staff' %}" role="button">{% trans '+ Add Staff' %}</a> <br/>&nbsp;
+            <div class="row">
+                <div class="col-md-6">
+                    <a class="btn btn-primary" href="{% url 'add_staff' %}" role="button">{% trans '+ Add Staff' %}</a>
+                </div>
+                <div class="col-md-6 text-right">
+                    <a class="btn btn-primary" href="{% url 'generate_staff_pdf' %}" role="button">{% trans 'Download PDF' %}</a>
+                </div>
+            </div>
+            <br/>
+
+            
             
             {% if messages %}
                                 <div class="form-group">
@@ -53,6 +63,7 @@
                                 <div class="input-group-append">
                                 <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
                                 </div>
+                                
                             </div>
                             </div>
                         </div>

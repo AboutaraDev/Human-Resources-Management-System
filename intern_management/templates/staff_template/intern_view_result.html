@@ -1,7 +1,7 @@
 {% extends 'staff_template/base_template.html' %}
 {% load i18n %}
 {% block page_title %}
-   {% trans 'Result' %}
+   {% trans 'Evaluation Result' %}
 {% endblock page_title %}
 
 {% block main_content %}
@@ -11,13 +11,13 @@
 <section class="content">
         <div class="container-fluid">
 
-            
+            <a class="btn btn-primary" href="{% url 'generate_result_employee_under_staff' %}" role="button">{% trans 'Download PDF' %}</a> <br/>&nbsp;
 
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">{% trans 'Result' %}</h3>
+                            <h3 class="card-title">{% trans 'Evaluation Result' %}</h3>
                         </div>
 
                         <div class="card-body">
@@ -27,7 +27,7 @@
                                     <tr>
                                         <th>#ID</th>
                                         <th>{% trans 'Assignment' %}</th>
-                                        <th>{% trans 'Assignments Marks' %}</th>
+                                        <th>{% trans 'Assignment Mark' %}</th>
                                         
                                         <th>{% trans 'status' %}</th>
                                     </tr>
@@ -50,9 +50,9 @@
                                                 <span class="alert alert-success">{% trans 'Good Work' %}</span>
                                             
                                             {% elif row.headquarter_assignment_marks >= 16 and row.headquarter_assignment_marks <= 18 %}
-                                                <span class="alert alert-success">{% trans 'Ammazing Work' %}</span>
+                                                <span class="alert alert-success">{% trans 'Amazing Work' %}</span>
                                             {% elif row.headquarter_assignment_marks > 18  %}
-                                                <span class="alert alert-success">{% trans 'Wondurful Work' %}</span>
+                                                <span class="alert alert-success">{% trans 'wonderful Work' %}</span>
                                             {% else %}
                                                 <span class="alert alert-danger">{% trans 'Error Up 20' %}</span>
                                             {% endif %}

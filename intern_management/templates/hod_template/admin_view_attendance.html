@@ -52,16 +52,16 @@
                                 <label>{% trans 'Assignment' %} </label>
                                 <select class="form-control" name="headquarter" id="headquarter">
                                     {% for headquarter in headquarters %}
-                                        <option value="{{ headquarter.id }}">{{ headquarter.headquarter_name }}</option>
+                                        <option value="{{ headquarter.id }}">{% trans headquarter.headquarter_name %}</option>
                                     {% endfor %}
                                 </select>
                             </div>
 
                             <div class="form-group">
-                                <label>{% trans 'Session Year' %} </label>
+                                <label>{% trans 'Internship Period' %} </label>
                                 <select class="form-control" name="session_year_id" id="session_year_id">
                                     {% for session_year in session_years %}
-                                        <option value="{{ session_year.id }}">{{ session_year.session_start_year }} to {{ session_year.session_end_year }}</option>
+                                        <option value="{{ session_year.id }}">{{ session_year.session_start_year }} {% trans 'to' %}  {{ session_year.session_end_year }}</option>
                                     {% endfor %}
                                 </select>
                             </div>

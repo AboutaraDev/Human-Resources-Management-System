@@ -1,5 +1,6 @@
 {% extends 'hod_template/base_template.html' %}
 {% load i18n %}
+{% load babel %}
 {% block page_title %}
     {% trans 'Manage Department' %}
 {% endblock page_title %}
@@ -11,7 +12,15 @@
 <section class="content">
         <div class="container-fluid">
 
-            <a class="btn btn-primary" href="{% url 'add_department' %}" role="button">{% trans '+ Add Department' %}</a> <br/>&nbsp;
+            <div class="row">
+                <div class="col-md-6">
+                    <a class="btn btn-primary" href="{% url 'add_department' %}" role="button">{% trans '+ Add Department' %}</a>
+                </div>
+                <div class="col-md-6 text-right">
+                    <a class="btn btn-primary" href="{% url 'generate_department_pdf' %}" role="button">{% trans 'Download PDF' %}</a>
+                </div>
+            </div>
+            <br/>
 
             {% if messages %}
                                 <div class="form-group">
@@ -70,7 +79,7 @@
                                 {% for department in departments %}
                                 <tr>
                                 <td>{{ department.id }}</td>
-                                <td>{{ department.department_name }}</td>
+                                <td>{% trans department.department_name %} </td>
                                 <td>{{ department.created_at }}</td>
                                 <td>{{ department.updated_at }}</td>
                                 <td>

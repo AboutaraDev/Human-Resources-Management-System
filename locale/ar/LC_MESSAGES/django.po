@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 23:22+0100\n"
+"POT-Creation-Date: 2023-07-31 12:34+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,28 +18,229 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-#: .\intern_management\forms.py:13 .\intern_management\forms.py:58
+
+#: .\intern_management\HodViews.py:115 .\intern_management\HodViews.py:236
+#: .\intern_management\HodViews.py:347 .\intern_management\InternViews.py:65
+#: .\intern_management\InternViews.py:113 .\intern_management\StaffViews.py:100
+#: .\intern_management\StaffViews.py:389
+msgid "Invalid Method"
+msgstr "طريقة غير صحيحة"
+
+#: .\intern_management\HodViews.py:129
+msgid "Staff Added Successfully!"
+msgstr "تمت إضافة طاقم عمل بنجاح!"
+
+#: .\intern_management\HodViews.py:132
+msgid "Failed to Add Staff!"
+msgstr "فشل في إضافة طاقم العمل!"
+
+#: .\intern_management\HodViews.py:156
+msgid "<h2>Method Not Allowed</h2>"
+msgstr "<h2>الطريقة غير متاحة</h2>"
+
+#: .\intern_management\HodViews.py:179
+msgid "Staff Updated Successfully."
+msgstr "تم تحديث طاقم عمل بنجاح."
+
+#: .\intern_management\HodViews.py:183
+msgid "Failed to Update Staff."
+msgstr "فشل في تحديث طاقم عمل."
+
+#: .\intern_management\HodViews.py:192
+msgid "Staff Deleted Successfully."
+msgstr "تم حذف طاقم عمل بنجاح."
+
+#: .\intern_management\HodViews.py:195
+msgid "Failed to Delete Staff."
+msgstr "فشل في حذف طاقم العمل!"
+
+#: .\intern_management\HodViews.py:205 .\intern_management\HodViews.py:304
+#: .\intern_management\HodViews.py:431 .\intern_management\HodViews.py:779
+#: .\intern_management\InternViews.py:170 .\intern_management\StaffViews.py:347
+msgid "Invalid Method!"
+msgstr "طريقة غير صحيحة!"
+
+#: .\intern_management\HodViews.py:212
+msgid "Department Added Successfully!"
+msgstr "تمت إضافة القسم بنجاح!"
+
+#: .\intern_management\HodViews.py:215
+msgid "Failed to Add Department!"
+msgstr "فشل إضافة القسم!"
+
+#: .\intern_management\HodViews.py:246
+msgid "Department Updated Successfully."
+msgstr "تم تحديث القسم بنجاح."
+
+#: .\intern_management\HodViews.py:250
+msgid "Failed to Update Department."
+msgstr "فشل في تحديث القسم."
+
+#: .\intern_management\HodViews.py:258
+msgid "Department Deleted Successfully."
+msgstr "تم حذف القسم بنجاح."
+
+#: .\intern_management\HodViews.py:261
+msgid "Failed to Delete Department."
+msgstr "فشل في حذف القسم."
+
+#: .\intern_management\HodViews.py:271
+msgid "'Invalid Method"
+msgstr "طريقة غير صحيحة"
+
+#: .\intern_management\HodViews.py:280
+msgid "Internship Period added Successfully!"
+msgstr "تمت إضافة فترة التدريب بنجاح !"
+
+#: .\intern_management\HodViews.py:283
+msgid "Failed to Add Internship Period"
+msgstr "فشل إضافة فترة التدريب !"
+
+#: .\intern_management\HodViews.py:317
+msgid "Internship Period Updated Successfully."
+msgstr "تم تحديث فترة التدريب بنجاح!"
+
+#: .\intern_management\HodViews.py:320
+#, fuzzy
+#| msgid "Failed to Update Intern."
+msgid "Failed to Update Internship Period."
+msgstr "فشل في تحديث فترة التدريب."
+
+#: .\intern_management\HodViews.py:328
+msgid "Internship Period Deleted Successfully."
+msgstr "تم حذف فترة التدريب بنجاح."
+
+#: .\intern_management\HodViews.py:331
+msgid "Failed to Delete Internship Period."
+msgstr "فشل في حذف فترة التدريب."
+
+#: .\intern_management\HodViews.py:388
+msgid "Intern Added Successfully!"
+msgstr "تمت إضافة المتدرب بنجاح!"
+
+#: .\intern_management\HodViews.py:391
+msgid "Failed to Add Intern!"
+msgstr "فشل إضافة المتدرب!"
+
+#: .\intern_management\HodViews.py:485
+msgid "Intern Updated Successfully!"
+msgstr "تم تحديث المتدرب بنجاح!"
+
+#: .\intern_management\HodViews.py:488
+msgid "Failed to Update Intern."
+msgstr "فشل في تحديث المتدرب."
+
+#: .\intern_management\HodViews.py:498
+msgid "Intern Deleted Successfully."
+msgstr "تم حذف المتدرب بنجاح."
+
+#: .\intern_management\HodViews.py:501
+msgid "Failed to Delete Intern."
+msgstr "فشل في حذف المتدرب."
+
+#: .\intern_management\HodViews.py:517
+msgid "Method Not Allowed!"
+msgstr "الطريقة غير متاحة!"
+
+#: .\intern_management\HodViews.py:535
+msgid "Assignment Added Successfully!"
+msgstr "تمت إضافة المهمة بنجاح!"
+
+#: .\intern_management\HodViews.py:539
+msgid "Failed to Add Assignment!"
+msgstr "فشل إضافة المهمة!"
+
+#: .\intern_management\HodViews.py:567 .\intern_management\InternViews.py:141
+#: .\intern_management\StaffViews.py:128
+msgid "Invalid Method."
+msgstr "طريقة غير صحيحة"
+
+#: .\intern_management\HodViews.py:586
+msgid "Assignment Updated Successfully."
+msgstr "تم تحديث المهمة بنجاح."
+
+#: .\intern_management\HodViews.py:591
+msgid "Failed to Update Assignment."
+msgstr "فشل في تحديث المهمة."
+
+#: .\intern_management\HodViews.py:601
+msgid "Assignment Deleted Successfully."
+msgstr "تم حذف المهمة بنجاح."
+
+#: .\intern_management\HodViews.py:604
+msgid "Failed to Delete Assignment."
+msgstr "فشل في حذف المهمة."
+
+#: .\intern_management\HodViews.py:644 .\intern_management\HodViews.py:667
+msgid "True"
+msgstr "صحيح"
+
+#: .\intern_management\HodViews.py:647 .\intern_management\HodViews.py:670
+msgid "False"
+msgstr "خطأ"
+
+#: .\intern_management\HodViews.py:793 .\intern_management\InternViews.py:190
+#: .\intern_management\StaffViews.py:367
+msgid "Profile Updated Successfully"
+msgstr "تم تحديث الملف الشخصي بنجاح"
+
+#: .\intern_management\HodViews.py:796 .\intern_management\InternViews.py:193
+#: .\intern_management\StaffViews.py:370
+msgid "Failed to Update Profile"
+msgstr "فشل في تحديث الملف الشخصي."
+
+#: .\intern_management\InternViews.py:123 .\intern_management\StaffViews.py:110
+msgid "Applied for Leave."
+msgstr "تم طلب الحصول على المغادرة."
+
+#: .\intern_management\InternViews.py:126 .\intern_management\StaffViews.py:113
+msgid "Failed to Apply Leave"
+msgstr "فشل في تقديم طلب المغادرة"
+
+#: .\intern_management\InternViews.py:150 .\intern_management\StaffViews.py:137
+msgid "Feedback Sent."
+msgstr "تم إرسال التعليق."
+
+#: .\intern_management\InternViews.py:153 .\intern_management\StaffViews.py:140
+msgid "Failed to Send Feedback."
+msgstr "فشل في إرسال التعليق!"
+
+#: .\intern_management\StaffViews.py:408
+msgid "Result Updated Successfully!"
+msgstr "تم تحديث النتيجة بنجاح!"
+
+#: .\intern_management\StaffViews.py:413
+msgid "Result Added Successfully!"
+msgstr "تمت إضافة النتيجة بنجاح!"
+
+#: .\intern_management\StaffViews.py:416
+msgid "Failed to Add Result!"
+msgstr "فشل في إضافة النتيجة!"
+
+#: .\intern_management\forms.py:15 .\intern_management\forms.py:64
 #: .\intern_management\templates\hod_template\admin_profile.html:61
 #: .\intern_management\templates\hod_template\manage_intern_template.html:67
 #: .\intern_management\templates\hod_template\manage_staff_template.html:68
 #: .\intern_management\templates\intern_template\intern_profile.html:61
-#: .\intern_management\templates\login.html:47
+#: .\intern_management\templates\login.html:48
 #: .\intern_management\templates\staff_template\staff_profile.html:61
 #: .\intern_management\templates\staff_template\view_intern_template.html:66
 msgid "Email"
 msgstr "بريد إلكتروني"
 
-#: .\intern_management\forms.py:14
+#: .\intern_management\forms.py:16
 #: .\intern_management\templates\hod_template\add_staff_template.html:66
+#: .\intern_management\templates\hod_template\add_staff_template.html:67
 #: .\intern_management\templates\hod_template\admin_profile.html:76
 #: .\intern_management\templates\intern_template\intern_profile.html:81
-#: .\intern_management\templates\login.html:55
+#: .\intern_management\templates\login.html:56
 #: .\intern_management\templates\staff_template\staff_profile.html:81
 msgid "Password"
 msgstr "كلمة المرور"
 
-#: .\intern_management\forms.py:15 .\intern_management\forms.py:59
+#: .\intern_management\forms.py:17 .\intern_management\forms.py:65
 #: .\intern_management\templates\hod_template\add_staff_template.html:71
+#: .\intern_management\templates\hod_template\add_staff_template.html:72
 #: .\intern_management\templates\hod_template\admin_profile.html:66
 #: .\intern_management\templates\hod_template\edit_staff_template.html:72
 #: .\intern_management\templates\hod_template\manage_intern_template.html:64
@@ -50,8 +251,9 @@ msgstr "كلمة المرور"
 msgid "First Name"
 msgstr "الاسم الأول"
 
-#: .\intern_management\forms.py:16 .\intern_management\forms.py:60
+#: .\intern_management\forms.py:18 .\intern_management\forms.py:66
 #: .\intern_management\templates\hod_template\add_staff_template.html:76
+#: .\intern_management\templates\hod_template\add_staff_template.html:77
 #: .\intern_management\templates\hod_template\admin_profile.html:71
 #: .\intern_management\templates\hod_template\edit_staff_template.html:77
 #: .\intern_management\templates\hod_template\manage_intern_template.html:65
@@ -60,10 +262,11 @@ msgstr "الاسم الأول"
 #: .\intern_management\templates\staff_template\staff_profile.html:71
 #: .\intern_management\templates\staff_template\view_intern_template.html:64
 msgid "Last Name"
-msgstr "اسم العائلة"
+msgstr "اسم العائلي"
 
-#: .\intern_management\forms.py:17 .\intern_management\forms.py:61
+#: .\intern_management\forms.py:19 .\intern_management\forms.py:67
 #: .\intern_management\templates\hod_template\add_staff_template.html:61
+#: .\intern_management\templates\hod_template\add_staff_template.html:62
 #: .\intern_management\templates\hod_template\admin_profile.html:56
 #: .\intern_management\templates\hod_template\edit_staff_template.html:61
 #: .\intern_management\templates\hod_template\manage_intern_template.html:66
@@ -74,8 +277,9 @@ msgstr "اسم العائلة"
 msgid "Username"
 msgstr "اسم المستخدم"
 
-#: .\intern_management\forms.py:18 .\intern_management\forms.py:62
+#: .\intern_management\forms.py:20 .\intern_management\forms.py:68
 #: .\intern_management\templates\hod_template\add_staff_template.html:81
+#: .\intern_management\templates\hod_template\add_staff_template.html:82
 #: .\intern_management\templates\hod_template\edit_staff_template.html:83
 #: .\intern_management\templates\hod_template\manage_intern_template.html:68
 #: .\intern_management\templates\hod_template\manage_staff_template.html:69
@@ -85,16 +289,20 @@ msgstr "اسم المستخدم"
 msgid "Address"
 msgstr "عنوان"
 
-#: .\intern_management\forms.py:44 .\intern_management\forms.py:87
+#: .\intern_management\forms.py:41 .\intern_management\forms.py:85
+msgid " to "
+msgstr " إلى "
+
+#: .\intern_management\forms.py:50 .\intern_management\forms.py:95
 msgid "Male"
-msgstr ""
+msgstr "ذكر"
 
-#: .\intern_management\forms.py:45 .\intern_management\forms.py:88
+#: .\intern_management\forms.py:51 .\intern_management\forms.py:96
 msgid "Female"
-msgstr ""
+msgstr "أنثى"
 
-#: .\intern_management\forms.py:48 .\intern_management\forms.py:91
-#: .\intern_management\templates\hod_template\add_headquarter_template.html:61
+#: .\intern_management\forms.py:54 .\intern_management\forms.py:99
+#: .\intern_management\templates\hod_template\add_headquarter_template.html:63
 #: .\intern_management\templates\hod_template\edit_headquarter_template.html:61
 #: .\intern_management\templates\hod_template\manage_headquarter_template.html:64
 #: .\intern_management\templates\hod_template\manage_intern_template.html:73
@@ -102,106 +310,112 @@ msgstr ""
 #: .\intern_management\templates\staff_template\manage_headquarter_template.html:64
 #: .\intern_management\templates\staff_template\view_intern_template.html:72
 msgid "Department"
-msgstr ""
+msgstr "قسم"
 
-#: .\intern_management\forms.py:49 .\intern_management\forms.py:92
+#: .\intern_management\forms.py:55 .\intern_management\forms.py:100
 #: .\intern_management\templates\hod_template\manage_intern_template.html:69
 #: .\intern_management\templates\staff_template\view_intern_template.html:68
 msgid "Gender"
-msgstr ""
+msgstr "جنس"
 
-#: .\intern_management\forms.py:50 .\intern_management\forms.py:93
+#: .\intern_management\forms.py:56 .\intern_management\forms.py:101
 #: .\intern_management\templates\hod_template\admin_view_attendance.html:62
+#: .\intern_management\templates\staff_template\add_result_template.html:64
+#: .\intern_management\templates\staff_template\take_attendance_template.html:62
 #: .\intern_management\templates\staff_template\update_attendance_template.html:62
-msgid "Session Year"
-msgstr ""
+msgid "Internship Period"
+msgstr "فترة التدريب"
 
-#: .\intern_management\forms.py:53 .\intern_management\forms.py:96
+#: .\intern_management\forms.py:59 .\intern_management\forms.py:104
 #: .\intern_management\templates\hod_template\manage_intern_template.html:70
 #: .\intern_management\templates\staff_template\view_intern_template.html:69
 msgid "Profile Pic"
-msgstr ""
+msgstr "صورة الملف الشخصي"
 
 #: .\intern_management\models.py:35 .\intern_management\models.py:43
 msgid "address"
-msgstr ""
+msgstr "عنوان"
 
 #: .\intern_management\models.py:50
 msgid "department name"
-msgstr ""
+msgstr "اسم القسم"
 
 #: .\intern_management\models.py:57
 msgid "assignment name"
-msgstr ""
+msgstr "إسم المهمة"
 
 #: .\intern_management\models.py:67
 msgid "gender"
-msgstr ""
+msgstr "جنس"
 
 #: .\intern_management\models.py:68
 msgid "profile picture"
-msgstr ""
+msgstr "الصوره الشخصيه"
 
 #: .\intern_management\models.py:100 .\intern_management\models.py:111
 msgid "leave message"
-msgstr ""
+msgstr "رسالة المغادرة"
 
 #: .\intern_management\models.py:110
 msgid "leave date"
-msgstr ""
+msgstr "تاريخ مغادرة"
 
 #: .\intern_management\models.py:121 .\intern_management\models.py:131
 msgid "feedback"
-msgstr ""
+msgstr "تعليق"
 
 #: .\intern_management\models.py:122 .\intern_management\models.py:132
 msgid "feedback reply"
-msgstr ""
+msgstr "الرد على التعليق"
 
 #: .\intern_management\models.py:142 .\intern_management\models.py:151
 msgid "message"
-msgstr ""
+msgstr "رسالة"
 
 #: .\intern_management\templates\base.html:11
 msgid "Intern Management System | Dashboard"
-msgstr ""
+msgstr "نظام إدارة المتدربين | لوحة القيادة"
 
 #: .\intern_management\templates\hod_template\add_department_template.html:4
 msgid "Add Departement"
-msgstr ""
+msgstr "إضافة قسم"
 
 #: .\intern_management\templates\hod_template\add_department_template.html:19
-#: .\intern_management\templates\hod_template\add_department_template.html:64
+#: .\intern_management\templates\hod_template\add_department_template.html:77
 #: .\intern_management\templates\hod_template\sidebar_template.html:77
 msgid "Add Department"
-msgstr ""
+msgstr "إضافة قسم"
 
 #: .\intern_management\templates\hod_template\add_department_template.html:56
 #: .\intern_management\templates\hod_template\edit_department_template.html:56
-#: .\intern_management\templates\hod_template\manage_department_template.html:63
+#: .\intern_management\templates\hod_template\manage_department_template.html:64
 msgid "Department Name"
-msgstr ""
+msgstr "اسم القسم"
 
-#: .\intern_management\templates\hod_template\add_department_template.html:57
+#: .\intern_management\templates\hod_template\add_department_template.html:58
 msgid "Enter Department"
-msgstr ""
+msgstr "أدخل القسم"
 
-#: .\intern_management\templates\hod_template\add_headquarter_template.html:4
-#: .\intern_management\templates\hod_template\add_headquarter_template.html:19
-#: .\intern_management\templates\hod_template\add_headquarter_template.html:82
+#: .\intern_management\templates\hod_template\add_headquarter_template.html:6
+#: .\intern_management\templates\hod_template\add_headquarter_template.html:21
+#: .\intern_management\templates\hod_template\add_headquarter_template.html:84
 #: .\intern_management\templates\hod_template\sidebar_template.html:143
 msgid "Add Assignment"
-msgstr ""
+msgstr "أضف مهمة"
 
-#: .\intern_management\templates\hod_template\add_headquarter_template.html:56
+#: .\intern_management\templates\hod_template\add_headquarter_template.html:58
 #: .\intern_management\templates\hod_template\edit_headquarter_template.html:56
 #: .\intern_management\templates\hod_template\manage_headquarter_template.html:63
 #: .\intern_management\templates\intern_template\intern_view_headquarters.html:63
 #: .\intern_management\templates\staff_template\manage_headquarter_template.html:63
 msgid "Assignment Name"
-msgstr ""
+msgstr "اسم المهمة"
 
-#: .\intern_management\templates\hod_template\add_headquarter_template.html:70
+#: .\intern_management\templates\hod_template\add_headquarter_template.html:59
+msgid "Enter Assignment"
+msgstr "أدخل المهمة"
+
+#: .\intern_management\templates\hod_template\add_headquarter_template.html:72
 #: .\intern_management\templates\hod_template\edit_headquarter_template.html:70
 #: .\intern_management\templates\hod_template\manage_headquarter_template.html:65
 #: .\intern_management\templates\hod_template\staff_feedback_template.html:28
@@ -209,69 +423,80 @@ msgstr ""
 #: .\intern_management\templates\intern_template\intern_view_headquarters.html:65
 #: .\intern_management\templates\staff_template\manage_headquarter_template.html:65
 msgid "Staff"
-msgstr ""
+msgstr "طاقم عمل"
 
 #: .\intern_management\templates\hod_template\add_intern_template.html:4
 #: .\intern_management\templates\hod_template\add_intern_template.html:19
 #: .\intern_management\templates\hod_template\add_intern_template.html:27
 #: .\intern_management\templates\hod_template\sidebar_template.html:120
 msgid "Add Intern"
-msgstr ""
+msgstr "إضافة متدرب"
 
-#: .\intern_management\templates\hod_template\add_intern_template.html:61
-#: .\intern_management\templates\hod_template\add_staff_template.html:127
+#: .\intern_management\templates\hod_template\add_intern_template.html:128
+#: .\intern_management\templates\hod_template\add_staff_template.html:206
 msgid "Email Not Available."
-msgstr ""
+msgstr "البريد الإلكتروني غير متاح."
 
-#: .\intern_management\templates\hod_template\add_intern_template.html:65
-#: .\intern_management\templates\hod_template\add_staff_template.html:131
+#: .\intern_management\templates\hod_template\add_intern_template.html:132
+#: .\intern_management\templates\hod_template\add_staff_template.html:210
 msgid "Email Available."
-msgstr ""
+msgstr "البريد الإلكتروني متاح."
 
-#: .\intern_management\templates\hod_template\add_intern_template.html:93
-#: .\intern_management\templates\hod_template\add_staff_template.html:159
+#: .\intern_management\templates\hod_template\add_intern_template.html:160
+#: .\intern_management\templates\hod_template\add_staff_template.html:238
 msgid "Username Not Available."
-msgstr ""
+msgstr "إسم المستخدم غير متاح."
 
-#: .\intern_management\templates\hod_template\add_intern_template.html:97
-#: .\intern_management\templates\hod_template\add_staff_template.html:163
+#: .\intern_management\templates\hod_template\add_intern_template.html:164
+#: .\intern_management\templates\hod_template\add_staff_template.html:242
 msgid "Username Available."
-msgstr ""
+msgstr "إسم المستخدم متاح."
 
 #: .\intern_management\templates\hod_template\add_session_template.html:4
+msgid "Add Internship Period Year"
+msgstr "أضف سنة فترة التدريب"
+
 #: .\intern_management\templates\hod_template\add_session_template.html:19
-#: .\intern_management\templates\hod_template\add_session_template.html:69
-msgid "Add Session Year"
-msgstr ""
+msgid "Add Internship Period"
+msgstr "أضف فترة التدريب"
 
 #: .\intern_management\templates\hod_template\add_session_template.html:56
 #: .\intern_management\templates\hod_template\edit_session_template.html:56
 #: .\intern_management\templates\hod_template\manage_session_template.html:63
-msgid "Session Start Year"
-msgstr ""
+msgid "Period Start Year"
+msgstr "سنة بدء فترة التدريب"
 
 #: .\intern_management\templates\hod_template\add_session_template.html:61
 #: .\intern_management\templates\hod_template\edit_session_template.html:61
 #: .\intern_management\templates\hod_template\manage_session_template.html:64
-msgid "Session End Year"
-msgstr ""
+msgid "Period End Year"
+msgstr "سنة نهاية فترة التدريب"
+
+#: .\intern_management\templates\hod_template\add_session_template.html:69
+#: .\intern_management\templates\hod_template\sidebar_template.html:98
+msgid "Add Period"
+msgstr "أضف فترة التدريب"
 
 #: .\intern_management\templates\hod_template\add_staff_template.html:4
 #: .\intern_management\templates\hod_template\add_staff_template.html:19
 #: .\intern_management\templates\hod_template\add_staff_template.html:92
 #: .\intern_management\templates\hod_template\sidebar_template.html:56
 msgid "Add Staff"
-msgstr ""
+msgstr "إضافة طاقم العمل"
 
 #: .\intern_management\templates\hod_template\add_staff_template.html:56
 #: .\intern_management\templates\hod_template\edit_staff_template.html:56
 msgid "Email address"
-msgstr ""
+msgstr "عنوان البريد الإلكتروني"
+
+#: .\intern_management\templates\hod_template\add_staff_template.html:57
+msgid "Enter email"
+msgstr "أدخل البريد الإلكتروني"
 
 #: .\intern_management\templates\hod_template\admin_profile.html:4
 #: .\intern_management\templates\hod_template\admin_profile.html:19
 #: .\intern_management\templates\hod_template\admin_profile.html:84
-#: .\intern_management\templates\hod_template\base_template.html:69
+#: .\intern_management\templates\hod_template\base_template.html:72
 #: .\intern_management\templates\intern_template\base_template.html:66
 #: .\intern_management\templates\intern_template\intern_profile.html:4
 #: .\intern_management\templates\intern_template\intern_profile.html:19
@@ -281,13 +506,13 @@ msgstr ""
 #: .\intern_management\templates\staff_template\staff_profile.html:19
 #: .\intern_management\templates\staff_template\staff_profile.html:89
 msgid "Update Profile"
-msgstr ""
+msgstr "تحديث حساب تعريفي"
 
 #: .\intern_management\templates\hod_template\admin_profile.html:77
 #: .\intern_management\templates\intern_template\intern_profile.html:82
 #: .\intern_management\templates\staff_template\staff_profile.html:82
 msgid "Fill only if you want to change Password."
-msgstr ""
+msgstr "املأ فقط إذا كنت تريد تغيير كلمة المرور."
 
 #: .\intern_management\templates\hod_template\admin_view_attendance.html:4
 #: .\intern_management\templates\hod_template\admin_view_attendance.html:19
@@ -295,7 +520,7 @@ msgstr ""
 #: .\intern_management\templates\intern_template\intern_view_attendance.html:19
 #: .\intern_management\templates\intern_template\sidebar_template.html:46
 msgid "View Attendance"
-msgstr ""
+msgstr "عرض الحضور"
 
 #: .\intern_management\templates\hod_template\admin_view_attendance.html:53
 #: .\intern_management\templates\intern_template\intern_view_attendance.html:55
@@ -305,76 +530,83 @@ msgstr ""
 #: .\intern_management\templates\staff_template\take_attendance_template.html:53
 #: .\intern_management\templates\staff_template\update_attendance_template.html:53
 msgid "Assignment"
-msgstr ""
+msgstr "مهمة"
+
+#: .\intern_management\templates\hod_template\admin_view_attendance.html:65
+#: .\intern_management\templates\staff_template\take_attendance_template.html:65
+#: .\intern_management\templates\staff_template\update_attendance_template.html:65
+msgid "to"
+msgstr "إلى"
 
 #: .\intern_management\templates\hod_template\admin_view_attendance.html:75
 #: .\intern_management\templates\staff_template\update_attendance_template.html:75
 msgid "Fetch Attendance Date"
-msgstr ""
+msgstr "جلب تاريخ الحضور"
 
 #: .\intern_management\templates\hod_template\admin_view_attendance.html:80
 msgid "Attendance Date"
-msgstr ""
+msgstr "تاريخ الحضور"
 
 #: .\intern_management\templates\hod_template\admin_view_attendance.html:99
 #: .\intern_management\templates\staff_template\update_attendance_template.html:99
 msgid "Fetch Intern Data"
-msgstr ""
+msgstr "جلب بيانات المتدرب"
 
 #: .\intern_management\templates\hod_template\admin_view_attendance.html:168
 #: .\intern_management\templates\staff_template\update_attendance_template.html:168
 msgid "No Attendance Data Found."
-msgstr ""
+msgstr "لم يتم العثور على بيانات الحضور."
 
 #: .\intern_management\templates\hod_template\admin_view_attendance.html:178
 #: .\intern_management\templates\staff_template\update_attendance_template.html:178
 msgid "Error in getting Attendance Dates."
-msgstr ""
+msgstr "خطأ في الحصول على تواريخ الحضور."
 
 #: .\intern_management\templates\hod_template\admin_view_attendance.html:207
 #: .\intern_management\templates\staff_template\update_attendance_template.html:207
 msgid "Intern Attendance:"
-msgstr ""
+msgstr "حضور المتدرب:"
 
 #: .\intern_management\templates\hod_template\admin_view_attendance.html:220
-#: .\intern_management\templates\intern_template\intern_attendance_data.html:63
 #: .\intern_management\templates\intern_template\intern_home_template.html:53
 #: .\intern_management\templates\intern_template\intern_home_template.html:174
 #: .\intern_management\templates\staff_template\update_attendance_template.html:228
 msgid "Present"
-msgstr ""
+msgstr "حاضر"
 
 #: .\intern_management\templates\hod_template\admin_view_attendance.html:224
+#: .\intern_management\templates\intern_template\intern_home_template.html:38
+#: .\intern_management\templates\intern_template\intern_home_template.html:185
 #: .\intern_management\templates\staff_template\update_attendance_template.html:232
 msgid "Absent"
-msgstr ""
+msgstr "غائب"
 
 #: .\intern_management\templates\hod_template\admin_view_attendance.html:237
 #: .\intern_management\templates\staff_template\add_result_template.html:148
 #: .\intern_management\templates\staff_template\take_attendance_template.html:133
 #: .\intern_management\templates\staff_template\update_attendance_template.html:247
 msgid "Error in Fetching Interns."
-msgstr ""
+msgstr "خطأ في جلب المتدربين."
 
 #: .\intern_management\templates\hod_template\base_template.html:10
 msgid "Intern Management System | Admin Dashboard"
-msgstr ""
+msgstr "نظام إدارة المتدربين | لوحة تحكم المسؤول"
 
-#: .\intern_management\templates\hod_template\base_template.html:57
+#: .\intern_management\templates\hod_template\base_template.html:60
 msgid "Intern Management System | Admin"
-msgstr ""
+msgstr "نظام إدارة المتدربين | المسؤول"
 
-#: .\intern_management\templates\hod_template\base_template.html:74
+#: .\intern_management\templates\hod_template\base_template.html:77
 #: .\intern_management\templates\intern_template\base_template.html:71
 #: .\intern_management\templates\staff_template\base_template.html:71
 msgid "Logout"
-msgstr ""
+msgstr "تسجيل خروج"
 
-#: .\intern_management\templates\hod_template\base_template.html:130
+#: .\intern_management\templates\hod_template\base_template.html:135
 #: .\intern_management\templates\hod_template\sidebar_template.html:35
-#: .\intern_management\templates\intern_template\base_template.html:124
+#: .\intern_management\templates\intern_template\base_template.html:126
 #: .\intern_management\templates\intern_template\sidebar_template.html:35
-#: .\intern_management\templates\staff_template\base_template.html:125
+#: .\intern_management\templates\staff_template\base_template.html:127
 #: .\intern_management\templates\staff_template\sidebar_template.html:37
 msgid "Home"
 msgstr "الرئسية"
@@ -382,176 +614,204 @@ msgstr "الرئسية"
 #: .\intern_management\templates\hod_template\edit_department_template.html:4
 #, python-format
 msgid "Edit Department | #ID : %(deptId)s "
-msgstr "قسم التحرير | #ID: %(deptId)s "
+msgstr "تحرير القسم | #ID: %(deptId)s "
 
 #: .\intern_management\templates\hod_template\edit_department_template.html:19
 msgid "Edit Department"
-msgstr ""
+msgstr "تحرير القسم"
 
 #: .\intern_management\templates\hod_template\edit_department_template.html:65
 msgid "Update Department"
-msgstr ""
+msgstr " تحديث القسم"
 
 #: .\intern_management\templates\hod_template\edit_headquarter_template.html:4
 #, python-format
 msgid "Edit Assignment | #ID : %(hedId)s "
-msgstr ""
+msgstr "تحرير المهمة | # ID: %(hedId)s "
 
 #: .\intern_management\templates\hod_template\edit_headquarter_template.html:19
 msgid "Edit Assignment"
-msgstr ""
+msgstr "تحرير المهمة"
 
 #: .\intern_management\templates\hod_template\edit_headquarter_template.html:85
 msgid "Update Assignment"
-msgstr ""
+msgstr "تحديث المهمة"
 
 #: .\intern_management\templates\hod_template\edit_intern_template.html:4
 #, python-format
 msgid " Edit Intern | Username: %(usern)s | #ID : %(idU)s "
-msgstr ""
+msgstr "تحرير المتدرب | اسم المستخدم: %(usern)s | #ID : %(idU)s "
 
 #: .\intern_management\templates\hod_template\edit_intern_template.html:19
 msgid "Edit Intern"
-msgstr ""
+msgstr "تحرير المتدرب"
 
 #: .\intern_management\templates\hod_template\edit_intern_template.html:26
 msgid "Update Intern"
-msgstr ""
+msgstr "تحديث المتدرب"
 
 #: .\intern_management\templates\hod_template\edit_session_template.html:4
+msgid "Edit Internship Period Year"
+msgstr "تحرير سنة فترة التدريب"
+
 #: .\intern_management\templates\hod_template\edit_session_template.html:19
-msgid "Edit Session Year"
-msgstr ""
+msgid "Edit Period Year"
+msgstr "تحرير فترة التدريب"
 
 #: .\intern_management\templates\hod_template\edit_session_template.html:70
-msgid "Update Session Year"
-msgstr ""
+msgid "Update Period Year"
+msgstr "تحديث سنة فترة التدريب"
 
 #: .\intern_management\templates\hod_template\edit_staff_template.html:4
 #, python-format
 msgid "Edit Staff | Username: %(sUnser)s | #ID : %(sId)s "
-msgstr ""
+msgstr "تحرير فريق العمل | اسم المستخدم: %(sUnser)s | #ID : %(sId)s "
 
 #: .\intern_management\templates\hod_template\edit_staff_template.html:19
 msgid "Edit Staff"
-msgstr ""
+msgstr "تحرير طاقم العمل"
 
 #: .\intern_management\templates\hod_template\edit_staff_template.html:94
 msgid "Update Staff"
-msgstr ""
+msgstr "تحديث طاقم العمل"
+
+#: .\intern_management\templates\hod_template\footer.html:3
+#: .\intern_management\templates\intern_template\footer.html:3
+#: .\intern_management\templates\staff_template\footer.html:3
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+#: .\intern_management\templates\hod_template\footer.html:3
+#: .\intern_management\templates\hod_template\sidebar_template.html:9
+#: .\intern_management\templates\intern_template\footer.html:3
+#: .\intern_management\templates\intern_template\sidebar_template.html:9
+#: .\intern_management\templates\staff_template\footer.html:3
+#: .\intern_management\templates\staff_template\sidebar_template.html:11
+msgid "Province Zagora"
+msgstr "عمالة زاكورة"
 
 #: .\intern_management\templates\hod_template\footer.html:4
 #: .\intern_management\templates\intern_template\footer.html:4
+#: .\intern_management\templates\staff_template\footer.html:4
 msgid "All rights reserved."
-msgstr ""
+msgstr "كل الحقوق محفوظة."
 
-#: .\intern_management\templates\hod_template\home_content.html:17
+#: .\intern_management\templates\hod_template\footer.html:6
+#: .\intern_management\templates\intern_template\footer.html:6
+#: .\intern_management\templates\staff_template\footer.html:6
+msgid "Version"
+msgstr "إصدار"
+
+#: .\intern_management\templates\hod_template\home_content.html:18
 msgid "Total Interns"
-msgstr ""
+msgstr "إجمالي المتدربين"
 
-#: .\intern_management\templates\hod_template\home_content.html:22
-#: .\intern_management\templates\hod_template\home_content.html:37
-#: .\intern_management\templates\hod_template\home_content.html:53
+#: .\intern_management\templates\hod_template\home_content.html:23
+#: .\intern_management\templates\hod_template\home_content.html:38
+#: .\intern_management\templates\hod_template\home_content.html:54
+#: .\intern_management\templates\intern_template\intern_home_template.html:28
+#: .\intern_management\templates\intern_template\intern_home_template.html:43
 #: .\intern_management\templates\intern_template\intern_home_template.html:58
 #: .\intern_management\templates\intern_template\intern_home_template.html:74
 #: .\intern_management\templates\staff_template\staff_home_template.html:28
 #: .\intern_management\templates\staff_template\staff_home_template.html:45
 #: .\intern_management\templates\staff_template\staff_home_template.html:60
+#: .\intern_management\templates\staff_template\staff_home_template.html:75
 msgid "More info"
-msgstr ""
+msgstr "مزيد من المعلومات"
 
-#: .\intern_management\templates\hod_template\home_content.html:32
+#: .\intern_management\templates\hod_template\home_content.html:33
 msgid "Total Staffs"
-msgstr ""
+msgstr "إجمالي طاقم العمل"
 
-#: .\intern_management\templates\hod_template\home_content.html:48
+#: .\intern_management\templates\hod_template\home_content.html:49
 msgid "Total Departments"
-msgstr ""
+msgstr "إجمالي الأقسام"
 
-#: .\intern_management\templates\hod_template\home_content.html:63
+#: .\intern_management\templates\hod_template\home_content.html:64
 #: .\intern_management\templates\intern_template\intern_home_template.html:69
 #: .\intern_management\templates\staff_template\staff_home_template.html:70
 msgid "Total Assignments"
-msgstr ""
+msgstr "إجمالي المهام"
 
-#: .\intern_management\templates\hod_template\home_content.html:68
+#: .\intern_management\templates\hod_template\home_content.html:69
 msgid "More info "
-msgstr ""
+msgstr "مزيد من المعلومات"
 
-#: .\intern_management\templates\hod_template\home_content.html:80
+#: .\intern_management\templates\hod_template\home_content.html:81
 msgid "Intern and Staff Chart"
-msgstr ""
+msgstr "مبيان المتدربين و طاقم عمل"
 
-#: .\intern_management\templates\hod_template\home_content.html:100
+#: .\intern_management\templates\hod_template\home_content.html:101
 msgid "Total Assignments in Each Departement"
-msgstr ""
+msgstr "إجمالي المهام في كل قسم"
 
-#: .\intern_management\templates\hod_template\home_content.html:124
+#: .\intern_management\templates\hod_template\home_content.html:125
 msgid "Total Interns in Each Department"
-msgstr ""
+msgstr "إجمالي المتدربين في كل قسم"
 
-#: .\intern_management\templates\hod_template\home_content.html:143
+#: .\intern_management\templates\hod_template\home_content.html:144
 msgid "Total Interns in Each Assignment"
-msgstr ""
+msgstr "إجمالي المتدربين في كل مهمة"
 
-#: .\intern_management\templates\hod_template\home_content.html:164
+#: .\intern_management\templates\hod_template\home_content.html:165
 msgid "Staff Attendance vs Leave"
-msgstr ""
+msgstr "حضور طاقم عمل مقابل المغادرة"
 
-#: .\intern_management\templates\hod_template\home_content.html:194
+#: .\intern_management\templates\hod_template\home_content.html:195
 msgid "Intern Attendance vs Leave"
-msgstr ""
-
-#: .\intern_management\templates\hod_template\home_content.html:234
-msgid "Interns"
-msgstr ""
+msgstr "الحضور المتدرب مقابل المغادرة"
 
 #: .\intern_management\templates\hod_template\home_content.html:235
-msgid "Staffs"
-msgstr ""
+msgid "Interns"
+msgstr "المتدربين"
 
-#: .\intern_management\templates\hod_template\home_content.html:365
-#: .\intern_management\templates\hod_template\home_content.html:421
+#: .\intern_management\templates\hod_template\home_content.html:236
+msgid "Staffs"
+msgstr "طاقم العمل"
+
+#: .\intern_management\templates\hod_template\home_content.html:380
+#: .\intern_management\templates\hod_template\home_content.html:436
 #: .\intern_management\templates\staff_template\staff_home_template.html:162
 msgid "Leave"
-msgstr ""
+msgstr "المغادرة"
 
-#: .\intern_management\templates\hod_template\home_content.html:376
-#: .\intern_management\templates\hod_template\home_content.html:432
+#: .\intern_management\templates\hod_template\home_content.html:391
+#: .\intern_management\templates\hod_template\home_content.html:447
 #: .\intern_management\templates\staff_template\staff_home_template.html:163
 msgid "Attendance"
-msgstr ""
+msgstr "الحضور"
 
 #: .\intern_management\templates\hod_template\intern_feedback_template.html:4
 #: .\intern_management\templates\hod_template\intern_feedback_template.html:19
 #: .\intern_management\templates\hod_template\sidebar_template.html:168
 msgid "Intern Feedback"
-msgstr ""
+msgstr "تعليقات المتدربين"
 
 #: .\intern_management\templates\hod_template\intern_feedback_template.html:28
 #: .\intern_management\templates\hod_template\intern_leave_view.html:28
-#: .\intern_management\templates\login.html:33
+#: .\intern_management\templates\login.html:34
 msgid "Intern"
 msgstr "المتدرب"
 
 #: .\intern_management\templates\hod_template\intern_feedback_template.html:29
 #: .\intern_management\templates\hod_template\intern_leave_view.html:29
 msgid "Intern Name"
-msgstr ""
+msgstr "اسم المتدرب"
 
 #: .\intern_management\templates\hod_template\intern_feedback_template.html:30
-msgid "Intern Session"
-msgstr ""
+msgid "Intern Period"
+msgstr "فترة التدريب للمتدرب"
 
 #: .\intern_management\templates\hod_template\intern_feedback_template.html:31
 #: .\intern_management\templates\hod_template\staff_feedback_template.html:30
 msgid "Message"
-msgstr ""
+msgstr "رسالة"
 
 #: .\intern_management\templates\hod_template\intern_feedback_template.html:32
 #: .\intern_management\templates\hod_template\staff_feedback_template.html:31
 msgid "Sended On"
-msgstr ""
+msgstr "تم الإرسال في"
 
 #: .\intern_management\templates\hod_template\intern_feedback_template.html:33
 #: .\intern_management\templates\hod_template\intern_feedback_template.html:48
@@ -560,40 +820,45 @@ msgstr ""
 #: .\intern_management\templates\hod_template\staff_feedback_template.html:46
 #: .\intern_management\templates\hod_template\staff_feedback_template.html:88
 msgid "Reply"
-msgstr ""
+msgstr "الرد"
 
 #: .\intern_management\templates\hod_template\intern_feedback_template.html:77
 #: .\intern_management\templates\hod_template\staff_feedback_template.html:75
 msgid "Reply Feedback"
-msgstr ""
+msgstr "الرد على التعليق"
 
 #: .\intern_management\templates\hod_template\intern_feedback_template.html:83
 #: .\intern_management\templates\hod_template\staff_feedback_template.html:81
 msgid "Reply to:"
-msgstr ""
+msgstr "الرد على:"
+
+#: .\intern_management\templates\hod_template\intern_feedback_template.html:117
+#: .\intern_management\templates\hod_template\staff_feedback_template.html:115
+msgid "Sending Reply..."
+msgstr "إرسال الرد ..."
 
 #: .\intern_management\templates\hod_template\intern_feedback_template.html:139
 #: .\intern_management\templates\hod_template\staff_feedback_template.html:137
 msgid "Reply Sent!"
-msgstr ""
+msgstr "تم إرسال الرد!"
 
 #: .\intern_management\templates\hod_template\intern_feedback_template.html:143
 #: .\intern_management\templates\hod_template\staff_feedback_template.html:141
 msgid "Failed to Send Reply!"
-msgstr ""
+msgstr "فشل في إرسال الرد!"
 
 #: .\intern_management\templates\hod_template\intern_feedback_template.html:151
 #: .\intern_management\templates\hod_template\staff_feedback_template.html:149
 msgid "Error in Sending Feedback Reply."
-msgstr ""
+msgstr "خطأ في إرسال رد التعليقات."
 
 #: .\intern_management\templates\hod_template\intern_leave_view.html:4
 msgid "Leave Apply by Interns"
-msgstr ""
+msgstr "طلبات المغادرة  للمتدربين"
 
 #: .\intern_management\templates\hod_template\intern_leave_view.html:19
 msgid "Leave Apply by interns"
-msgstr ""
+msgstr "طلبات المغادرة  للمتدربين"
 
 #: .\intern_management\templates\hod_template\intern_leave_view.html:30
 #: .\intern_management\templates\hod_template\staff_leave_view.html:30
@@ -602,68 +867,68 @@ msgstr ""
 #: .\intern_management\templates\staff_template\staff_apply_leave_template.html:54
 #: .\intern_management\templates\staff_template\staff_apply_leave_template.html:94
 msgid "Leave Date"
-msgstr ""
+msgstr "تاريخ المغادرة"
 
 #: .\intern_management\templates\hod_template\intern_leave_view.html:31
 #: .\intern_management\templates\hod_template\staff_leave_view.html:31
 #: .\intern_management\templates\intern_template\intern_apply_leave.html:95
 #: .\intern_management\templates\staff_template\staff_apply_leave_template.html:95
 msgid "Leave Message"
-msgstr ""
+msgstr "رسالة المغادرة"
 
 #: .\intern_management\templates\hod_template\intern_leave_view.html:32
 #: .\intern_management\templates\hod_template\staff_leave_view.html:32
 msgid "Applied On"
-msgstr ""
+msgstr "تم الطلب"
 
 #: .\intern_management\templates\hod_template\intern_leave_view.html:33
-#: .\intern_management\templates\hod_template\manage_department_template.html:66
+#: .\intern_management\templates\hod_template\manage_department_template.html:67
 #: .\intern_management\templates\hod_template\manage_headquarter_template.html:68
 #: .\intern_management\templates\hod_template\manage_intern_template.html:76
 #: .\intern_management\templates\hod_template\manage_session_template.html:65
 #: .\intern_management\templates\hod_template\manage_staff_template.html:72
 #: .\intern_management\templates\hod_template\staff_leave_view.html:33
 msgid "Action"
-msgstr ""
+msgstr "فعل"
 
 #: .\intern_management\templates\hod_template\intern_leave_view.html:48
 #: .\intern_management\templates\hod_template\staff_leave_view.html:48
 msgid "Approve"
-msgstr ""
+msgstr "موافقة"
 
 #: .\intern_management\templates\hod_template\intern_leave_view.html:49
 #: .\intern_management\templates\hod_template\staff_leave_view.html:49
 msgid "Reject"
-msgstr ""
+msgstr "رفض"
 
 #: .\intern_management\templates\hod_template\intern_leave_view.html:51
 #: .\intern_management\templates\hod_template\staff_leave_view.html:51
 #: .\intern_management\templates\intern_template\intern_apply_leave.html:107
 #: .\intern_management\templates\staff_template\staff_apply_leave_template.html:107
 msgid "Approved"
-msgstr ""
+msgstr "طلب مقبول"
 
 #: .\intern_management\templates\hod_template\intern_leave_view.html:53
 #: .\intern_management\templates\hod_template\staff_leave_view.html:53
 #: .\intern_management\templates\intern_template\intern_apply_leave.html:109
 #: .\intern_management\templates\staff_template\staff_apply_leave_template.html:109
 msgid "Rejected"
-msgstr ""
+msgstr "طلب مرفوض"
 
-#: .\intern_management\templates\hod_template\manage_department_template.html:4
+#: .\intern_management\templates\hod_template\manage_department_template.html:5
 #: .\intern_management\templates\hod_template\sidebar_template.html:67
 msgid "Manage Department"
-msgstr ""
+msgstr "إدارة القسم"
 
-#: .\intern_management\templates\hod_template\manage_department_template.html:14
+#: .\intern_management\templates\hod_template\manage_department_template.html:15
 msgid "+ Add Department"
-msgstr ""
+msgstr "+ اضافة قسم"
 
-#: .\intern_management\templates\hod_template\manage_department_template.html:45
+#: .\intern_management\templates\hod_template\manage_department_template.html:46
 msgid "Department Details"
-msgstr ""
+msgstr "تفاصيل القسم"
 
-#: .\intern_management\templates\hod_template\manage_department_template.html:49
+#: .\intern_management\templates\hod_template\manage_department_template.html:50
 #: .\intern_management\templates\hod_template\manage_headquarter_template.html:49
 #: .\intern_management\templates\hod_template\manage_intern_template.html:50
 #: .\intern_management\templates\hod_template\manage_session_template.html:49
@@ -671,200 +936,212 @@ msgstr ""
 #: .\intern_management\templates\staff_template\manage_headquarter_template.html:49
 #: .\intern_management\templates\staff_template\view_intern_template.html:49
 msgid "Search"
-msgstr ""
+msgstr "بحث"
 
-#: .\intern_management\templates\hod_template\manage_department_template.html:64
+#: .\intern_management\templates\hod_template\manage_department_template.html:65
 #: .\intern_management\templates\hod_template\manage_headquarter_template.html:66
 #: .\intern_management\templates\intern_template\intern_view_headquarters.html:66
 #: .\intern_management\templates\staff_template\manage_headquarter_template.html:66
 msgid "Created At"
-msgstr ""
+msgstr "أنشئت في"
 
-#: .\intern_management\templates\hod_template\manage_department_template.html:65
+#: .\intern_management\templates\hod_template\manage_department_template.html:66
 #: .\intern_management\templates\hod_template\manage_headquarter_template.html:67
 #: .\intern_management\templates\intern_template\intern_view_headquarters.html:67
 #: .\intern_management\templates\staff_template\manage_headquarter_template.html:67
 msgid "Updated At"
-msgstr ""
+msgstr "تم التحديث في"
 
-#: .\intern_management\templates\hod_template\manage_department_template.html:77
+#: .\intern_management\templates\hod_template\manage_department_template.html:78
 #: .\intern_management\templates\hod_template\manage_headquarter_template.html:81
 #: .\intern_management\templates\hod_template\manage_intern_template.html:96
 #: .\intern_management\templates\hod_template\manage_session_template.html:75
 #: .\intern_management\templates\hod_template\manage_staff_template.html:87
 msgid "Edit"
-msgstr ""
+msgstr "تحرير"
 
-#: .\intern_management\templates\hod_template\manage_department_template.html:78
+#: .\intern_management\templates\hod_template\manage_department_template.html:79
 #: .\intern_management\templates\hod_template\manage_headquarter_template.html:82
 #: .\intern_management\templates\hod_template\manage_intern_template.html:97
 #: .\intern_management\templates\hod_template\manage_session_template.html:76
 #: .\intern_management\templates\hod_template\manage_staff_template.html:88
 msgid "Delete"
-msgstr ""
+msgstr "حذف"
 
 #: .\intern_management\templates\hod_template\manage_headquarter_template.html:4
 msgid "Manage Assignments"
-msgstr ""
+msgstr "إدارة المهام"
 
 #: .\intern_management\templates\hod_template\manage_headquarter_template.html:14
 msgid "+ Add Assignment"
-msgstr ""
+msgstr "+ إضافة مهمة"
 
 #: .\intern_management\templates\hod_template\manage_headquarter_template.html:45
 #: .\intern_management\templates\intern_template\intern_view_headquarters.html:45
 #: .\intern_management\templates\staff_template\manage_headquarter_template.html:45
 msgid "Assignment Details"
-msgstr ""
+msgstr "تفاصيل المهمة"
 
 #: .\intern_management\templates\hod_template\manage_intern_template.html:4
 #: .\intern_management\templates\hod_template\sidebar_template.html:110
 msgid "Manage Intern"
-msgstr ""
+msgstr "إدارة المتدرب"
 
 #: .\intern_management\templates\hod_template\manage_intern_template.html:14
 msgid "+ Add Intern"
-msgstr ""
+msgstr "+ اضافة متدرب"
 
 #: .\intern_management\templates\hod_template\manage_intern_template.html:46
 #: .\intern_management\templates\staff_template\view_intern_template.html:45
 msgid "Intern Details"
-msgstr ""
+msgstr "تفاصيل المتدرب"
 
 #: .\intern_management\templates\hod_template\manage_intern_template.html:71
 #: .\intern_management\templates\staff_template\view_intern_template.html:70
-msgid "Start Year"
-msgstr ""
+msgid "Start Period"
+msgstr "سنة بدء التدريب"
 
 #: .\intern_management\templates\hod_template\manage_intern_template.html:72
 #: .\intern_management\templates\staff_template\view_intern_template.html:71
-msgid "End Year"
-msgstr ""
+msgid "End Period"
+msgstr "سنة نهاية التدريب"
 
 #: .\intern_management\templates\hod_template\manage_intern_template.html:74
 #: .\intern_management\templates\hod_template\manage_staff_template.html:70
 #: .\intern_management\templates\staff_template\view_intern_template.html:73
 msgid "Last Login"
-msgstr ""
+msgstr "آخر تسجيل دخول"
 
 #: .\intern_management\templates\hod_template\manage_intern_template.html:75
 #: .\intern_management\templates\hod_template\manage_staff_template.html:71
 #: .\intern_management\templates\staff_template\view_intern_template.html:74
 msgid "Date Joined"
-msgstr ""
+msgstr "تاريخ الانضمام"
 
 #: .\intern_management\templates\hod_template\manage_session_template.html:4
-#: .\intern_management\templates\hod_template\sidebar_template.html:88
-msgid "Manage Session"
-msgstr ""
+msgid "Manage Internship Period"
+msgstr "إدارة فترة التدريب"
 
 #: .\intern_management\templates\hod_template\manage_session_template.html:14
-msgid "+ Add Session"
-msgstr ""
+msgid "+ Add Period"
+msgstr "+ اضافة فترة التدريب"
 
 #: .\intern_management\templates\hod_template\manage_session_template.html:45
-msgid "Session Details"
-msgstr ""
+msgid "Period Details"
+msgstr "تفاصيل فترة التدريب"
 
 #: .\intern_management\templates\hod_template\manage_staff_template.html:4
 #: .\intern_management\templates\hod_template\sidebar_template.html:46
 msgid "Manage Staff"
-msgstr ""
+msgstr "إدارة طاقم العمل"
 
 #: .\intern_management\templates\hod_template\manage_staff_template.html:14
 msgid "+ Add Staff"
-msgstr ""
+msgstr "+ إضافة طاقم العمل"
 
 #: .\intern_management\templates\hod_template\manage_staff_template.html:47
 msgid "Staff Details"
-msgstr ""
+msgstr "تفاصيل طاقم العمل"
 
-#: .\intern_management\templates\hod_template\sidebar_template.html:98
-msgid "Add Session"
-msgstr ""
+#: .\intern_management\templates\hod_template\sidebar_template.html:88
+msgid "Manage Period"
+msgstr "إدارة فترة التدريب"
 
 #: .\intern_management\templates\hod_template\sidebar_template.html:133
 msgid "Manage Assignment"
-msgstr ""
+msgstr "إدارة المهمة"
 
 #: .\intern_management\templates\hod_template\sidebar_template.html:178
 #: .\intern_management\templates\hod_template\staff_feedback_template.html:4
 #: .\intern_management\templates\hod_template\staff_feedback_template.html:19
 msgid "Staff Feedback"
-msgstr ""
+msgstr "تعليقات طاقم العمل"
 
 #: .\intern_management\templates\hod_template\sidebar_template.html:188
 msgid "Intern Leave"
-msgstr ""
+msgstr "مغادرة المتدرب"
 
 #: .\intern_management\templates\hod_template\sidebar_template.html:198
 msgid "Staff Leave"
-msgstr ""
+msgstr "مغادرة طاقم العمل"
 
 #: .\intern_management\templates\hod_template\staff_feedback_template.html:29
 #: .\intern_management\templates\hod_template\staff_leave_view.html:29
 msgid "Staff Name"
-msgstr ""
+msgstr "اسم طاقم العمل"
 
 #: .\intern_management\templates\hod_template\staff_leave_view.html:4
 #: .\intern_management\templates\hod_template\staff_leave_view.html:19
 msgid "Leave Apply by Staffs"
-msgstr ""
+msgstr "طلب المغادرة لطاقم العمل"
 
 #: .\intern_management\templates\intern_template\base_template.html:10
 #: .\intern_management\templates\intern_template\base_template.html:54
 msgid "Intern Management System | Intern Dashboard"
-msgstr ""
+msgstr "نظام إدارة المتدربين | لوحة القيادة للمتدرب"
 
 #: .\intern_management\templates\intern_template\intern_apply_leave.html:4
 #: .\intern_management\templates\staff_template\staff_apply_leave_template.html:4
 msgid "Leave Report and Apply for Leave"
-msgstr ""
+msgstr "ترك تقرير والتقدم بطلب للحصول على المغادرة"
 
 #: .\intern_management\templates\intern_template\intern_apply_leave.html:19
 #: .\intern_management\templates\staff_template\staff_apply_leave_template.html:19
 msgid "Apply For Leave"
-msgstr ""
+msgstr "تقدم بطلب للحصول على مغادرة"
 
 #: .\intern_management\templates\intern_template\intern_apply_leave.html:59
 #: .\intern_management\templates\staff_template\staff_apply_leave_template.html:59
 msgid "Leave Reason"
-msgstr ""
+msgstr "سبب المغادرة"
 
 #: .\intern_management\templates\intern_template\intern_apply_leave.html:60
 #: .\intern_management\templates\staff_template\staff_apply_leave_template.html:60
 msgid "Leave Messge"
-msgstr ""
+msgstr "رسالة المغادرة"
 
 #: .\intern_management\templates\intern_template\intern_apply_leave.html:68
 #: .\intern_management\templates\intern_template\sidebar_template.html:70
 #: .\intern_management\templates\staff_template\staff_apply_leave_template.html:68
 msgid "Apply for Leave"
-msgstr ""
+msgstr "تقدم بطلب للحصول على مغادرة"
 
 #: .\intern_management\templates\intern_template\intern_apply_leave.html:85
 #: .\intern_management\templates\staff_template\staff_apply_leave_template.html:85
 msgid "Leave Apply History"
-msgstr ""
+msgstr "سجل طلبات المغادرة"
 
 #: .\intern_management\templates\intern_template\intern_apply_leave.html:96
 #: .\intern_management\templates\staff_template\staff_apply_leave_template.html:96
 msgid "Status"
-msgstr ""
+msgstr "حالة"
 
 #: .\intern_management\templates\intern_template\intern_apply_leave.html:111
 #: .\intern_management\templates\staff_template\staff_apply_leave_template.html:111
 msgid "Pending"
-msgstr ""
+msgstr "قيد الانتظار"
 
 #: .\intern_management\templates\intern_template\intern_attendance_data.html:35
 #: .\intern_management\templates\intern_template\intern_view_attendance.html:4
 msgid "View Attendance Data"
-msgstr ""
+msgstr "عرض بيانات الحضور"
 
 #: .\intern_management\templates\intern_template\intern_attendance_data.html:50
 msgid "Attendance Data for"
-msgstr ""
+msgstr "بيانات الحضور لـ"
+
+#: .\intern_management\templates\intern_template\intern_attendance_data.html:61
+#: .\intern_management\templates\intern_template\intern_attendance_data.html:71
+msgid "Date :"
+msgstr "تاريخ :"
+
+#: .\intern_management\templates\intern_template\intern_attendance_data.html:63
+msgid "[ Status :  Present ]"
+msgstr "[ الحالة : حاضر ]"
+
+#: .\intern_management\templates\intern_template\intern_attendance_data.html:73
+msgid "[ Status :  Absent ]"
+msgstr "[ الحالة : غائب ]"
 
 #: .\intern_management\templates\intern_template\intern_feedback.html:4
 #: .\intern_management\templates\intern_template\intern_feedback.html:54
@@ -875,277 +1152,286 @@ msgstr ""
 #: .\intern_management\templates\staff_template\staff_feedback_template.html:55
 #: .\intern_management\templates\staff_template\staff_feedback_template.html:89
 msgid "Feedback Message"
-msgstr ""
+msgstr "رسالة التعليق"
 
 #: .\intern_management\templates\intern_template\intern_feedback.html:19
 #: .\intern_management\templates\staff_template\staff_feedback_template.html:19
 msgid "Leave a Feedback Message"
-msgstr ""
+msgstr "اترك رسالة التعليق"
 
 #: .\intern_management\templates\intern_template\intern_feedback.html:63
 #: .\intern_management\templates\staff_template\staff_feedback_template.html:63
 msgid "Leave a Feedback"
-msgstr ""
+msgstr "اترك تعليق"
 
 #: .\intern_management\templates\intern_template\intern_feedback.html:80
 #: .\intern_management\templates\staff_template\staff_feedback_template.html:80
 msgid "Feedback History"
-msgstr ""
+msgstr "سجل التعليقات السابقة"
 
 #: .\intern_management\templates\intern_template\intern_feedback.html:90
 #: .\intern_management\templates\staff_template\staff_feedback_template.html:90
 msgid "Feedback Reply"
-msgstr ""
+msgstr "رد على التعليقات"
 
 #: .\intern_management\templates\intern_template\intern_home_template.html:4
 msgid "Intern Home"
-msgstr ""
+msgstr "الصفحة الرئيسية للمتدرب"
 
 #: .\intern_management\templates\intern_template\intern_home_template.html:23
 msgid "Total Attendance"
-msgstr ""
+msgstr "إجمالي الحضور"
 
 #: .\intern_management\templates\intern_template\intern_home_template.html:89
 msgid "Total Attendance Chart"
-msgstr ""
+msgstr "مخطط إجمالي الحضور"
 
 #: .\intern_management\templates\intern_template\intern_home_template.html:109
 msgid "Attendance Statistics by Assignments"
-msgstr ""
+msgstr "إحصائيات الحضور حسب المهام"
+
+#: .\intern_management\templates\intern_template\intern_home_template.html:139
+msgid "ABSENT"
+msgstr "غائب"
 
 #: .\intern_management\templates\intern_template\intern_home_template.html:140
 msgid "PRESENT"
-msgstr ""
+msgstr "حاضر"
 
 #: .\intern_management\templates\intern_template\intern_view_attendance.html:66
-msgid "Start Date"
-msgstr ""
+msgid "Start Internship Date"
+msgstr "تاريخ بدء التدريب"
 
 #: .\intern_management\templates\intern_template\intern_view_attendance.html:73
-msgid "End Date"
-msgstr ""
+msgid "End Internship Date"
+msgstr "تاريخ نهاية التدريب"
 
 #: .\intern_management\templates\intern_template\intern_view_attendance.html:85
 msgid "Fetch Attendance"
-msgstr ""
+msgstr "جلب الحضور"
 
 #: .\intern_management\templates\intern_template\intern_view_headquarters.html:4
 msgid "View Assignments"
-msgstr ""
+msgstr "عرض المهام"
 
 #: .\intern_management\templates\intern_template\intern_view_result.html:4
 #: .\intern_management\templates\intern_template\intern_view_result.html:20
-#: .\intern_management\templates\staff_template\intern_view_result.html:4
-#: .\intern_management\templates\staff_template\intern_view_result.html:20
 msgid "Result"
-msgstr ""
+msgstr "نتيجة"
 
 #: .\intern_management\templates\intern_template\intern_view_result.html:30
-#: .\intern_management\templates\staff_template\intern_view_result.html:30
 msgid "Assignments Marks"
-msgstr ""
+msgstr "علامة المهام"
 
 #: .\intern_management\templates\intern_template\intern_view_result.html:44
 #: .\intern_management\templates\staff_template\intern_view_result.html:44
 msgid "Bad Work"
-msgstr ""
+msgstr "عمل سيئة"
 
 #: .\intern_management\templates\intern_template\intern_view_result.html:47
 #: .\intern_management\templates\staff_template\intern_view_result.html:47
 msgid "Normal Work"
-msgstr ""
+msgstr "عمل عادي"
 
 #: .\intern_management\templates\intern_template\intern_view_result.html:50
 #: .\intern_management\templates\staff_template\intern_view_result.html:50
 msgid "Good Work"
-msgstr ""
+msgstr "عمل جيد"
 
 #: .\intern_management\templates\intern_template\intern_view_result.html:53
 msgid "Amazing Work"
-msgstr ""
+msgstr "عمل مدهش"
 
 #: .\intern_management\templates\intern_template\intern_view_result.html:55
 msgid "Wonderful Work"
-msgstr ""
+msgstr "عمل رائع"
 
 #: .\intern_management\templates\intern_template\intern_view_result.html:57
 #: .\intern_management\templates\staff_template\intern_view_result.html:57
 msgid "Error Up 20"
-msgstr ""
+msgstr "خطأ حتى 20"
 
 #: .\intern_management\templates\intern_template\sidebar_template.html:58
-#: .\intern_management\templates\staff_template\sidebar_template.html:98
-msgid "View Result"
-msgstr ""
+msgid "View Evaluation Result"
+msgstr "عرض نتيجة التقييم"
 
 #: .\intern_management\templates\intern_template\sidebar_template.html:82
 msgid "Send Feedback"
-msgstr ""
+msgstr "إرسال تعليق"
 
 #: .\intern_management\templates\login.html:33
 msgid "Management System"
 msgstr "النظام الإداري"
 
-#: .\intern_management\templates\login.html:42
+#: .\intern_management\templates\login.html:43
 msgid "Sign in to Intern Management System"
 msgstr "قم بتسجيل الدخول إلى نظام إدارة المتدربين"
 
-#: .\intern_management\templates\login.html:64
+#: .\intern_management\templates\login.html:65
 msgid "Sign In"
 msgstr "تسجيل الدخول"
 
 #: .\intern_management\templates\staff_template\add_result_template.html:4
-#: .\intern_management\templates\staff_template\add_result_template.html:21
 #: .\intern_management\templates\staff_template\sidebar_template.html:86
+msgid "Add Evaluation Result"
+msgstr "أضف نتيجة التقييم"
+
+#: .\intern_management\templates\staff_template\add_result_template.html:21
 msgid "Add Result"
-msgstr ""
+msgstr "أضف نتيجة"
 
 #: .\intern_management\templates\staff_template\add_result_template.html:77
 #: .\intern_management\templates\staff_template\take_attendance_template.html:75
 msgid "Fetch Intern"
-msgstr ""
+msgstr "جلب المتدرب"
 
 #: .\intern_management\templates\staff_template\add_result_template.html:120
 msgid "Intern List"
-msgstr ""
+msgstr "قائمة المتدربين"
 
 #: .\intern_management\templates\staff_template\add_result_template.html:132
-msgid "Assignment Marks :"
-msgstr ""
+msgid "Assignment Mark :"
+msgstr "علامة  المهمة :"
 
 #: .\intern_management\templates\staff_template\add_result_template.html:132
-msgid "Assignment Marks"
-msgstr ""
+#: .\intern_management\templates\staff_template\intern_view_result.html:30
+msgid "Assignment Mark"
+msgstr "علامة  المهمة :"
 
 #: .\intern_management\templates\staff_template\add_result_template.html:136
 msgid "Exam Marks :"
-msgstr ""
+msgstr "علامة  الإمتحان  :"
 
 #: .\intern_management\templates\staff_template\add_result_template.html:136
 msgid "Exam Marks"
-msgstr ""
+msgstr "علامة  الإمتحان  :"
 
 #: .\intern_management\templates\staff_template\add_result_template.html:142
 msgid "Save Result"
-msgstr ""
+msgstr "حفظ النتيجة"
 
 #: .\intern_management\templates\staff_template\base_template.html:10
 #: .\intern_management\templates\staff_template\base_template.html:54
 msgid "Intern Management System | Staff Dashboard"
-msgstr ""
+msgstr "نظام إدارة المتدربين | لوحة القيادة لطاقم عمل"
+
+#: .\intern_management\templates\staff_template\intern_view_result.html:4
+#: .\intern_management\templates\staff_template\intern_view_result.html:20
+msgid "Evaluation Result"
+msgstr "نتيجة التقييم"
 
 #: .\intern_management\templates\staff_template\intern_view_result.html:32
 msgid "status"
-msgstr ""
+msgstr "حالة"
 
 #: .\intern_management\templates\staff_template\intern_view_result.html:53
 msgid "Ammazing Work"
-msgstr ""
+msgstr "عمل مدهش"
 
 #: .\intern_management\templates\staff_template\intern_view_result.html:55
 msgid "Wondurful Work"
-msgstr ""
+msgstr "عمل رائع"
 
 #: .\intern_management\templates\staff_template\sidebar_template.html:49
 #: .\intern_management\templates\staff_template\view_intern_template.html:4
 msgid "View Intern"
-msgstr ""
+msgstr "عرض المتدرب"
 
 #: .\intern_management\templates\staff_template\sidebar_template.html:62
 #: .\intern_management\templates\staff_template\take_attendance_template.html:4
 #: .\intern_management\templates\staff_template\take_attendance_template.html:19
 msgid "Take Attendance"
-msgstr ""
+msgstr "تسجيل الحضور"
 
 #: .\intern_management\templates\staff_template\sidebar_template.html:74
 #: .\intern_management\templates\staff_template\update_attendance_template.html:4
 #: .\intern_management\templates\staff_template\update_attendance_template.html:19
 msgid "View Update Attendance"
-msgstr ""
+msgstr "عرض تحديث الحضور"
+
+#: .\intern_management\templates\staff_template\sidebar_template.html:98
+msgid "View Result"
+msgstr "عرض نتائج المهام"
 
 #: .\intern_management\templates\staff_template\sidebar_template.html:110
 msgid "Apply Leave"
-msgstr ""
+msgstr "تطبيق المغادرة"
 
 #: .\intern_management\templates\staff_template\sidebar_template.html:122
 msgid "Feedback"
-msgstr ""
+msgstr "تعليق"
 
 #: .\intern_management\templates\staff_template\staff_home_template.html:4
 msgid "Staff Home"
-msgstr ""
+msgstr "الصفحة الرئيسية لطاقم العمل"
 
 #: .\intern_management\templates\staff_template\staff_home_template.html:23
 msgid "Interns Under Me"
-msgstr ""
+msgstr "المتدربون تحت إشرافي"
 
 #: .\intern_management\templates\staff_template\staff_home_template.html:40
 msgid "Total Attendance Taken"
-msgstr ""
+msgstr "إجمالي الحضور"
 
 #: .\intern_management\templates\staff_template\staff_home_template.html:55
 msgid "Total Leave Taken"
-msgstr ""
+msgstr "إجمالي المغادرأت"
 
 #: .\intern_management\templates\staff_template\staff_home_template.html:88
 msgid "Leave Status Chart"
-msgstr ""
+msgstr "مبيان حالات المغادرة"
 
 #: .\intern_management\templates\staff_template\staff_home_template.html:108
 msgid "Assignments Attend Chart"
-msgstr ""
+msgstr "مبيان الحضور للمهام "
 
 #: .\intern_management\templates\staff_template\staff_home_template.html:132
 msgid "Intern Attendance Data"
-msgstr ""
+msgstr "بيانات الحضور للمتدرب"
 
 #: .\intern_management\templates\staff_template\staff_home_template.html:204
-msgid "Headquarter Attend Chart"
-msgstr ""
+msgid "Assignment Attend Chart"
+msgstr "مبيان الحضور للمهام "
 
 #: .\intern_management\templates\staff_template\staff_home_template.html:252
 msgid "Intern Attendance Chart for Present"
-msgstr ""
+msgstr "مبيان الحضور للمتدرب للحاضرين"
 
 #: .\intern_management\templates\staff_template\staff_home_template.html:263
 msgid "Intern Attendance Chart for Absent"
-msgstr ""
+msgstr "مبيان الحضور للمتدرب للغائبين"
 
 #: .\intern_management\templates\staff_template\take_attendance_template.html:117
 msgid "Attendance Date:"
-msgstr ""
+msgstr "تاريخ الحضور:"
 
 #: .\intern_management\templates\staff_template\take_attendance_template.html:127
 #: .\intern_management\templates\staff_template\update_attendance_template.html:241
 msgid "Save Attendance Data"
-msgstr ""
+msgstr "حفظ بيانات الحضور"
 
 #: .\intern_management\templates\staff_template\take_attendance_template.html:141
 msgid "Saving Attendance Data..."
-msgstr ""
+msgstr "حفظ بيانات الحضور ..."
 
 #: .\intern_management\templates\staff_template\take_attendance_template.html:173
 #: .\intern_management\templates\staff_template\update_attendance_template.html:289
 msgid "Attendance Saved!"
-msgstr ""
+msgstr "تم حفظ الحضور!"
 
 #: .\intern_management\templates\staff_template\take_attendance_template.html:177
 #: .\intern_management\templates\staff_template\update_attendance_template.html:293
 msgid "Failed to Save Attendance!"
-msgstr ""
+msgstr "فشل في حفظ الحضور!"
 
 #: .\intern_management\templates\staff_template\take_attendance_template.html:185
 #: .\intern_management\templates\staff_template\update_attendance_template.html:301
 msgid "Error in Saving Interns Attendance Data."
-msgstr ""
-
-#: .\intern_management\templates\staff_template\update_attendance_template.html:65
-msgid "to"
-msgstr ""
+msgstr "خطأ في حفظ بيانات حضور المتدربين."
 
 #: .\intern_management\templates\staff_template\update_attendance_template.html:80
 msgid "Attendance Date "
-msgstr ""
+msgstr "تاريخ الحضور"
 
 #: .\intern_management\urls.py:10
 msgid "doLogin/"
@@ -1473,28 +1759,116 @@ msgstr ""
 
 #: .\intern_management\views.py:37
 msgid "Invalid Login!"
-msgstr ""
+msgstr "تسجيل الدخول غير صالح!"
 
 #: .\intern_management\views.py:40
 msgid "Invalid Login Credentials!"
-msgstr ""
+msgstr "اعتماد تسجيل الدخول غير صالح!"
 
 #: .\intern_management\views.py:49
 msgid "Please Login First"
-msgstr ""
+msgstr "الرجاء تسجيل الدخول أولا"
 
-#: .\provinceManagement\settings.py:120
+#: .\provinceManagement\settings.py:127
 msgid "English"
-msgstr ""
+msgstr "الإنجليزية"
 
-#: .\provinceManagement\settings.py:121
+#: .\provinceManagement\settings.py:128
 msgid "French"
-msgstr ""
+msgstr "الفرنسية"
 
-#: .\provinceManagement\settings.py:122
+#: .\provinceManagement\settings.py:129
 msgid "Arabic"
-msgstr ""
+msgstr "العربية"
 
 #: .\provinceManagement\urls.py:26
 msgid "admin/"
-msgstr ""
+msgstr "مسؤول/"
+
+#, fuzzy
+#~| msgid "Add Session Year"
+#~ msgid "Add Period Year"
+#~ msgstr "أضف سنة فترة التدريب"
+
+#~| msgid "Interns Under Me"
+#~ msgid "Internship Period Year"
+#~ msgstr "سنة فترة التدريب"
+
+#~ msgid "Session Year"
+#~ msgstr "الفترة بسنة"
+
+#~ msgid "Session Year added Successfully!"
+#~ msgstr "تمت إضافة سنة فترة التدريب بنجاح!"
+
+#~ msgid "Failed to Add Session Year"
+#~ msgstr "فشل إضافة سنة فترة التدريب"
+
+#~ msgid "Session Year Updated Successfully."
+#~ msgstr "تم تحديث سنة فترة التدريب بنجاح."
+
+#~ msgid "Failed to Update Session Year."
+#~ msgstr "فشل في تحديث فترة التدريب."
+
+#~ msgid "Session Deleted Successfully."
+#~ msgstr "تم حذف فترة التدريب بنجاح."
+
+#~ msgid "Failed to Delete Session."
+#~ msgstr "فشل في حذف فترة التدريب."
+
+#~ msgid "End Date"
+#~ msgstr "تاريخ الانتهاء"
+
+#, fuzzy
+#~| msgid "Assignments Marks"
+#~ msgid "Assignments Mark"
+#~ msgstr "علامة المهام"
+
+#~ msgid "Start Year"
+#~ msgstr "سنة بدء التدريب"
+
+#~ msgid "End Year"
+#~ msgstr "سنة نهاية التدريب"
+
+#~ msgid "OK"
+#~ msgstr "تم"
+
+#~ msgid "Error"
+#~ msgstr "خطأ حتى 20"
+
+#~ msgid "Headquarter Attend Chart"
+#~ msgstr "بيانات الحضور للمهام"
+
+#, python-format
+#~ msgid "%(department.department_name|trans)s"
+#~ msgstr "%(department.department_name)s"
+
+#~| msgid "Failed to Update Intern."
+#~ msgid "Failed to Delete Headquarter."
+#~ msgstr "فشل في تحديث المهمة."
+
+#~ msgid "IT"
+#~ msgstr "المعلوميات"
+
+#~ msgid "Finances"
+#~ msgstr "المالية"
+
+#~ msgid "Ressources Humaines"
+#~ msgstr "الموارد البشرية"
+
+#~ msgid "Commercial"
+#~ msgstr "تجاري"
+
+#~ msgid "Logistique et des Opérations"
+#~ msgstr "اللوجستيك والعمليات"
+
+#~ msgid "Direction générale"
+#~ msgstr "إدارة عامة"
+
+#~ msgid "Incomes count"
+#~ msgstr "حساب المدخول"
+
+#~ msgid "siteweb"
+#~ msgstr "موقع انترنت"
+
+#~ msgid "The employees are inactive"
+#~ msgstr "الموظفون غير نشطين"

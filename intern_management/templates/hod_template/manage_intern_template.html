@@ -11,7 +11,16 @@
 <section class="content">
         <div class="container-fluid">
 
-            <a class="btn btn-primary" href="{% url 'add_intern' %}" role="button">{% trans '+ Add Intern' %}</a> <br/>&nbsp;
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <a class="btn btn-primary" href="{% url 'add_intern' %}" role="button">{% trans '+ Add Intern' %}</a>
+                </div>
+                <div class="col-md-6 text-right">
+                    <a class="btn btn-primary" href="{% url 'generate_intern_pdf' %}" role="button">{% trans 'Download PDF' %}</a>
+                </div>
+            </div>
+            <br>
             
             {% if messages %}
                                 <div class="form-group">
@@ -67,10 +76,12 @@
                                 <th>{% trans 'Email' %}</th>
                                 <th>{% trans 'Address' %}</th>
                                 <th>{% trans 'Gender' %}</th>
+                                <th>{% trans 'Phone Number' %}</th>
                                 <th>{% trans 'Profile Pic' %}</th>
-                                <th>{% trans 'Start Year' %}</th>
-                                <th>{% trans 'End Year' %}</th>
+                                <th>{% trans 'Start Period' %}</th>
+                                <th>{% trans 'End Period' %}</th>
                                 <th>{% trans 'Department' %}</th>
+                                <th>{% trans 'Service' %}</th>
                                 <th>{% trans 'Last Login' %}</th>
                                 <th>{% trans 'Date Joined' %}</th>
                                 <th>{% trans 'Action' %}</th>
@@ -85,11 +96,13 @@
                                 <td>{{ intern.admin.username }}</td>
                                 <td>{{ intern.admin.email }}</td>
                                 <td>{{ intern.address }}</td>
-                                <td>{{ intern.gender }}</td>
+                                <td>{% trans intern.gender %}</td>
+                                <td>{% trans intern.numero_telephone %}</td>
                                 <td> <img src="{{ intern.profile_pic }}" style="width: 100px;" /> </td>
                                 <td>{{ intern.session_year_id.session_start_year }}</td>
                                 <td>{{ intern.session_year_id.session_end_year }}</td>
-                                <td>{{ intern.department_id.department_name }}</td>
+                                <td>{% trans intern.department_id.department_name %}</td>
+                                <td>{% trans intern.service_id.service_name %}</td>
                                 <td>{{ intern.admin.last_login }}</td>
                                 <td>{{ intern.admin.date_joined }}</td>
                                 <td>

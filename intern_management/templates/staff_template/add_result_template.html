@@ -1,7 +1,7 @@
 {% extends 'staff_template/base_template.html' %}
 {% load i18n %}
 {% block page_title %}
-     {% trans 'Add Result' %}
+     {% trans 'Add Evaluation Result' %}
 {% endblock page_title %}
 
 {% block main_content %}
@@ -60,7 +60,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Session Year </label>
+                                <label>{% trans 'Internship Period' %} </label>
                                 <select class="form-control" name="session_year" id="session_year">
                                     {% for session_year in session_years %}
                                         <option value="{{ session_year.id }}">{{ session_year.session_start_year }} to {{ session_year.session_end_year }}</option>
@@ -127,12 +127,12 @@
                 div_data+="<div class='form-group'><div class='row'>";
 
                 div_data+="<div class='col-lg-6'>";
-                div_data+="<label>{% trans 'Assignment Marks :' %} </label><input type='text'name='assignment_marks' class='form-control' placeholder='{% trans 'Assignment Marks' %}' />";
+                div_data+="<label>{% trans 'Assignment Mark :' %} </label><input type='text'name='assignment_marks' class='form-control' placeholder='{% trans 'Assignment Mark' %}' />";
                 div_data+="</div>";
 
-                div_data+="<div class='col-lg-6'>";
-                div_data+="<label>{% trans 'Exam Marks :' %} </label><input type='text'name='exam_marks' class='form-control' placeholder='{% trans 'Exam Marks' %}' />";
-                div_data+="</div>";
+                // div_data+="<div class='col-lg-6'>";
+                // div_data+="<label>{% trans 'Exam Marks :' %} </label><input type='text'name='exam_marks' class='form-control' placeholder='{% trans 'Exam Marks' %}' />";
+                // div_data+="</div>";
 
                 div_data+="</div></div>";
 

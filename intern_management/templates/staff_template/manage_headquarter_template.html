@@ -1,7 +1,7 @@
 {% extends 'staff_template/base_template.html' %}
 {% load i18n %}
 {% block page_title %}
-    View Headquarters
+    View Assignments
 {% endblock page_title %}
 
 {% block main_content %}
@@ -10,9 +10,9 @@
 
 <section class="content">
         <div class="container-fluid">
-
+  
             
-
+            <a class="btn btn-primary" href="{% url 'generate_assignments_staff' %}" role="button">{% trans 'Download PDF' %}</a> <br/>&nbsp;
             {% if messages %}
                                 <div class="form-group">
                                 <div class="col-12">
@@ -62,7 +62,10 @@
                                 <th>ID</th>
                                 <th>{% trans 'Assignment Name' %}</th>
                                 <th>{% trans 'Department' %}</th>
+                                <th>{% trans 'Service' %}</th>
                                 <th>{% trans 'Staff' %}</th>
+                                <th>{% trans 'Start Period' %}</th>
+                                <th>{% trans 'End Period' %}</th>
                                 <th>{% trans 'Created At' %}</th>
                                 <th>{% trans 'Updated At' %}</th>
                                 
@@ -74,7 +77,10 @@
                                 <td>{{ headquarter.id }}</td>
                                 <td>{{ headquarter.headquarter_name }}</td>
                                 <td>{{ headquarter.department_id.department_name }}</td>
+                                <td>{{ headquarter.service_id.service_name }}</td>
                                 <td>{{ headquarter.staff_id.first_name }} {{ headquarter.staff_id.last_name }}</td>
+                                <td>{{ headquarter.session_year_id.session_start_year }}</td>
+                                <td>{{ headquarter.session_year_id.session_end_year }}</td>
                                 <td>{{ headquarter.created_at }}</td>
                                 <td>{{ headquarter.updated_at }}</td>
                                 

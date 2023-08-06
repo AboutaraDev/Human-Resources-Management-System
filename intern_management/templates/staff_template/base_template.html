@@ -1,7 +1,7 @@
-{% load i18n %}
+
 
 {% load static %}
-
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +28,9 @@
   <link rel="stylesheet" href="{% static 'daterangepicker/daterangepicker.css' %}">
   <!-- summernote -->
   <link rel="stylesheet" href="{% static 'summernote/summernote-bs4.css' %}">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'Keyboard/css/keyboard.css' %}">
+
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
@@ -80,11 +83,13 @@
         {% get_current_language as LANGUAGE_CODE %}
        {% get_available_languages as LANGUAGES %}
        {% get_language_info_list for LANGUAGES as languages %}
+
+       
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;">
           <ul class="languages">
             {% for language in languages %}
               <li>
-                <a href="/{{ language.code }}/"
+                <a href="{% url 'staff_home' %}?lang={{ language.code }}"
                 {% if language.code == LANGUAGE_CODE %} class="selected"{% endif %}>
                  <span style="color:black">{{ language.name_local }}</span>
                 </a>
@@ -93,8 +98,8 @@
             {% endfor %}
           </ul>
           
-          
-          
+         </div> 
+        
         </div>
       </li>
       
@@ -147,6 +152,8 @@
 <!-- jQuery UI 1.11.4 -->
 <script src="{% static 'jquery-ui/jquery-ui.min.js'  %}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+
+<script type="text/javascript" src="{% static 'Keyboard/js/jquery.keyboard.js' %}"></script>
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>

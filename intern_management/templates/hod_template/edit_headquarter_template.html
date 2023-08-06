@@ -57,10 +57,21 @@
                             </div>
 
                             <div class="form-group">
-                                <label>{% trans 'Department' %} </label>
-                                <select class="form-control" name="department">
+                                <label for="department">{% trans 'Department' %} </label>
+                                <select class="form-control" name="department" id="department">
                                     {% for department in departments %}
                                         <option value="{{ department.id }}" {% if department.id == headquarter.department_id.id %} selected {% endif %}>{{ department.department_name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service">{% trans 'Service' %} </label>
+                                <select class="form-control" name="service" id="service">
+                                    {% for department in departments %}
+                                      {% for service in department.services.all %}
+                                       <option value="{{ service.id }}" data-department="{{ department.id }}">{{ service.service_name }}</option>
+                                       {% endfor %}
                                     {% endfor %}
                                 </select>
                             </div>
@@ -94,3 +105,24 @@
       </section>
 
   {% endblock main_content %}
+
+  {% block custom_js %}
+
+  <script>
+    $(document).ready(function() {
+        // Hide all service options initially
+        $('#department').on('change', function() {
+            var selectedDepartmentId = $(this).val();
+
+            // Hide all service options
+            $('#service option').hide();
+
+            // Show only the services related to the selected department
+            $('#service option[data-department="' + selectedDepartmentId + '"]').show();
+
+            // Select the first service option for the selected department
+            $('#service option[data-department="' + selectedDepartmentId + '"]:first').prop('selected', true);
+        });
+    });
+</script>
+{% endblock custom_js %}

@@ -71,7 +71,7 @@
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
                     </div>
-                    <a href="{% url 'view_headquarter' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="{% url 'view_headquarter' %}" class="small-box-footer">{% trans 'More info' %} <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -199,7 +199,7 @@
             labels  : headquarter_list,
             datasets: [
                 {
-                label               : '{% trans "Headquarter Attend Chart"  %}',
+                label               : '{% trans "Assignment Attend Chart"  %}',
                 backgroundColor     : 'rgba(60,141,188,0.9)',
                 borderColor         : 'rgba(60,141,188,0.8)',
                 pointRadius          : false,

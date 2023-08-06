@@ -25,6 +25,6 @@ from django.utils.translation import gettext_lazy as _
 urlpatterns = i18n_patterns(
     path(_('admin/'), admin.site.urls),
     path('', include('intern_management.urls')),
-    path('rosetta/', include('rosetta.urls')),
+    
     
 )+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

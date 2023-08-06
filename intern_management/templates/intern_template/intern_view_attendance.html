@@ -10,7 +10,7 @@
 
 <section class="content">
         <div class="container-fluid">
-
+            <a class="btn btn-primary" href="{% url 'generate_attendance_employee' %}" role="button">{% trans 'Download PDF' %}</a> <br/>&nbsp;
             <div class="row">
                 <div class="col-md-12">
                     <!-- general form elements -->
@@ -62,14 +62,14 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label>{% trans 'Start Date' %} </label>
+                                        <label>{% trans 'Start Internship Date' %} </label>
                                         <input type="date" class="form-control" name="start_date" />
                                     </div>
                                 </div>
                                 
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label>{% trans 'End Date' %} </label>
+                                        <label>{% trans 'End Internship Date' %} </label>
                                         <input type="date" class="form-control" name="end_date" />
                                     </div>
                                 </div>

@@ -38,10 +38,95 @@
   {% endblock main_content %}
 
   {% block custom_js %}
+ 
+  <script>
+    $(document).ready(function() {
+        // Hide all service options initially
+        $('#department_id').on('change', function() {
+            var selectedDepartmentId = $(this).val();
+
+            // Hide all service options
+            $('#service_id option').hide();
+
+            // Show only the services related to the selected department
+            $('#service_id option[data-department="' + selectedDepartmentId + '"]').show();
+
+            // Select the first service option for the selected department
+            $('#service_id option[data-department="' + selectedDepartmentId + '"]:first').prop('selected', true);
+        });
+    });
+</script>
+
+
+  
+  {% get_current_language as LANGUAGE_CODE %}
+
+  {% if LANGUAGE_CODE == 'ar' %}
+      <script>
+          $(document).ready(function () {
+              $('.arabic-input').each(function () {
+                  // Initialize the virtual keyboard
+                  var virtualKeyboard = $(this).keyboard({
+                      // Your custom keyboard layout and options here
+                      layout: 'custom',
+                      customLayout: {
+          'default': [
+                    'ض ص ث ق ف غ ع ه خ ح ج ش',
+                    'ش س ي ب ل ا ت ن م ك ظ',
+                    '{shift} ء ئ ؤ ر لإ لآ ى ة و ز ظ',
+                    '{numbers} ، ؛ / : . , - + = _',
+                    '{space}'
+          ],
+          'shift': [
+                    'ً ٌ ٍ ؤ َ ُ ِ ئ ا أ ٱ ٲ ٳ ٴ ٵ ٶ ٷ',
+                    'إ ب ة ت ث ن م ء ذ د ِ ّ ْ َّ ُّ ِّ ًّ',
+                    '{shift} ؤ ئ ّء ة ى ٱ ٲ ٳ ٴ ٵ ٶ ٷ ٸ ٹ ٺ',
+                    '{numbers} ، ؛ / : . , - + = _',
+                    '{space}'
+          ],
+        },
+        display: {
+            '{numbers}': '123',
+            '{space}': 'Space',
+            '{shift}': 'Shift',
+        },
+        usePreview: false, // Disable the preview display
+        position: {
+            of: $(this),
+            my: 'center top+40', // Adjust the vertical offset here (40px in this example)
+            at: 'center bottom',
+            collision: 'flipfit',
+        },
+        autoAccept: false, // Disable auto-acceptance of keys
+        useCombos: false, // Disable combining characters
+        maxLength: 100, // Set a maximum length for the input field if needed
+        autoAccept: true,
+    }).getkeyboard();         
+                     
+
+                  // Handle keypress events on the virtual keyboard
+                  $(this).on('keyboardChange', function (e, keyboard, el) {
+                      el.value = keyboard.$preview.val(); // Update the input field value with the pressed key
+                  });
+
+                  // Hide the virtual keyboard after use
+                  $(this).on('focus', function () {
+                      $(this).blur();
+                  });
+                  virtualKeyboard.$el.on('hidden.keyboard', function () {
+                      $(this).val(virtualKeyboard.$preview.val());
+                  });
+              });
+          });
+      </script>
+  {% endif %}
+
+
     {% comment %} Checking if email and username already exists or not usin Ajax {% endcomment %}
 
     <script>
         $(document).ready(function(){
+            
             // keyup event will be triggered when user leaves keyboard
             $("#id_email").keyup(function(){
                 var email = $(this).val();

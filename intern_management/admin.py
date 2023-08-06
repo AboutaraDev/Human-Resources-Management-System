@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 
-from .models import CustomUser, AdminHOD, Staffs, Department, Headquarter, Intern, Attendance, AttendanceReport, LeaveReportIntern, LeaveReportStaff, FeedBackIntern, FeedBackStaffs, NotificationIntern, NotificationStaffs
+from .models import CustomUser, AdminHOD, Staffs, Department, Service, Headquarter, Intern, Attendance, AttendanceReport, LeaveReportIntern, LeaveReportStaff, FeedBackIntern, FeedBackStaffs, NotificationIntern, NotificationStaffs
 
 
 # Register your models here.
@@ -16,6 +16,7 @@ admin.site.register(CustomUser, UserModel)
 admin.site.register(AdminHOD)
 admin.site.register(Staffs)
 admin.site.register(Department)
+admin.site.register(Service)
 admin.site.register(Headquarter)
 admin.site.register(Intern)
 admin.site.register(Attendance)

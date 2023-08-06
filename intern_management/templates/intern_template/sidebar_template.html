@@ -6,7 +6,7 @@
       <a href="{% url 'admin_home' %}" class="brand-link">
         <img src="{% static 'dist/img/provinceZagoraLogoo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
-        <span class="brand-text font-weight-light">Province Zagora</span>
+        <span class="brand-text font-weight-light">{% trans 'Province Zagora' %}</span>
       </a>
 
       <!-- Sidebar -->
@@ -54,7 +54,7 @@
               <a href="{{ intern_view_result }}" class="nav-link {% if request.path == intern_view_result %} active {% endif %}">
                 <i class="nav-icon fas fa-tasks"></i>
                 <p>
-                  {% trans 'View Result' %}
+                  {% trans 'View Evaluation Result' %}
                   {% comment %} <span class="right badge badge-danger">New</span> {% endcomment %}
                 </p>
               </a>

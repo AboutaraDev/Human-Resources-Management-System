@@ -1,5 +1,6 @@
 {% extends 'hod_template/base_template.html' %}
 {% load i18n %}
+{% load babel %}
 {% block main_content %}
 
 {% load static %}
@@ -266,9 +267,17 @@
       // Get context with jQuery - using jQuery's .get() method.
       var department_name_list = {{ department_name_list|safe }}
       var headquarter_count_list = {{ headquarter_count_list }}
+      
+      // Function to get the translated department name based on the current language
+    
+
       var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
       var donutData        = {
-        labels: department_name_list,
+        
+        labels: [{% for dept_name in department_name_list %}
+                            '{% trans dept_name %}',
+                  {% endfor %}
+                ],
 
         datasets: [
           {
@@ -294,7 +303,10 @@
       //var donutChartCanvas = $('#pieChart2').get(0).getContext('2d')
       var intern_count_list_in_department = {{ intern_count_list_in_department }}
       var pieData2 = {
-        labels: department_name_list,
+        labels: [{% for dept_name in department_name_list %}
+                            '{% trans dept_name %}',
+                  {% endfor %}
+                ],
         datasets: [
           {
             data: intern_count_list_in_department,
@@ -324,7 +336,10 @@
       var intern_count_list_in_headquarter = {{ intern_count_list_in_headquarter }}
       var headquarter_list = {{ headquarter_list|safe }}
       var pieData3 = {
-        labels: headquarter_list,
+        labels: [{% for hed_name in headquarter_list %}
+                            '{% trans hed_name %}',
+                  {% endfor %}
+                ],
         datasets: [
           {
             data: intern_count_list_in_headquarter,

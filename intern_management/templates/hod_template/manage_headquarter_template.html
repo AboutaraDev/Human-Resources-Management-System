@@ -11,7 +11,16 @@
 <section class="content">
         <div class="container-fluid">
 
-            <a class="btn btn-primary" href="{% url 'add_headquarter' %}" role="button">{% trans '+ Add Assignment' %}</a> <br/>&nbsp;
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <a class="btn btn-primary" href="{% url 'add_headquarter' %}" role="button">{% trans '+ Add Assignment' %}</a>
+                </div>
+                <div class="col-md-6 text-right">
+                    <a class="btn btn-primary" href="{% url 'generate_assignment_pdf' %}" role="button">{% trans 'Download PDF' %}</a>
+                </div>
+            </div>
+            <br>
 
             {% if messages %}
                                 <div class="form-group">
@@ -62,6 +71,9 @@
                                 <th>ID</th>
                                 <th>{% trans 'Assignment Name' %}</th>
                                 <th>{% trans 'Department' %}</th>
+                                <th>{% trans 'Service' %}</th>            
+                                <th>{% trans 'Started Period' %}</th>
+                                <th>{% trans 'End Period' %}</th>
                                 <th>{% trans 'Staff' %}</th>
                                 <th>{% trans 'Created At' %}</th>
                                 <th>{% trans 'Updated At' %}</th>
@@ -72,8 +84,11 @@
                                 {% for headquarter in headquarters %}
                                 <tr>
                                 <td>{{ headquarter.id }}</td>
-                                <td>{{ headquarter.headquarter_name }}</td>
-                                <td>{{ headquarter.department_id.department_name }}</td>
+                                <td>{% trans headquarter.headquarter_name %}</td>
+                                <td>{% trans headquarter.department_id.department_name %}</td>
+                                <td>{% trans headquarter.service_id.service_name %}</td>
+                                <td>{{ headquarter.session_year_id.session_start_year }}</td>
+                                <td>{{ headquarter.session_year_id.session_end_year }}</td>
                                 <td>{{ headquarter.staff_id.first_name }} {{ headquarter.staff_id.last_name }}</td>
                                 <td>{{ headquarter.created_at }}</td>
                                 <td>{{ headquarter.updated_at }}</td>

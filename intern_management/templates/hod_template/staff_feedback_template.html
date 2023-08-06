@@ -79,7 +79,7 @@
             <div class="modal-body">
                 <p>{% trans 'Reply to:' %} <b><span id="reply_name"></span></b></p>
                 <input type="hidden" id="reply_id" name="reply_id" />
-                <textarea class="form-control" rows="5" id="reply_message"></textarea>
+                <textarea class="form-control arabic-input" rows="5" id="reply_message"></textarea>
             </div>
             <div class="modal-footer">
                 {% comment %} <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> {% endcomment %}
@@ -109,7 +109,7 @@
             $(document).on("click", "#reply_button", function(){
                 //Disabling the Button while data is being saved in Server
                 $(this).attr("disabled", "disabled")
-                $(this).text("Sending Reply...")
+                $(this).text("{% trans 'Sending Reply...' %}")
 
                 //console.log("SAVE")
                 
@@ -150,4 +150,77 @@
 
         })
     </script>
+
+
+
+{% get_current_language as LANGUAGE_CODE %}
+
+{% if LANGUAGE_CODE == 'ar' %}
+
+<script>
+$(document).ready(function () {
+    // Initialize the virtual keyboard
+    var virtualKeyboard = $('.arabic-input').keyboard({
+        layout: 'custom',
+        customLayout: {
+          'default': [
+                    'ض ص ث ق ف غ ع ه خ ح ج ش',
+                    'ش س ي ب ل ا ت ن م ك ظ',
+                    '{shift} ء ئ ؤ ر لإ لآ ى ة و ز ظ',
+                    '{numbers} ، ؛ / : . , - + = _',
+                    '{space}'
+          ],
+          'shift': [
+                    'ً ٌ ٍ ؤ َ ُ ِ ئ ا أ ٱ ٲ ٳ ٴ ٵ ٶ ٷ',
+                    'إ ب ة ت ث ن م ء ذ د ِ ّ ْ َّ ُّ ِّ ًّ',
+                    '{shift} ؤ ئ ّء ة ى ٱ ٲ ٳ ٴ ٵ ٶ ٷ ٸ ٹ ٺ',
+                    '{numbers} ، ؛ / : . , - + = _',
+                    '{space}'
+          ],
+        },
+        display: {
+            '{numbers}': '123',
+            '{space}': 'Space',
+            '{shift}': 'Shift',
+        },
+        usePreview: false, // Disable the preview display
+        position: {
+            of: '.arabic-input',
+            my: 'center top+160', // Adjust the vertical offset here (40px in this example)
+            at: 'center bottom',
+            collision: 'flipfit',
+        },
+        autoAccept: false, // Disable auto-acceptance of keys
+        useCombos: false, // Disable combining characters
+        maxLength: 100, // Set a maximum length for the input field if needed
+        autoAccept: true,
+    }).getkeyboard();
+
+    // Handle keypress events on the virtual keyboard
+    $('.arabic-input').on('keyboardChange', function (e, keyboard, el) {
+      el.value = keyboard.$preview.val(); // Update the input field value with the pressed key
+      
+      
+    });
+
+    
+   /*
+    // Show the virtual keyboard when the button is clicked
+    $('#arabic-input-button').on('click', function () {
+         virtualKeyboard.reveal();
+        $('#arabic-input').focus(); // Focus the input field after showing the virtual keyboard
+    });
+    */
+
+    $('.arabic-input').on('focus', function () {
+    $(this).blur();
+    });
+     virtualKeyboard.$el.on('hidden.keyboard', function () {
+     $('.arabic-input').val(virtualKeyboard.$preview.val());
+     });
+    
+});
+</script>
+
+{% endif %}
   {% endblock custom_js %}
