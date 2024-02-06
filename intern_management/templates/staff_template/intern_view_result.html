@@ -26,6 +26,7 @@
                                     <thead class="thead-light">
                                     <tr>
                                         <th>#ID</th>
+                                        <th>{% trans 'Employee Name' %}</th>
                                         <th>{% trans 'Assignment' %}</th>
                                         <th>{% trans 'Assignment Mark' %}</th>
                                         
@@ -36,6 +37,7 @@
                                     {% for row in intern_result %}
                                     <tr>
                                         <td>{{ row.id }}</td>
+                                        <td>{{ row.intern_id.admin.first_name }} {{ row.intern_id.admin.last_name }}</td>
                                         <td>{{ row.headquarter_id.headquarter_name }}</td>
                                         <td>{{ row.headquarter_assignment_marks }}</td>
                                         

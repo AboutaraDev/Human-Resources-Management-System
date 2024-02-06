@@ -34,31 +34,102 @@
         {% comment %} Adding Form with All inputs Here {% endcomment %}
 
         {% for field in form %}
-            <div class="form-group {% if LANGUAGE_CODE == 'ar' %}arabic-input{% endif %}">
-<!-- 
-                {{ field.errors }}
+            <div class="form-group">
+
+           <!-- {% get_current_language as LANGUAGE_CODE %}
+
+          {% if LANGUAGE_CODE != 'ar' %}
+        {{ field.errors }}
                 {{ field.label_tag }}
-                   {{ field }} -->
+                   {{ field }} 
+        -->
+
+            {% if field.name == 'department_id' %}
+             {{ field.errors }}
+             {{ field.label_tag }}
+       
+             <select class="form-control" name="department_id" id="department_id">
+             {% for department in departments %}
+           
+             <option value="{{ department.id }}" >{{ department.department_name }}</option>
+           
+              {% endfor %}
+             </select> 
+
+                
+
+                   
+         
+                    
+                   {% elif field.name == 'first_name' %}
+                      {{ field.errors }}
+                      {{ field.label_tag }}
+                      
+                        
+                        <input type="text" class="form-control arabic-input" name="first_name" id="first_name" placeholder="{% trans 'Enter First name' %}">
+                    
+                   
+                   {% elif field.name == 'last_name' %}
+                      {{ field.errors }}
+                      {{ field.label_tag }}
+                     
+                        
+                        <input type="text" class="form-control arabic-input" name="last_name" id="last_name" placeholder="{% trans 'Enter Last name' %}">
+                   
+                   
+                   {% elif field.name == 'username' %}
+                      {{ field.errors }}
+                      {{ field.label_tag }}
+                      
+                        
+                        <input type="text" class="form-control arabic-input" name="username" id="username" placeholder="{% trans 'Enter Username' %}">
+                    
                    
 
-                   {% if field.name == 'service_id' %}
-                   {{ field.errors }}
-                   {{ field.label_tag }}
-                   <label for="service_id">{% trans 'Service' %} </label>
-                   <select class="form-control" name="service_id" id="service_id">
-                    {% for department in departments %}
-                      {% for service in department.services.all %}
+                   {% elif field.name == 'address' %}
+                      {{ field.errors }}
+                      {{ field.label_tag }}
+                      
+                        
+                        <input type="text" class="form-control arabic-input" name="address"  id="address" placeholder="{% trans 'Enter Address' %}">
+                    
+                        {% elif field.name == 'department_id' %}
+                        {{ field.errors }}
+                        {{ field.label_tag }}
+                     
+                      <select class="form-control" name="department_id" id="department_id">
+                       {% for department in departments %}
+                         
+                         <option value="{{ department.id }}" >{{ department.department_name }}</option>
+                         
+                       {% endfor %}
+                      </select> 
+
+                   {% elif field.name == 'service_id' %}
+                      {{ field.errors }}
+                      {{ field.label_tag }}
+                   
+                    <select class="form-control" name="service_id" id="service_id">
+                     {% for department in departments %}
+                       {% for service in department.services.all %}
                        <option value="{{ service.id }}" data-department="{{ department.id }}">{{ service.service_name }}</option>
                        {% endfor %}
-                    {% endfor %}
-                </select>
+                     {% endfor %}
+                    </select> 
+                
+                
             {% else %}
+            
+
                 {{ field.errors }}
                 {{ field.label_tag }}
                 {{ field }}
             {% endif %}
 
+            {% endif %}
+
             </div>
+            
         {% endfor %}
 
         

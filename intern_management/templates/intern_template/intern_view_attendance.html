@@ -1,7 +1,7 @@
 {% extends 'intern_template/base_template.html' %}
 {% load i18n %}
 {% block page_title %}
-    {% trans 'View Attendance Data' %}
+    {% trans 'View Attendance' %}
 {% endblock page_title %}
 
 {% block main_content %}
@@ -62,14 +62,14 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label>{% trans 'Start Internship Date' %} </label>
+                                        <label>{% trans 'Start Assignment Date' %} </label>
                                         <input type="date" class="form-control" name="start_date" />
                                     </div>
                                 </div>
                                 
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label>{% trans 'End Internship Date' %} </label>
+                                        <label>{% trans 'End Assignment Date' %} </label>
                                         <input type="date" class="form-control" name="end_date" />
                                     </div>
                                 </div>
@@ -84,7 +84,7 @@
                         <button type="submit" class="btn btn-primary" id="fetch_intern">{% trans 'Fetch Attendance' %}</button>
                         </div>
 
-                        {% comment %} Displaying Interns Here {% endcomment %}
+                        {% comment %} Displaying Employees Here {% endcomment %}
 
                         <div class="card-footer" id="intern_data">
                         </div> 

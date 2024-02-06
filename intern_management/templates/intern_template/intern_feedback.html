@@ -10,13 +10,15 @@
 
 <section class="content">
         <div class="container-fluid">
+            <a class="btn btn-primary" href="{% url 'generate_message_employee' %}" role="button">{% trans 'Download PDF' %}</a> <br/>&nbsp;
+            
 
             <div class="row">
                 <div class="col-md-12">
                     <!-- general form elements -->
                     <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">{% trans 'Leave a Feedback Message' %}</h3>
+                        <h3 class="card-title">{% trans 'Leave a Message' %}</h3>
                     </div>
                     <!-- /.card-header -->
 
@@ -50,8 +52,8 @@
                         <div class="card-body">
                            
                             <div class="form-group">
-                                <label>{% trans 'Feedback Message' %} </label>
-                                <textarea name="feedback_message" class="form-control" id="arabic-input" rows="6" placeholder="{% trans 'Feedback Message' %}"></textarea>
+                                <label>{% trans 'Message' %} </label>
+                                <textarea name="feedback_message" class="form-control" id="arabic-input" rows="6" placeholder="{% trans 'Message' %}"></textarea>
                             </div>
 
 
@@ -59,7 +61,7 @@
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">{% trans 'Leave a Feedback' %}</button>
+                        <button type="submit" class="btn btn-primary">{% trans 'Leave a Message' %}</button>
                         </div>
 
                     </form>
@@ -76,7 +78,7 @@
                 <div class="col-md-12">
                     <div class="card card-success">
                         <div class="card-header">
-                            <h3 class="card-title">{% trans 'Feedback History' %}</h3>
+                            <h3 class="card-title">{% trans 'Message History' %}</h3>
                         </div>
 
                         <div class="card-body">
@@ -85,8 +87,8 @@
                                     <thead class="thead-light">
                                     <tr>
                                         <th>#ID</th>
-                                        <th>{% trans 'Feedback Message' %}</th>
-                                        <th>{% trans 'Feedback Reply' %}</th>
+                                        <th>{% trans 'Message' %}</th>
+                                        <th>{% trans 'Message Reply' %}</th>
                                     </tr>
                                     </thead>
                                     

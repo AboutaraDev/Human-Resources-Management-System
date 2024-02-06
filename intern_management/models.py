@@ -56,6 +56,8 @@ class Department(models.Model):
     def __str__(self):
         return self.department_name
 
+  
+
 class Service(models.Model):
     id = models.AutoField(primary_key=True)
     service_name = models.CharField(_('service name'), max_length=255)
@@ -64,30 +66,43 @@ class Service(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     objects = models.Manager()
 
+
+
+     
 class Headquarter(models.Model):
     id = models.AutoField(primary_key=True)
     headquarter_name = models.CharField(_('assignment name'), max_length=255)
-    department_id = models.ForeignKey(Department, on_delete=models.CASCADE, default=1)
+    department_id = models.ForeignKey(Department, on_delete=models.CASCADE, default=2)
     service_id = models.ForeignKey(Service, on_delete=models.CASCADE)
     staff_id = models.ForeignKey(CustomUser, on_delete=models.CASCADE, default=1)
-    session_year_id = models.ForeignKey(SessionYearModel, on_delete=models.CASCADE, default=timezone.now)
+    session_year_id = models.ForeignKey(SessionYearModel, on_delete=models.CASCADE, default=1)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = models.Manager()
 
+def get_default_session_year_id():
+     try:
+        default_session_year = SessionYearModel.objects.earliest('session_start_year')
+        return default_session_year.id
+     except SessionYearModel.DoesNotExist:
+        return None
+
+    
 class Intern(models.Model):
     id = models.AutoField(primary_key=True)
     admin = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     gender = models.CharField(_('gender'),max_length=50)
     profile_pic = models.FileField(_('profile picture'))
     address = models.TextField()
-    department_id = models.ForeignKey(Department, on_delete=models.DO_NOTHING, default=1)
+    department_id = models.ForeignKey(Department, on_delete=models.CASCADE, default=1)
     service_id = models.ForeignKey(Service, on_delete=models.CASCADE, default=1)
     session_year_id = models.ForeignKey(SessionYearModel, on_delete=models.CASCADE)
     numero_telephone = models.CharField(_('phone number'), max_length=20)
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
     objects = models.Manager()
+
+    
 
 class Attendance(models.Model):
     # headquarter Attendance

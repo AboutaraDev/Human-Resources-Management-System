@@ -5,7 +5,7 @@ from django.core.files.storage import FileSystemStorage #To upload Profile Pictu
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.translation import gettext_lazy as _
-
+from django.shortcuts import get_object_or_404
 
 import json
 
@@ -25,13 +25,13 @@ import io
 
 
 from django.template.loader import get_template
-from reportlab.lib.pagesizes import letter
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Image, Spacer, SimpleDocTemplate
-from reportlab.lib import colors
-from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.lib.enums import TA_LEFT, TA_CENTER
-from reportlab.lib import utils
-from reportlab.platypus import Paragraph
+# from reportlab.lib.pagesizes import letter
+# from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Image, Spacer, SimpleDocTemplate, PageBreak
+# from reportlab.lib import colors
+# from reportlab.lib.styles import getSampleStyleSheet
+# from reportlab.lib.enums import TA_LEFT, TA_CENTER
+# from reportlab.lib import utils
+# from reportlab.platypus import Paragraph
     
 def admin_home(request):
     all_intern_count = Intern.objects.all().count()
@@ -167,14 +167,15 @@ def manage_staff(request):
 
 def generate_staff_pdf(request):
     response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="staff_details.pdf"'
+    file_name = "staff_details.pdf"
+    response['Content-Disposition'] = f'attachment; filename={file_name}'
 
     # Create a new PDF document
     doc = SimpleDocTemplate(response, pagesize=letter)
 
     # Table data and styles
     staffs = Staffs.objects.all()
-    table_data = [["Username", "Email", "Address"]]
+    table_data = [[_("Username"), _("Email"), _("Address")]]
 
     for staff in staffs:
         row = [
@@ -222,7 +223,7 @@ def generate_staff_pdf(request):
         
 
     # Add title to the PDF
-    title = "Staff Details"
+    title = _("Staffs Details")
     title_style = getSampleStyleSheet()["Title"]
     title_paragraph = Paragraph(title, title_style)
     elements.append(title_paragraph)
@@ -310,18 +311,19 @@ def delete_staff(request, staff_id):
 
 def generate_department_pdf(request):
     response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="department_details.pdf"'
+    file_name = "departments_details.pdf"
+    response['Content-Disposition'] = f'attachment; filename={file_name}'
 
     # Create a new PDF document
     doc = SimpleDocTemplate(response, pagesize=letter)
 
     # Table data and styles
     departments = Department.objects.all()
-    table_data = [["ID", "Department Name"]]
+    table_data = [[_("Department Name")]]
 
     for department in departments:
         row = [
-            str(department.id),
+            
             
             Paragraph(department.department_name, getSampleStyleSheet()["BodyText"]),
             
@@ -367,7 +369,7 @@ def generate_department_pdf(request):
         
 
     # Add title to the PDF
-    title = "Services Details"
+    title = _("Departments Details")
     title_style = getSampleStyleSheet()["Title"]
     title_paragraph = Paragraph(title, title_style)
     elements.append(title_paragraph)
@@ -465,14 +467,15 @@ def delete_department(request, department_id):
 
 def generate_service_pdf(request):
     response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="services_details.pdf"'
+    file_name = "services_details.pdf"
+    response['Content-Disposition'] = f'attachment; filename={file_name}'
 
     # Create a new PDF document
     doc = SimpleDocTemplate(response, pagesize=letter)
 
     # Table data and styles
     services = Service.objects.all()
-    table_data = [["Service Name", "Department Name"]]
+    table_data = [[_("Service Name"), _("Department Name")]]
 
     for service in services:
         row = [
@@ -521,7 +524,7 @@ def generate_service_pdf(request):
         
 
     # Add title to the PDF
-    title = "Services Details"
+    title = _("Services Details")
     title_style = getSampleStyleSheet()["Title"]
     title_paragraph = Paragraph(title, title_style)
     elements.append(title_paragraph)
@@ -619,7 +622,7 @@ def edit_service_save(request):
             return HttpResponseRedirect(reverse("edit_service", kwargs={"service_id":service_id}))
 
         except:
-            messages.error(request, _("Failed to Update Assignment."))
+            messages.error(request, _("Failed to Update Service."))
             return HttpResponseRedirect(reverse("edit_service", kwargs={"service_id":service_id}))
             # return redirect('/edit_subject/'+subject_id)
 
@@ -652,10 +655,10 @@ def add_session_save(request):
         try:
             sessionyear = SessionYearModel(session_start_year=session_start_year, session_end_year=session_end_year)
             sessionyear.save()
-            messages.success(request, _("Internship Period added Successfully!"))
+            messages.success(request, _("Assignment Period added Successfully!"))
             return redirect("add_session")
         except:
-            messages.error(request, _("Failed to Add Internship Period"))
+            messages.error(request, _("Failed to Add Assignment Period"))
             return redirect("add_session")
 
 
@@ -689,10 +692,10 @@ def edit_session_save(request):
             session_year.session_end_year = session_end_year
             session_year.save()
 
-            messages.success(request, _("Internship Period Updated Successfully."))
+            messages.success(request, _("Assignment Period Updated Successfully."))
             return redirect('/edit_session/'+session_id)
         except:
-            messages.error(request, _("Failed to Update Internship Period."))
+            messages.error(request, _("Failed to Update Assignment Period."))
             return redirect('/edit_session/'+session_id)
 
 
@@ -700,22 +703,26 @@ def delete_session(request, session_id):
     session = SessionYearModel.objects.get(id=session_id)
     try:
         session.delete()
-        messages.success(request, _("Internship Period Deleted Successfully."))
+        messages.success(request, _("Assignment Period Deleted Successfully."))
         return redirect('manage_session')
     except:
-        messages.error(request, _("Failed to Delete Internship Period."))
+        messages.error(request, _("Failed to Delete Assignment Period."))
         return redirect('manage_session')
 
 def generate_intern_pdf(request):
     response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="employees_details.pdf"'
+    file_name = "employees_details.pdf"
+    response['Content-Disposition'] = f'attachment; filename={file_name}'
 
     # Create a new PDF document
     doc = SimpleDocTemplate(response, pagesize=letter)
 
+    
+
+    
     # Table data and styles
     interns = Intern.objects.all()
-    table_data = [["First Name", "Last Name", "Email", "Phone number", "Department", "Service"]]
+    table_data = [[_("First Name"), _("Last Name"), _("Email"), _("Phone number"), _("Department"), _("Service")]]
 
     for intern in interns:
         # Combine last name and email in one cell with inline styles
@@ -778,7 +785,7 @@ def generate_intern_pdf(request):
         
 
     # Add title to the PDF
-    title = "Employees Details"
+    title = _("Employees Details")
     title_style = getSampleStyleSheet()["Title"]
     title_paragraph = Paragraph(title, title_style)
     elements.append(title_paragraph)
@@ -835,11 +842,24 @@ def add_intern_save(request):
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
             address = form.cleaned_data['address']
-            session_year_id = form.cleaned_data['session_year_id']
-            department_id = form.cleaned_data['department_id']
-            service_id = form.cleaned_data['service_id']
+            session_year_id = int(form.cleaned_data['session_year_id'])
+            department_id = int(form.cleaned_data['department_id'])
+            service_id = int(form.cleaned_data['service_id'])
             gender = form.cleaned_data['gender']
             num_tel = form.cleaned_data['num_tel']
+            
+            print(department_id)
+            print(type(department_id))
+
+            print(service_id)
+            print(type(service_id))
+
+            print(session_year_id)
+            print(type(session_year_id))
+
+            department_obj = Department.objects.get(id=department_id)
+            print(department_obj)
+            print(type(department_obj))
 
             # Getting Profile Pic first
             # First Check whether the file is selected or not
@@ -854,13 +874,16 @@ def add_intern_save(request):
 
 
             try:
-                user = CustomUser.objects.create_user(username=username, password=password, email=email, first_name=first_name, last_name=last_name, user_type= CustomUser.INTERN)
+                user_type = CustomUser.EMAIL_TO_USER_TYPE_MAP['intern']
+                user = CustomUser.objects.create_user(username=username, password=password, email=email, first_name=first_name, last_name=last_name, user_type= user_type)
                 user.intern.address = address
 
                 department_obj = Department.objects.get(id=department_id)
+                print(department_obj)
                 user.intern.department_id = department_obj
 
                 service_obj = Service.objects.get(id=service_id)
+                print(service_obj)
                 user.intern.service_id = service_obj
 
                 session_year_obj = SessionYearModel.objects.get(id=session_year_id)
@@ -871,11 +894,16 @@ def add_intern_save(request):
                 user.intern.numero_telephone = num_tel
                 user.intern.profile_pic = profile_pic_url
                 user.save()
-                messages.success(request, _("Intern Added Successfully!"))
+                messages.success(request, _("Employee Added Successfully!"))
                 return redirect('add_intern')
-            except:
-                messages.error(request, _("Failed to Add Intern!"))
+            except Exception as e :
+                print(e)
+                messages.error(request, _("Failed to Add Employee!"))
                 return redirect('add_intern')
+            except Department.DoesNotExist:
+                print("Department not found.")
+            except Service.DoesNotExist:
+                print("Service not found.")
         else:
             return redirect('add_intern')
 
@@ -982,10 +1010,10 @@ def edit_intern_save(request):
                 # Delete intern_id SESSION after the data is updated
                 del request.session['intern_id']
 
-                messages.success(request, _("Intern Updated Successfully!"))
+                messages.success(request, _("Employee Updated Successfully!"))
                 return redirect('/edit_intern/'+intern_id)
             except:
-                messages.success(request, _("Failed to Update Intern."))
+                messages.success(request, _("Failed to Update Employee."))
                 return redirect('/edit_intern/'+intern_id)
         else:
             return redirect('/edit_intern/'+intern_id)
@@ -995,17 +1023,18 @@ def delete_intern(request, intern_id):
     intern = Intern.objects.get(admin=intern_id)
     try:
         intern.delete()
-        messages.success(request, _("Intern Deleted Successfully."))
+        messages.success(request, _("Employee Deleted Successfully."))
         return redirect('manage_intern')
     except:
-        messages.error(request, _("Failed to Delete Intern."))
+        messages.error(request, _("Failed to Delete Employee."))
         return redirect('manage_intern')
 
 
 
 def generate_assignment_pdf(request):
     response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="assignments_details.pdf"'
+    file_name = "assignments_details.pdf"
+    response['Content-Disposition'] = f'attachment; filename={file_name}'
 
     # Create a SimpleDocTemplate instance
     buffer = io.BytesIO()
@@ -1013,7 +1042,7 @@ def generate_assignment_pdf(request):
 
     # Table data and styles
     assignments = Headquarter.objects.all()
-    table_data = [["Assignment Name", "Department", "Service", "Start Period", "End Period", "Staff"]]
+    table_data = [[_("Assignment Name"), _("Department"), _("Service"), _("Start Period"), _("End Period"), _("Staff")]]
 
     for assignment in assignments:
         # Combine last name and email in one cell with inline styles
@@ -1068,7 +1097,7 @@ def generate_assignment_pdf(request):
         
 
     # Add title to the PDF
-    title = "Assignments Details"
+    title = _("Assignments Details")
     title_style = getSampleStyleSheet()["Title"]
     title_paragraph = Paragraph(title, title_style)
     elements.append(title_paragraph)
@@ -1100,7 +1129,7 @@ def generate_assignment_pdf(request):
     buffer.close()
 
     response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="assignments_details.pdf"'
+    response['Content-Disposition'] = f'attachment; filename={file_name}'
     response.write(pdf)
 
     return response
@@ -1290,6 +1319,187 @@ def staff_feedback_message(request):
     }
     return render(request, 'hod_template/staff_feedback_template.html', context)
 
+def generate_view_admin_message_employees_pdf(request):
+    emp = request.user
+    response = HttpResponse(content_type='application/pdf')
+    file_name = "messages_apply_by_employees.pdf"
+    response['Content-Disposition'] = f'attachment; filename={file_name}'
+    
+
+    # Create a new PDF document
+    doc = SimpleDocTemplate(response, pagesize=letter)
+
+    feedback_data = FeedBackIntern.objects.all()
+
+    table_data = [[_("Message"), _("Message Reply"), _("Sended On")]]
+    
+    for fed in feedback_data:
+        
+        row = [
+
+            Paragraph(str(fed.feedback), getSampleStyleSheet()["BodyText"]),
+            Paragraph(fed.feedback_reply, getSampleStyleSheet()["BodyText"]),  # Use BodyText style for inline formatting
+            Paragraph(str(fed.created_at.strftime("%Y-%m-%d %H:%M:%S")), getSampleStyleSheet()["BodyText"]),
+        ]
+        table_data.append(row)
+
+     # Calculate the column widths based on the page size and number of columns
+    num_columns = len(table_data[0])
+    page_width, page_height = letter
+    column_width = page_width / num_columns
+
+    elements = []
+
+     # Get the full paths of the logo images
+    logo1_path = os.path.join(settings.MEDIA_ROOT, 'provinceZagoraLogoo.png')
+    logo2_path = os.path.join(settings.MEDIA_ROOT, 'provinceZagoraLogoo.png')
+
+    # Check if the logo image files exist
+    if os.path.exists(logo1_path) and os.path.exists(logo2_path):
+        # Add the logos to the PDF
+        logo1 = Image(logo1_path)
+        logo2 = Image(logo2_path)
+
+        # Set the sizes of the logos
+        logo1.drawHeight = 150
+        logo1.drawWidth = 150
+
+        logo2.drawHeight = 50
+        logo2.drawWidth = 150
+
+        # Position the logos on the top corners
+        logo1_pos_x, logo1_pos_y = 40, 750  # Top left corner
+        logo2_pos_x, logo2_pos_y = page_width - 40 - logo2.drawWidth, 750  # Top right corner
+
+        # Add the logos directly to the elements list
+        elements.extend([
+            logo1,
+            #logo2,
+        ])
+
+        
+    
+    # Add title to the PDF
+    title = _('Messages Apply by Employees')
+    title_style = getSampleStyleSheet()["Title"]
+    title_paragraph = Paragraph(title, title_style)
+    elements.append(title_paragraph)
+    elements.append(Spacer(1, 12))  # Add some space between title and table
+    
+    table = Table(table_data, colWidths=[column_width] * num_columns, repeatRows=1)
+    table.setStyle(TableStyle([
+            # ... Table styles ...
+            ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),  # Vertical alignment of text within cells
+            ('TEXTCOLOR', (0, 0), (-1, -1), colors.black),  # Text color
+            ('FONTNAME', (0, 0), (-1, -1), 'Helvetica'),  # Font
+            ('FONTSIZE', (0, 0), (-1, -1), 10),  # Font size
+            ('GRID', (0, 0), (-1, -1), 1, colors.black),  # Grid lines
+            ('BACKGROUND', (0, 0), (-1, 0), colors.grey),  # Header background color
+            ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),  # Header text color
+            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),  # Center alignment for all cells
+            ('TOPPADDING', (0, 0), (-1, -1), 10),  # Top padding for cells
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 10),  # Bottom padding for cells
+            ('LEFTPADDING', (0, 0), (-1, -1), 5),  # Left padding for cells
+            ('RIGHTPADDING', (0, 0), (-1, -1), 5),  # Right padding for cells
+    ]))
+    elements.append(table)
+    elements.append(Spacer(0, 10))
+
+    doc.build(elements)
+    
+    return response
+
+def generate_messages_staff_pdf(request):
+    
+    response = HttpResponse(content_type='application/pdf')
+    file_name = "messages_staffs.pdf"
+    response['Content-Disposition'] = f'attachment; filename={file_name}'
+    
+
+    # Create a new PDF document
+    doc = SimpleDocTemplate(response, pagesize=letter)
+
+    feedback_data = FeedBackStaffs.objects.all()
+
+    table_data = [[_("Staff Name"), _("Message"), _("Sended On"), _("Message Reply")]]
+    
+    for fed in feedback_data:
+        
+        name = f'<b>{fed.staff_id.admin.first_name} {fed.staff_id.admin.last_name}</b>'
+        row = [
+
+            Paragraph(name, getSampleStyleSheet()["BodyText"]),
+            Paragraph(str(fed.feedback), getSampleStyleSheet()["BodyText"]),
+            Paragraph(str(fed.created_at.strftime("%Y-%m-%d %H:%M:%S")), getSampleStyleSheet()["BodyText"]),
+            Paragraph(fed.feedback_reply, getSampleStyleSheet()["BodyText"]),  # Use BodyText style for inline formatting
+        ]
+        table_data.append(row)
+
+     # Calculate the column widths based on the page size and number of columns
+    num_columns = len(table_data[0])
+    page_width, page_height = letter
+    column_width = page_width / num_columns
+
+    elements = []
+
+     # Get the full paths of the logo images
+    logo1_path = os.path.join(settings.MEDIA_ROOT, 'provinceZagoraLogoo.png')
+    logo2_path = os.path.join(settings.MEDIA_ROOT, 'provinceZagoraLogoo.png')
+
+    # Check if the logo image files exist
+    if os.path.exists(logo1_path) and os.path.exists(logo2_path):
+        # Add the logos to the PDF
+        logo1 = Image(logo1_path)
+        logo2 = Image(logo2_path)
+
+        # Set the sizes of the logos
+        logo1.drawHeight = 150
+        logo1.drawWidth = 150
+
+        logo2.drawHeight = 50
+        logo2.drawWidth = 150
+
+        # Position the logos on the top corners
+        logo1_pos_x, logo1_pos_y = 40, 750  # Top left corner
+        logo2_pos_x, logo2_pos_y = page_width - 40 - logo2.drawWidth, 750  # Top right corner
+
+        # Add the logos directly to the elements list
+        elements.extend([
+            logo1,
+            #logo2,
+        ])
+
+        
+    
+    # Add title to the PDF
+    title = _('Messages Apply by Staffs')
+    title_style = getSampleStyleSheet()["Title"]
+    title_paragraph = Paragraph(title, title_style)
+    elements.append(title_paragraph)
+    elements.append(Spacer(1, 12))  # Add some space between title and table
+    
+    table = Table(table_data, colWidths=[column_width] * num_columns, repeatRows=1)
+    table.setStyle(TableStyle([
+            # ... Table styles ...
+            ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),  # Vertical alignment of text within cells
+            ('TEXTCOLOR', (0, 0), (-1, -1), colors.black),  # Text color
+            ('FONTNAME', (0, 0), (-1, -1), 'Helvetica'),  # Font
+            ('FONTSIZE', (0, 0), (-1, -1), 10),  # Font size
+            ('GRID', (0, 0), (-1, -1), 1, colors.black),  # Grid lines
+            ('BACKGROUND', (0, 0), (-1, 0), colors.grey),  # Header background color
+            ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),  # Header text color
+            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),  # Center alignment for all cells
+            ('TOPPADDING', (0, 0), (-1, -1), 10),  # Top padding for cells
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 10),  # Bottom padding for cells
+            ('LEFTPADDING', (0, 0), (-1, -1), 5),  # Left padding for cells
+            ('RIGHTPADDING', (0, 0), (-1, -1), 5),  # Right padding for cells
+    ]))
+    elements.append(table)
+    elements.append(Spacer(0, 10))
+
+    doc.build(elements)
+    
+    return response
 
 @csrf_exempt
 def staff_feedback_message_reply(request):
@@ -1312,6 +1522,203 @@ def intern_leave_view(request):
         "leaves": leaves
     }
     return render(request, 'hod_template/intern_leave_view.html', context)
+
+def generate_admin_view_leave_employee_pdf(request):
+    
+    response = HttpResponse(content_type='application/pdf')
+    file_name = "leave_apply_by_employees.pdf"
+    response['Content-Disposition'] = f'attachment; filename={file_name}'
+    
+
+    # Create a new PDF document
+    doc = SimpleDocTemplate(response, pagesize=letter)
+
+    leave_data = LeaveReportIntern.objects.all()
+
+    table_data = [[_("Leave Date"), _("Leave Message"), _("Status")]]
+    
+    for lev in leave_data:
+        if lev.leave_status == 1:
+            status = _('Approved')
+        elif lev.leave_status == 2:
+            status = _('Rejected')
+        else:
+            status = _('Pending')
+        row = [
+            
+            
+            Paragraph(str(lev.leave_date), getSampleStyleSheet()["BodyText"]),
+            Paragraph(lev.leave_message, getSampleStyleSheet()["BodyText"]),  # Use BodyText style for inline formatting
+            Paragraph(status, getSampleStyleSheet()["BodyText"]),
+         
+        ]
+        table_data.append(row)
+
+     # Calculate the column widths based on the page size and number of columns
+    num_columns = len(table_data[0])
+    page_width, page_height = letter
+    column_width = page_width / num_columns
+
+    elements = []
+
+     # Get the full paths of the logo images
+    logo1_path = os.path.join(settings.MEDIA_ROOT, 'provinceZagoraLogoo.png')
+    logo2_path = os.path.join(settings.MEDIA_ROOT, 'provinceZagoraLogoo.png')
+
+    # Check if the logo image files exist
+    if os.path.exists(logo1_path) and os.path.exists(logo2_path):
+        # Add the logos to the PDF
+        logo1 = Image(logo1_path)
+        logo2 = Image(logo2_path)
+
+        # Set the sizes of the logos
+        logo1.drawHeight = 150
+        logo1.drawWidth = 150
+
+        logo2.drawHeight = 50
+        logo2.drawWidth = 150
+
+        # Position the logos on the top corners
+        logo1_pos_x, logo1_pos_y = 40, 750  # Top left corner
+        logo2_pos_x, logo2_pos_y = page_width - 40 - logo2.drawWidth, 750  # Top right corner
+
+        # Add the logos directly to the elements list
+        elements.extend([
+            logo1,
+            #logo2,
+        ])
+
+        
+    
+    # Add title to the PDF
+    title = _('Leaves Apply by Employees')
+    title_style = getSampleStyleSheet()["Title"]
+    title_paragraph = Paragraph(title, title_style)
+    elements.append(title_paragraph)
+    elements.append(Spacer(1, 12))  # Add some space between title and table
+    
+    table = Table(table_data, colWidths=[column_width] * num_columns, repeatRows=1)
+    table.setStyle(TableStyle([
+            # ... Table styles ...
+            ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),  # Vertical alignment of text within cells
+            ('TEXTCOLOR', (0, 0), (-1, -1), colors.black),  # Text color
+            ('FONTNAME', (0, 0), (-1, -1), 'Helvetica'),  # Font
+            ('FONTSIZE', (0, 0), (-1, -1), 10),  # Font size
+            ('GRID', (0, 0), (-1, -1), 1, colors.black),  # Grid lines
+            ('BACKGROUND', (0, 0), (-1, 0), colors.grey),  # Header background color
+            ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),  # Header text color
+            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),  # Center alignment for all cells
+            ('TOPPADDING', (0, 0), (-1, -1), 10),  # Top padding for cells
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 10),  # Bottom padding for cells
+            ('LEFTPADDING', (0, 0), (-1, -1), 5),  # Left padding for cells
+            ('RIGHTPADDING', (0, 0), (-1, -1), 5),  # Right padding for cells
+    ]))
+    elements.append(table)
+    elements.append(Spacer(0, 10))
+
+    doc.build(elements)
+    
+    return response
+
+
+def generate_leaves_staffs_pdf(request):
+
+    response = HttpResponse(content_type='application/pdf')
+    file_name = "leave_apply_by_staffs.pdf"
+    response['Content-Disposition'] = f'attachment; filename={file_name}'
+    
+
+    # Create a new PDF document
+    doc = SimpleDocTemplate(response, pagesize=letter)
+
+    leave_data = LeaveReportStaff.objects.all()
+
+    table_data = [[_("Staff Name"), _("Leave Date"), _("Leave Message"), _("Status")]]
+    
+    for lev in leave_data:
+        if lev.leave_status == 1:
+            status = _('Approved')
+        elif lev.leave_status == 2:
+            status = _('Rejected')
+        else:
+            status = _('Pending')
+        
+        name = f'<b>{lev.staff_id.admin.first_name} {lev.staff_id.admin.last_name}</b>' 
+        row = [
+            
+            Paragraph(name, getSampleStyleSheet()["BodyText"]),
+            Paragraph(str(lev.leave_date), getSampleStyleSheet()["BodyText"]),
+            Paragraph(lev.leave_message, getSampleStyleSheet()["BodyText"]),  # Use BodyText style for inline formatting
+            Paragraph(status, getSampleStyleSheet()["BodyText"]),
+         
+        ]
+        table_data.append(row)
+
+     # Calculate the column widths based on the page size and number of columns
+    num_columns = len(table_data[0])
+    page_width, page_height = letter
+    column_width = page_width / num_columns
+
+    elements = []
+
+     # Get the full paths of the logo images
+    logo1_path = os.path.join(settings.MEDIA_ROOT, 'provinceZagoraLogoo.png')
+    logo2_path = os.path.join(settings.MEDIA_ROOT, 'provinceZagoraLogoo.png')
+
+    # Check if the logo image files exist
+    if os.path.exists(logo1_path) and os.path.exists(logo2_path):
+        # Add the logos to the PDF
+        logo1 = Image(logo1_path)
+        logo2 = Image(logo2_path)
+
+        # Set the sizes of the logos
+        logo1.drawHeight = 150
+        logo1.drawWidth = 150
+
+        logo2.drawHeight = 50
+        logo2.drawWidth = 150
+
+        # Position the logos on the top corners
+        logo1_pos_x, logo1_pos_y = 40, 750  # Top left corner
+        logo2_pos_x, logo2_pos_y = page_width - 40 - logo2.drawWidth, 750  # Top right corner
+
+        # Add the logos directly to the elements list
+        elements.extend([
+            logo1,
+            #logo2,
+        ])
+
+        
+    
+    # Add title to the PDF
+    title = _('Leave Apply by Staffs')
+    title_style = getSampleStyleSheet()["Title"]
+    title_paragraph = Paragraph(title, title_style)
+    elements.append(title_paragraph)
+    elements.append(Spacer(1, 12))  # Add some space between title and table
+    
+    table = Table(table_data, colWidths=[column_width] * num_columns, repeatRows=1)
+    table.setStyle(TableStyle([
+            # ... Table styles ...
+            ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),  # Vertical alignment of text within cells
+            ('TEXTCOLOR', (0, 0), (-1, -1), colors.black),  # Text color
+            ('FONTNAME', (0, 0), (-1, -1), 'Helvetica'),  # Font
+            ('FONTSIZE', (0, 0), (-1, -1), 10),  # Font size
+            ('GRID', (0, 0), (-1, -1), 1, colors.black),  # Grid lines
+            ('BACKGROUND', (0, 0), (-1, 0), colors.grey),  # Header background color
+            ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),  # Header text color
+            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),  # Center alignment for all cells
+            ('TOPPADDING', (0, 0), (-1, -1), 10),  # Top padding for cells
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 10),  # Bottom padding for cells
+            ('LEFTPADDING', (0, 0), (-1, -1), 5),  # Left padding for cells
+            ('RIGHTPADDING', (0, 0), (-1, -1), 5),  # Right padding for cells
+    ]))
+    elements.append(table)
+    elements.append(Spacer(0, 10))
+
+    doc.build(elements)
+    
+    return response
 
 def intern_leave_approve(request, leave_id):
     leave = LeaveReportIntern.objects.get(id=leave_id)
@@ -1358,23 +1765,231 @@ def admin_view_attendance(request):
     }
     return render(request, "hod_template/admin_view_attendance.html", context)
 
+def generate_admin_view_attendance_pdf(request):
+    
+    response = HttpResponse(content_type='application/pdf')
+    file_name = "view_attendance.pdf"
+    response['Content-Disposition'] = f'attachment; filename={file_name}'
+    
+
+    # Create a new PDF document
+    doc = SimpleDocTemplate(response, pagesize=letter)
+
+    
+
+    interns = Intern.objects.all()
+    
+    
+    
+    table_data = [[_("Full Name"), _("Date"), _("Status")]]
+
+    intern_totals = {}
+
+    
+    
+    unique_combinations = set()
+
+    unique_assignments = set()
+    for inte in interns:
+
+        attendance_data = AttendanceReport.objects.filter(intern_id=inte.id)
+
+        
+
+        # Variables to store totals
+        unique_dates = set()
+        total_present = 0
+        total_absent = 0
+
+        for intern in attendance_data:
+          
+          nameInter = f'<b>{intern.intern_id.admin.first_name} {intern.intern_id.admin.last_name}</b>'
+          
+          intern_attendance_tuple = (intern.intern_id.id, str(intern.attendance_id.attendance_date))
+          assignment_attendance_tuple = (intern.attendance_id.headquarter_id.id, str(intern.attendance_id.headquarter_id))
+          if intern_attendance_tuple in unique_combinations and assignment_attendance_tuple not in unique_assignments:
+            # If not, add the tuple to the set and process the data
+            unique_assignments.add(assignment_attendance_tuple)
+            unique_combinations.add(intern_attendance_tuple)
+
+          if intern_attendance_tuple not in unique_combinations:
+            # If not, add the tuple to the set and process the data
+            unique_combinations.add(intern_attendance_tuple)
+
+            if intern.status is True:
+              total_present += 1
+              name = _('Present')
+              
+            elif intern.status is False:
+              total_absent += 1
+              name = _('Absent')
+              
+            else:
+              name = _('None')
+          
+          
+            row = [
+            
+             Paragraph(nameInter, getSampleStyleSheet()["BodyText"]),  # Use BodyText style for inline formatting  
+            #  Paragraph(intern.attendance_id.headquarter_id.headquarter_name, getSampleStyleSheet()["BodyText"]),   
+             Paragraph(str(intern.attendance_id.attendance_date), getSampleStyleSheet()["BodyText"]),    
+             Paragraph(name, getSampleStyleSheet()["BodyText"]),
+
+            
+            ]
+            table_data.append(row)
+        
+            unique_dates.add(str(intern.attendance_id.attendance_date))
+        # Calculate total days
+        total_days = len(unique_dates)
+        
+        
+        intern_totals[inte.id] = {
+            'total_days': total_days,
+            'total_present': total_present,
+            'total_absent': total_absent,
+        }
+
+        
+
+     # Calculate the column widths based on the page size and number of columns
+    num_columns = len(table_data[0])
+    page_width, page_height = letter
+    column_width = page_width / num_columns
+
+    elements = []
+
+     # Get the full paths of the logo images
+    logo1_path = os.path.join(settings.MEDIA_ROOT, 'provinceZagoraLogoo.png')
+    logo2_path = os.path.join(settings.MEDIA_ROOT, 'provinceZagoraLogoo.png')
+
+    # Check if the logo image files exist
+    if os.path.exists(logo1_path) and os.path.exists(logo2_path):
+        # Add the logos to the PDF
+        logo1 = Image(logo1_path)
+        logo2 = Image(logo2_path)
+
+        # Set the sizes of the logos
+        logo1.drawHeight = 150
+        logo1.drawWidth = 150
+
+        logo2.drawHeight = 50
+        logo2.drawWidth = 150
+
+        # Position the logos on the top corners
+        logo1_pos_x, logo1_pos_y = 40, 750  # Top left corner
+        logo2_pos_x, logo2_pos_y = page_width - 40 - logo2.drawWidth, 750  # Top right corner
+
+        # Add the logos directly to the elements list
+        elements.extend([
+            logo1,
+            #logo2,
+        ])
+
+        
+    
+    # Add title to the PDF
+    title = _('All Employees Attendance')
+    title_style = getSampleStyleSheet()["Title"]
+    title_paragraph = Paragraph(title, title_style)
+    elements.append(title_paragraph)
+    elements.append(Spacer(1, 12))  # Add some space between title and table
+    
+    table = Table(table_data, colWidths=[column_width] * num_columns, repeatRows=1)
+    table.setStyle(TableStyle([
+            # ... Table styles ...
+            ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),  # Vertical alignment of text within cells
+            ('TEXTCOLOR', (0, 0), (-1, -1), colors.black),  # Text color
+            ('FONTNAME', (0, 0), (-1, -1), 'Helvetica'),  # Font
+            ('FONTSIZE', (0, 0), (-1, -1), 10),  # Font size
+            ('GRID', (0, 0), (-1, -1), 1, colors.black),  # Grid lines
+            ('BACKGROUND', (0, 0), (-1, 0), colors.grey),  # Header background color
+            ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),  # Header text color
+            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),  # Center alignment for all cells
+            ('TOPPADDING', (0, 0), (-1, -1), 10),  # Top padding for cells
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 10),  # Bottom padding for cells
+            ('LEFTPADDING', (0, 0), (-1, -1), 5),  # Left padding for cells
+            ('RIGHTPADDING', (0, 0), (-1, -1), 5),  # Right padding for cells
+    ]))
+
+    
+    
+    elements.append(table)
+    
+    elements.append(PageBreak())
+
+
+    # for intern_id, totals in intern_totals.items():
+    #     intern_name = Intern.objects.get(id=intern_id).admin.first_name +" "+ Intern.objects.get(id=intern_id).admin.last_name
+    #     elements.append(Paragraph(_("Total Days for {}: ").format(intern_name) + str(totals['total_days']), getSampleStyleSheet()["BodyText"]))
+    #     elements.append(Paragraph(_("Total {} Present: ").format(intern_name) + str(totals['total_present']), getSampleStyleSheet()["BodyText"]))
+    #     elements.append(Paragraph(_("Total {} Absent: ").format(intern_name) + str(totals['total_absent']), getSampleStyleSheet()["BodyText"]))
+    #     elements.append(Spacer(0, 10))
+    #     elements.append(Paragraph("-------------------------------------------------", getSampleStyleSheet()["BodyText"])),
+   
+   # Create a table to display intern totals
+    total_table_data = [[_("Employee Name"), _("Total Days"), _("Total Present"), _("Total Absent")]]
+    for intern_id, totals in intern_totals.items():
+        intern_name = Intern.objects.get(id=intern_id).admin.first_name + " " + Intern.objects.get(id=intern_id).admin.last_name
+        total_row = [
+            Paragraph(intern_name, getSampleStyleSheet()["BodyText"]),
+            Paragraph(str(totals['total_days']), getSampleStyleSheet()["BodyText"]),
+            Paragraph(str(totals['total_present']), getSampleStyleSheet()["BodyText"]),
+            Paragraph(str(totals['total_absent']), getSampleStyleSheet()["BodyText"]),
+        ]
+        total_table_data.append(total_row)
+    
+    num_columns = len(total_table_data[0])
+    page_width, page_height = letter
+    column_width = page_width / num_columns
+
+
+    title = _('Total Employees Attendance')
+    title_style = getSampleStyleSheet()["Title"]
+    title_paragraph = Paragraph(title, title_style)
+    elements.append(title_paragraph)
+    elements.append(Spacer(1, 12))  # Add some space between title and table
+
+    total_table = Table(total_table_data, colWidths=[column_width] * num_columns, repeatRows=1)
+    total_table.setStyle(TableStyle([
+        # ... Table styles ...
+            ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),  # Vertical alignment of text within cells
+            ('TEXTCOLOR', (0, 0), (-1, -1), colors.black),  # Text color
+            ('FONTNAME', (0, 0), (-1, -1), 'Helvetica'),  # Font
+            ('FONTSIZE', (0, 0), (-1, -1), 10),  # Font size
+            ('GRID', (0, 0), (-1, -1), 1, colors.black),  # Grid lines
+            ('BACKGROUND', (0, 0), (-1, 0), colors.grey),  # Header background color
+            ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),  # Header text color
+            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),  # Center alignment for all cells
+            ('TOPPADDING', (0, 0), (-1, -1), 10),  # Top padding for cells
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 10),  # Bottom padding for cells
+            ('LEFTPADDING', (0, 0), (-1, -1), 5),  # Left padding for cells
+            ('RIGHTPADDING', (0, 0), (-1, -1), 5),  # Right padding for cells
+    ]))
+
+    elements.append(Spacer(1, 12))  # Add some space between tables
+    elements.append(total_table)
+
+
+    doc.build(elements)
+    
+    return response
 
 @csrf_exempt
 def admin_get_attendance_dates(request):
-    # Getting Values from Ajax POST 'Fetch Student'
+    
     headquarter_id = request.POST.get("headquarter")
     session_year = request.POST.get("session_year_id")
 
-    # Students enroll to Course, Course has Subjects
-    # Getting all data from subject model based on subject_id
+    
     headquarter_model = Headquarter.objects.get(id=headquarter_id)
 
     session_model = SessionYearModel.objects.get(id=session_year)
 
-    # students = Students.objects.filter(course_id=subject_model.course_id, session_year_id=session_model)
+    
     attendance = Attendance.objects.filter(headquarter_id=headquarter_model, session_year_id=session_model)
 
-    # Only Passing Student Id and Student Name Only
+  
     list_data = []
 
     for attendance_single in attendance:
@@ -1386,12 +2001,12 @@ def admin_get_attendance_dates(request):
 
 @csrf_exempt
 def admin_get_attendance_intern(request):
-    # Getting Values from Ajax POST 'Fetch Student'
+    
     attendance_date = request.POST.get('attendance_date')
     attendance = Attendance.objects.get(id=attendance_date)
 
     attendance_data = AttendanceReport.objects.filter(attendance_id=attendance)
-    # Only Passing Student Id and Student Name Only
+    
     list_data = []
 
     for intern in attendance_data:

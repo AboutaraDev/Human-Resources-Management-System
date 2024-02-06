@@ -1,7 +1,7 @@
 {% extends 'hod_template/base_template.html' %}
 {% load i18n %}
 {% block page_title %}
-   {% trans 'Leave Apply by Interns' %}
+   {% trans 'Leave Apply by Employees' %}
 {% endblock page_title %}
 
 {% block main_content %}
@@ -10,13 +10,15 @@
 
 <section class="content">
         <div class="container-fluid">
+            <a class="btn btn-primary" href="{% url 'generate_admin_view_leave_employee' %}" role="button">{% trans 'Download PDF' %}</a> <br/>&nbsp;
+            
 
             <div class="row">
                 <div class="col-md-12">
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">{% trans 'Leave Apply by interns' %}</h3>
+                            <h3 class="card-title">{% trans 'Leave Apply by Employees' %}</h3>
                         </div>
                         <!-- /.card-header -->
 
@@ -25,8 +27,8 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>{% trans 'Intern' %} ID</th>
-                                    <th>{% trans 'Intern Name' %}</th>
+                                    <th>{% trans 'Employee' %} ID</th>
+                                    <th>{% trans 'Employee Name' %}</th>
                                     <th>{% trans 'Leave Date' %}</th>
                                     <th>{% trans 'Leave Message' %}</th>
                                     <th>{% trans 'Applied On' %}</th>

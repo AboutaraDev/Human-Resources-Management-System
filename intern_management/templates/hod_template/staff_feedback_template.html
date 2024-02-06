@@ -1,7 +1,7 @@
 {% extends 'hod_template/base_template.html' %}
 {% load i18n %}
 {% block page_title %}
-   {% trans 'Staff Feedback' %}
+   {% trans 'Staff Message' %}
 {% endblock page_title %}
 
 {% block main_content %}
@@ -10,13 +10,13 @@
 
 <section class="content">
         <div class="container-fluid">
-
+            <a class="btn btn-primary" href="{% url 'generate_messages_staff' %}" role="button">{% trans 'Download PDF' %}</a> <br/>&nbsp;
             <div class="row">
                 <div class="col-md-12">
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">{% trans 'Staff Feedback' %}</h3>
+                            <h3 class="card-title">{% trans 'Staff Message' %}</h3>
                         </div>
                         <!-- /.card-header -->
 
@@ -71,7 +71,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">{% trans 'Reply Feedback' %}</h5>
+                <h5 class="modal-title" id="exampleModalLabel">{% trans 'Reply Message' %}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -143,7 +143,7 @@
                 })
 
                 .fail(function(){
-                    alert("{% trans 'Error in Sending Feedback Reply.' %}")
+                    alert("{% trans 'Error in Sending Message Reply.' %}")
                 })
 
             })

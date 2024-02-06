@@ -63,7 +63,7 @@
                                 <label>{% trans 'Internship Period' %} </label>
                                 <select class="form-control" name="session_year" id="session_year">
                                     {% for session_year in session_years %}
-                                        <option value="{{ session_year.id }}">{{ session_year.session_start_year }} to {{ session_year.session_end_year }}</option>
+                                        <option value="{{ session_year.id }}">{{ session_year.session_start_year }} - {{ session_year.session_end_year }}</option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -73,7 +73,7 @@
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                        <button type="button" class="btn btn-primary" id="fetch_intern">{% trans 'Fetch Intern' %}</button>
+                        <button type="button" class="btn btn-primary" id="fetch_intern">{% trans 'Fetch Employee' %}</button>
                         </div>
 
                         {% comment %} Displaying Interns Here {% endcomment %}
@@ -115,7 +115,7 @@
                 var json_data=JSON.parse(response);
                 console.log(json_data)
                 //Displaying Attendance Date Input and Students Attendance
-                var div_data="<div class='form-group'><label>{% trans 'Intern List' %}</label> <select class='intern_list form-control' name='intern_list'>"
+                var div_data="<div class='form-group'><label>{% trans 'Employee List' %}</label> <select class='intern_list form-control' name='intern_list'>"
 
                 for(key in json_data)
                 {
@@ -143,7 +143,7 @@
 
             })
             .fail(function(){
-                alert("{% trans 'Error in Fetching Interns.' %}")
+                alert("{% trans 'Error in Fetching Employees.' %}")
             })
 
             // Save Attendance Data to Database

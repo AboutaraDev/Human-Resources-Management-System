@@ -59,10 +59,10 @@
                             </div>
 
                             <div class="form-group">
-                                <label>{% trans 'Internship Period' %} </label>
+                                <label>{% trans 'Assignment Period' %} </label>
                                 <select class="form-control" name="session_year_id" id="session_year_id">
                                     {% for session_year in session_years %}
-                                        <option value="{{ session_year.id }}">{{ session_year.session_start_year }} {% trans 'to' %} {{ session_year.session_end_year }}</option>
+                                        <option value="{{ session_year.id }}">{{ session_year.session_start_year }} - {{ session_year.session_end_year }}</option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -96,7 +96,7 @@
 
                             <div class="card-footer" id="fetch_intern_block" style="display:none;">
 
-                                <button type="button" class="btn btn-primary" id="fetch_intern">{% trans 'Fetch Intern Data' %}</button>
+                                <button type="button" class="btn btn-primary" id="fetch_intern">{% trans 'Fetch Employee Data' %}</button>
                             </div>
                             
                             <!-- /.card-body -->
@@ -107,7 +107,7 @@
 
                         </div>
 
-                        {% comment %} Displaying Interns Here {% endcomment %}
+                        {% comment %} Displaying Employees Here {% endcomment %}
 
                         <div class="card-footer" id="intern_data">
                         </div> 
@@ -202,7 +202,7 @@
                 var json_data=JSON.parse(response);
                 console.log(json_data)
                 //Displaying Attendance Date Input and Interns Attendance
-                var div_data="<div class='form-group'><label>{% trans 'Intern Attendance:' %} </label></div>"
+                var div_data="<div class='form-group'><label>{% trans 'Employee Attendance:' %} </label></div>"
                 div_data+="<div class='form-group'><div class='row'>"
 
                 for(key in json_data)
@@ -242,7 +242,7 @@
 
             })
             .fail(function(){
-                alert("{% trans 'Error in Fetching Interns.' %}")
+                alert("{% trans 'Error in Fetching Employees.' %}")
             })
 
 
@@ -296,7 +296,7 @@
                 })
 
                 .fail(function(){
-                    alert("{% trans 'Error in Saving Interns Attendance Data.' %}")
+                    alert("{% trans 'Error in Saving Employees Attendance Data.' %}")
                 })
 
             })

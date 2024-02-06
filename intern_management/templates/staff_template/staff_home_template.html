@@ -19,7 +19,7 @@
                     <div class="inner">
                         <h3>{{ interns_count }}</h3>
 
-                        <p>{% trans 'Interns Under Me' %}</p>
+                        <p>{% trans 'Employees Under Me' %}</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
@@ -127,7 +127,7 @@
                     <!-- BAR CHART -->
                     <div class="card card-info">
                     <div class="card-header">
-                        <h3 class="card-title">{% trans 'Intern Attendance Data' %}</h3>
+                        <h3 class="card-title">{% trans 'Employee Attendance Data' %}</h3>
 
                         <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -247,7 +247,7 @@
             labels  : intern_list,
             datasets: [
                 {
-                label               : '{% trans "Intern Attendance Chart for Present" %}',
+                label               : '{% trans "Employee Attendance Chart for Present" %}',
                 backgroundColor     : 'rgba(60,141,188,0.9)',
                 borderColor         : 'rgba(60,141,188,0.8)',
                 pointRadius          : false,
@@ -258,7 +258,7 @@
                 data                : attendance_present_list
                 },
                 {
-                label               : '{% trans "Intern Attendance Chart for Absent" %}',
+                label               : '{% trans "Employee Attendance Chart for Absent" %}',
                 backgroundColor     : 'rgba(210, 214, 222, 1)',
                 borderColor         : 'rgba(210, 214, 222, 1)',
                 pointRadius         : false,

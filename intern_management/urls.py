@@ -79,7 +79,14 @@ urlpatterns = [
     path(_('admin_get_attendance_intern/'), HodViews.admin_get_attendance_intern, name="admin_get_attendance_intern"),
     path(_('admin_profile/'), HodViews.admin_profile, name="admin_profile"),
     path(_('admin_profile_update/'), HodViews.admin_profile_update, name="admin_profile_update"),
-
+    path(_('generate_admin_view_attendance/'), HodViews.generate_admin_view_attendance_pdf, name="generate_admin_view_attendance"),
+    path(_('generate_messages_staff/'), HodViews.generate_messages_staff_pdf, name="generate_messages_staff"),
+    path(_('generate_leaves_staffs/'), HodViews.generate_leaves_staffs_pdf, name="generate_leaves_staffs"),
+    path(_('generate_admin_view_leave_employee/'), HodViews.generate_admin_view_leave_employee_pdf, name="generate_admin_view_leave_employee"),
+    path(_('generate_view_admin_message_employees/'), HodViews.generate_view_admin_message_employees_pdf, name="generate_view_admin_message_employees"),
+    
+    
+ 
     # URLS FOR Staff
     path(_('staff_home/'), StaffViews.staff_home, name="staff_home"),
     path(_('staff_take_attendance/'), StaffViews.staff_take_attendance, name="staff_take_attendance"),
@@ -122,8 +129,10 @@ urlpatterns = [
     path(_('intern_view_result/'), InternViews.intern_view_result, name="intern_view_result"),
     path(_('intern_view_headquarters/'), InternViews.intern_view_headquarters, name="intern_view_headquarters"),
     path(_('generate_attendance_employee/'), InternViews.generate_attendance_employee_pdf, name="generate_attendance_employee"),
+    path(_('generate_result_employee/'), InternViews.generate_result_employee_pdf, name="generate_result_employee"),
+    path(_('generate_message_employee/'), InternViews.generate_message_employee_pdf, name="generate_message_employee"),
+    path(_('generate_leave_employee/'), InternViews.generate_leave_employee_pdf, name="generate_leave_employee"),
    
-
 
     path(_('check_email_exist/'), HodViews.check_email_exist, name="check_email_exist"),
     path(_('check_username_exist/'), HodViews.check_username_exist, name="check_username_exist"),

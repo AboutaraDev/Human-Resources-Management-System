@@ -1,7 +1,7 @@
 {% extends 'hod_template/base_template.html' %}
 {% load i18n %}
 {% block page_title %}
-     {% trans 'Manage Intern' %}
+     {% trans 'Manage Employee' %}
 {% endblock page_title %}
 
 {% block main_content %}
@@ -14,7 +14,7 @@
             
             <div class="row">
                 <div class="col-md-6">
-                    <a class="btn btn-primary" href="{% url 'add_intern' %}" role="button">{% trans '+ Add Intern' %}</a>
+                    <a class="btn btn-primary" href="{% url 'add_intern' %}" role="button">{% trans '+ Add Employee' %}</a>
                 </div>
                 <div class="col-md-6 text-right">
                     <a class="btn btn-primary" href="{% url 'generate_intern_pdf' %}" role="button">{% trans 'Download PDF' %}</a>
@@ -52,7 +52,7 @@
                     <!-- general form elements -->
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">{% trans 'Intern Details' %}</h3>
+                            <h3 class="card-title">{% trans 'Employees Details' %}</h3>
 
                             <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
@@ -90,7 +90,7 @@
                             <tbody>
                                 {% for intern in intern %}
                                 <tr>
-                                <td>{{ intern.admin.id }}</td>
+                                <td>{{ intern.id }}</td>
                                 <td>{{ intern.admin.first_name }}</td>
                                 <td>{{ intern.admin.last_name }}</td>
                                 <td>{{ intern.admin.username }}</td>
